@@ -124,6 +124,13 @@
     3> Run attached SQL script in Database or Open terminal , run migration script 1> add-migration "initial" 2> update-database, it will create database automatically in SQL
     4> now run application on IIS it will show swagger page with apis as per requirement, here there is no any authentication
     5> now if you want to see log of logger then need to run application by selecting project name and it will run on kestrel through which we can see our logging behaviour logs in command prompt
+    6> To check event on dashboard of Rabbit MQ we need to install Rabbit MQ first 
+    7> once install we need to run rabbitmq on local server 
+    8> it will further run on http://localhost:15672/#/ which is default for rabbit MQ 
+    9> we can check live statistic 
+    10> we need to run two project togethor to check live effects  
+
+    Hense System is Clean Architecture with CQRS pattern along with EventDriven Architecture for Microservices
 
 Happy Coding.  
 
