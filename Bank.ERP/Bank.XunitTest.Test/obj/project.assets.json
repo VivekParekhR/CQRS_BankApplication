@@ -9074,11 +9074,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Vivek\\Interview\\Company\\Cygnet\\Bank.ERP\\Bank.XunitTest.Test\\Bank.XunitTest.Test.csproj",
+      "projectUniqueName": "C:\\Users\\HP\\Desktop\\CQRS\\Bank.ERP\\Bank.XunitTest.Test\\Bank.XunitTest.Test.csproj",
       "projectName": "Bank.XunitTest.Test",
-      "projectPath": "D:\\Vivek\\Interview\\Company\\Cygnet\\Bank.ERP\\Bank.XunitTest.Test\\Bank.XunitTest.Test.csproj",
+      "projectPath": "C:\\Users\\HP\\Desktop\\CQRS\\Bank.ERP\\Bank.XunitTest.Test\\Bank.XunitTest.Test.csproj",
       "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "D:\\Vivek\\Interview\\Company\\Cygnet\\Bank.ERP\\Bank.XunitTest.Test\\obj\\",
+      "outputPath": "C:\\Users\\HP\\Desktop\\CQRS\\Bank.ERP\\Bank.XunitTest.Test\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -9099,11 +9099,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Vivek\\Interview\\Company\\Cygnet\\Bank.ERP\\Bank.Application\\Bank.Application.csproj": {
-              "projectPath": "D:\\Vivek\\Interview\\Company\\Cygnet\\Bank.ERP\\Bank.Application\\Bank.Application.csproj"
+            "C:\\Users\\HP\\Desktop\\CQRS\\Bank.ERP\\Bank.Application\\Bank.Application.csproj": {
+              "projectPath": "C:\\Users\\HP\\Desktop\\CQRS\\Bank.ERP\\Bank.Application\\Bank.Application.csproj"
             },
-            "D:\\Vivek\\Interview\\Company\\Cygnet\\Bank.ERP\\Bank.Core\\Bank.Core.csproj": {
-              "projectPath": "D:\\Vivek\\Interview\\Company\\Cygnet\\Bank.ERP\\Bank.Core\\Bank.Core.csproj"
+            "C:\\Users\\HP\\Desktop\\CQRS\\Bank.ERP\\Bank.Core\\Bank.Core.csproj": {
+              "projectPath": "C:\\Users\\HP\\Desktop\\CQRS\\Bank.ERP\\Bank.Core\\Bank.Core.csproj"
             }
           }
         }

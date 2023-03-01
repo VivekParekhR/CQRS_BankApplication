@@ -2,22 +2,23 @@
 using Bank.Application.SystemActors.AccountFeature.Query;
 using Bank.Core.Entity;
 using Bank.Core.Interface;
+using Bank.Core.ViewModel;
 using MediatR;
 
 #endregion
 namespace Bank.Application.SystemActors.AccountFeature.QueryHandler
 {
-    public class GetAccountByIdQueryHandler : IRequestHandler<GetAccountByIdQuery,  Account>
+    public class GetCustomerBankByIdQueryHandler : IRequestHandler<GetCustomerBankByIdQuery,  List<CustomerBankViewModel>>
     {
         #region Property
-        private readonly IAccountRepository _repository; 
+        private readonly ICustomerBankRepository _repository; 
         #endregion
 
         /// <summary>
         /// Constructor
         /// </summary>
         /// <param name="repository"></param>
-        public GetAccountByIdQueryHandler(IAccountRepository repository)
+        public GetCustomerBankByIdQueryHandler(ICustomerBankRepository repository)
         {
             _repository = repository;
         }
@@ -28,9 +29,9 @@ namespace Bank.Application.SystemActors.AccountFeature.QueryHandler
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public async Task<Account> Handle(GetAccountByIdQuery request, CancellationToken cancellationToken)
+        public async Task<List<CustomerBankViewModel>> Handle(GetCustomerBankByIdQuery request, CancellationToken cancellationToken)
         {
-            return await _repository.GetAccountByIdAsync(request.Id);
+            return await _repository.GetCustomerBankByCustomerIdAsync(request.CustomerId);
         }
     }
 }

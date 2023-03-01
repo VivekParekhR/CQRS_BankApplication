@@ -1,5 +1,6 @@
 ﻿using Bank.Core.Entity;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Bank.Core.Context
 {
@@ -9,9 +10,8 @@ namespace Bank.Core.Context
         public DbSet<Branch> Branches { get; set; }
         public DbSet<Entity.Bank> Banks { get; set; }
         public DbSet<Customer> Customers { get; set; }
-        public DbSet<Account> Accounts { get; set; }
+        public DbSet<CustomerBank> CustomerBanks { get; set; }
         public DbSet<Transaction> Transactions { get; set; }
-        public DbSet<TransactionHistory> TransactionHistories { get; set; }
         #endregion
 
         /// <summary>
@@ -31,9 +31,8 @@ namespace Bank.Core.Context
             modelBuilder.Entity<Branch>().HasKey(b => b.Id); 
             modelBuilder.Entity<Entity.Bank>().HasKey(b => b.Id);
             modelBuilder.Entity<Customer>().HasKey(c => c.Id);
-            modelBuilder.Entity<Account>().HasKey(a => a.Id);
+            modelBuilder.Entity<CustomerBank>().HasKey(a => a.Id);
             modelBuilder.Entity<Transaction>().HasKey(t => t.Id);
-            modelBuilder.Entity<TransactionHistory>().HasKey(th => th.Id); 
         }
     }
 }

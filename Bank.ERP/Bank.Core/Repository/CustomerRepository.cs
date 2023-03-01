@@ -46,31 +46,21 @@ namespace Bank.Core.Repository
         {
             return await _dbContext.Customers.Where(x => x.Id == id).FirstOrDefaultAsync();
         }
-
-
+         
         /// <summary>
-        /// CheckEmailWithBankExists
+        /// 
         /// </summary>
         /// <param name="email"></param>
-        /// <param name="bankId"></param>
+        /// <param name="PhoneNo"></param>
         /// <returns></returns>
-        public bool CheckEmailWithBankExists(string email, int bankId)
-        {
+        public bool CheckEmailWithPhoneExists(string email, string PhoneNo) {
             bool retVal = true;
-            var retval = _dbContext.Customers.Where(x => x.Email == email && x.BankId == bankId).FirstOrDefault();
+            var retval = _dbContext.Customers.Where(x => x.Email == email && x.PhoneNo == PhoneNo).FirstOrDefault();
             if (retval != null)
             {
                 retVal = false;
             }
             return retVal;
-        }
-
-
-        public async Task<int> GetBankByCustomerIdAsync(int customerId)
-        {
-            var bankId = await _dbContext.Customers.Where(c => c.Id == customerId).Select(x => x.BankId).FirstOrDefaultAsync();
-            return bankId;
-
         }
     }
 }

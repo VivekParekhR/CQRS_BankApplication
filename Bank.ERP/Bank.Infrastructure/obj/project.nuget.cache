@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "B0UqFSY8IvD5OpSgkwDYsiuXCGmMi8o8pH04BBhUwoZxzGP2pv+9sZ14vdfJb/4byXKQEAEUxg/6p9hiaKkMtg==",
+  "dgSpecHash": "SUC+VXKh+qFAV02ALy7W3UTJBp2y3owDK5A9WjiKTRY64OOGIMD9JhQzI1ls2i6KR95uIWdNJCgJGqyS3Jp/gA==",
   "success": true,
-  "projectFilePath": "D:\\Vivek\\Interview\\Company\\Cygnet\\Bank.ERP\\Bank.Infrastructure\\Bank.Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\HP\\Desktop\\CQRS\\Bank.ERP\\Bank.Infrastructure\\Bank.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\HP\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.3\\microsoft.entityframeworkcore.7.0.3.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.3\\microsoft.entityframeworkcore.abstractions.7.0.3.nupkg.sha512",

@@ -1,8 +1,10 @@
 ﻿#region Using
+using Azure.Core;
 using Bank.Application.SystemActors.TransectionFeature.Command;
 using Bank.Core.Entity;
 using Bank.Core.Interface;
 using Bank.Core.Repository;
+using Bank.Infrastructure.Enum;
 using Bank.Infrastructure.Exceptions;
 using MediatR;
 
@@ -12,24 +14,19 @@ namespace Bank.Application.SystemActors.TransectionFeature.CommandHandler
     public class TransferCommandHandler : IRequestHandler<TransferCommand, int>
     {
         #region Property
-        private readonly IAccountRepository _accountRepository;
-        private readonly ICustomerRepository _customerRepository;
+        private readonly ICustomerBankRepository _customerBankRepository;
         private readonly ITransactionRepository _transactionRepository;
-        private readonly ITransactionHistoryRepository _transactionHistoryRepository;
-
-
         #endregion
 
         /// <summary>
         /// Constructor
         /// </summary>
         /// <param name="bankRepository"></param>
-        public TransferCommandHandler(IAccountRepository accountRepository, ICustomerRepository customerRepository, ITransactionRepository transactionRepository, ITransactionHistoryRepository transactionHistoryRepository)
+        public TransferCommandHandler(ICustomerBankRepository customerBankRepository, 
+                                      ITransactionRepository transactionRepository)
         {
-            _accountRepository = accountRepository;
-            _customerRepository = customerRepository;
+            _customerBankRepository = customerBankRepository;
             _transactionRepository = transactionRepository;
-            _transactionHistoryRepository = transactionHistoryRepository;   
         }
 
         /// <summary>
@@ -42,64 +39,40 @@ namespace Bank.Application.SystemActors.TransectionFeature.CommandHandler
         /// <exception cref="InsufficientFundsException"></exception>
         public async Task<int> Handle(TransferCommand command, CancellationToken cancellationToken)
         {
-            var sourceAccount = await _accountRepository.GetAccountByIdAsync(command.SourceAccountId);
-            var destinationAccount = await _accountRepository.GetAccountByIdAsync(command.DestinationAccountId);
+            var CustomerBankObject = await _customerBankRepository.GetCustomerBankByBankIdAndCustomerIdAsync(command.CustomerId);
 
-            if (sourceAccount == null)
+            if (CustomerBankObject == null)
             {
-                throw new EntityNotExistsException(typeof(Account).Name);
+                throw new EntityNotExistsException(typeof(CustomerBank).Name);
             }
 
-            if (destinationAccount == null)
+            if (command.TransactionType == Infrastructure.Enum.TransactionType.Withdrawal)
             {
-                throw new EntityNotExistsException(typeof(Account).Name);
-            }
-            // Check if the source account has sufficient funds
-            if (sourceAccount.Balance < command.Amount)
-            {
-                throw new InsufficientFundsException(sourceAccount.AccountNumber, sourceAccount.Balance);
+                if (CustomerBankObject.Balance < command.Amount)
+                {
+                    throw new InsufficientFundsException(CustomerBankObject.AccountNumber, CustomerBankObject.Balance);
+                }
             }
 
-            // Update the account balances
-            sourceAccount.Balance -= command.Amount;
-            destinationAccount.Balance += command.Amount;
-
-            await _accountRepository.UpdateAccountAsync(sourceAccount);
-            await _accountRepository.UpdateAccountAsync(destinationAccount);
-
-            var bankId = await _customerRepository.GetBankByCustomerIdAsync(sourceAccount.CustomerId);
-            // Create transaction records
-            var sourceTransaction = new Transaction
+            var TransactionAdd = new Transaction
             {
-                FromAccountId = sourceAccount.Id,
-                ToAccountId = destinationAccount.Id,
+                Amount = command.Amount,
+                TransactionType = command.TransactionType,
+                CustomerId = command.CustomerId,
+                BankId = command.BankId,
                 TransactionId = Guid.NewGuid(),
-                Amount = -command.Amount,
-                BankId = bankId
+                TransectionDate = System.DateTime.Now,
+                TransectionRemarks = command.TransectionRemarks
             };
-            var tranId = await _transactionRepository.AddTransactionAsync(sourceTransaction);
+            var retValue = await _transactionRepository.AddTransactionAsync(TransactionAdd);
 
+            CustomerBankObject.Balance = (command.TransactionType == TransactionType.Deposite) ? 
+                                            CustomerBankObject.Balance + command.Amount :
+                                                CustomerBankObject.Balance - command.Amount;    
 
-
-            // Create transection history record 
-            var sourceTransactionHistory = new TransactionHistory
-            {
-                AccountId = command.SourceAccountId,
-                Date = DateTime.Now,
-                Amount = -command.Amount
-            };
-
-            var destinationTransactionHistory = new TransactionHistory
-            {
-                AccountId = command.DestinationAccountId,
-                Date = DateTime.Now,
-                Amount = command.Amount
-            };
-
-            await _transactionHistoryRepository.AddTransactionHistoryAsync(sourceTransactionHistory);
-            await _transactionHistoryRepository.AddTransactionHistoryAsync(destinationTransactionHistory);
-
-            return tranId;
+            await _customerBankRepository.UpdateCustomerBankAsync(CustomerBankObject);
+            
+            return retValue;
         }
     }
 }

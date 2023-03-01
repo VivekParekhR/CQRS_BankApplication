@@ -42,9 +42,7 @@ namespace Bank.Core.Repository
         /// <returns></returns>
         public async Task<Entity.Bank> GetBankByIdAsync(int id)
         {
-            return await _dbContext.Banks
-                                   .Include(x => x.Customers)
-                                   .Include(x=>x.Transactions)
+            return await _dbContext.Banks  
                                    .Where(x=>x.Id==id).FirstOrDefaultAsync();
         }
 

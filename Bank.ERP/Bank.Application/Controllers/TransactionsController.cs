@@ -1,6 +1,5 @@
 ﻿#region Using
-using Bank.Application.SystemActors.TransectionFeature.Query;
-using Bank.Application.SystemActors.TransectionHistoryFeature.Query;
+using Bank.Application.SystemActors.TransectionFeature.Query; 
 using MediatR;
 using Microsoft.AspNetCore.Mvc; 
 #endregion
@@ -24,6 +23,26 @@ namespace Bank.Application.Controllers
             _mediator = mediator;
         }
 
+        // need to do some generic type 
+        /// <summary>
+        /// GetTransactionHistoryByAccountId
+        /// </summary>
+        /// <param name="accountNumber"></param>
+        /// <returns></returns>
+        [HttpGet("GetTransectionHistory/{CustomerId}/{BankId}")]
+        public async Task<ActionResult> GetTransactionHistoryByCustomerAndBankId(int CustomerId, int BankId)
+        {
+            var transactionHistory = await _mediator.Send(new GetTransactionHistoryByAccountNumberQuery { BankId = BankId, CustomerId = CustomerId });
+
+            if (transactionHistory == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(transactionHistory);
+        }
+
+
         /// <summary>
         /// GetTransactionById
         /// </summary>
@@ -42,22 +61,6 @@ namespace Bank.Application.Controllers
             return Ok(transaction);
         }
 
-        /// <summary>
-        /// GetTransactionHistoryByAccountId
-        /// </summary>
-        /// <param name="accountNumber"></param>
-        /// <returns></returns>
-        [HttpGet("History/{accountNumber}")]
-        public async Task<ActionResult> GetTransactionHistoryByAccountId(Guid accountNumber)
-        {
-            var transactionHistory = await _mediator.Send(new GetTransactionHistoryByAccountNumberQuery { AccountNumber = accountNumber });
-
-            if (transactionHistory == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(transactionHistory);
-        }
+       
     }
 }

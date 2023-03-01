@@ -2,6 +2,7 @@
 using Bank.Application.SystemActors.AccountFeature.Command;
 using Bank.Application.SystemActors.AccountFeature.Query;
 using Bank.Application.SystemActors.TransectionFeature.Command;
+using Bank.Core.Entity;
 using MediatR;
 using Microsoft.AspNetCore.Mvc; 
 #endregion
@@ -10,7 +11,7 @@ namespace Bank.Application.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class CustomerAccountController : ControllerBase
+    public class CustomerBankController : ControllerBase
     {
         #region Property
         private readonly IMediator _mediator; 
@@ -20,7 +21,7 @@ namespace Bank.Application.Controllers
         /// Constructor
         /// </summary>
         /// <param name="mediator"></param>
-        public CustomerAccountController(IMediator mediator)
+        public CustomerBankController(IMediator mediator)
         {
             _mediator = mediator;
         }
@@ -30,8 +31,8 @@ namespace Bank.Application.Controllers
         /// </summary>
         /// <param name="command"></param>
         /// <returns></returns>
-        [HttpPost("OpenAccount")]
-        public async Task<IActionResult> OpenAccount(CreateAccountCommand command)
+        [HttpPost("CreateAccount")]
+        public async Task<IActionResult> CustomerBankCreate(CustomerBankCreateCommand command)
         {
             var accountId = await _mediator.Send(command);
 
@@ -43,7 +44,7 @@ namespace Bank.Application.Controllers
         /// </summary>
         /// <param name="command"></param>
         /// <returns></returns>
-        [HttpPost("TransferPayment")]
+        [HttpPost("WidrowlOrDepositeMoney")]
         public async Task<IActionResult> TransferPayment(TransferCommand command)
         {
             var transactionId = await _mediator.Send(command);
@@ -56,10 +57,10 @@ namespace Bank.Application.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        [HttpGet("CheckBalance/{id}")]
-        public async Task<ActionResult> CheckBalance(int id)
+        [HttpGet("CheckBalanceForBankAccounts/{customerId}")]
+        public async Task<ActionResult> CheckBalance(int customerId)
         {
-            var account = await _mediator.Send(new GetAccountByIdQuery { Id = id });
+            var account = await _mediator.Send(new GetCustomerBankByIdQuery { CustomerId = customerId });
 
             if (account == null)
             {

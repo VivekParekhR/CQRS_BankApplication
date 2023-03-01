@@ -7,5 +7,6 @@ namespace Bank.Application.SystemActors.BranchFeature.Command
     public class CreateBranchCommand : IRequest<int>
     {
         public string Name { get; set; }
+        public string BranchCode { get; set; }
     }
 }

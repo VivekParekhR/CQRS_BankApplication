@@ -19,10 +19,8 @@ namespace Bank.Application.ServiceContainer
             services.AddScoped<IBankRepository, BankRepository>();
             services.AddScoped<IBranchRepository, BranchRepository>();
             services.AddScoped<ICustomerRepository, CustomerRepository>();
-            services.AddScoped<IAccountRepository, AccountRepository>();
-            services.AddScoped<ITransactionRepository, TransactionRepository>();
-            services.AddScoped<ITransactionHistoryRepository, TransactionHistoryRepository>();
-            
+            services.AddScoped<ICustomerBankRepository, CustomerBankRepository>();
+            services.AddScoped<ITransactionRepository, TransactionRepository>(); 
             return services;
         }
 

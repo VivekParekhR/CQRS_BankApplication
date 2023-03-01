@@ -19,13 +19,13 @@ namespace Bank.XunitTest.Test.TestList
             var context = BankUnitTestContext.Get();
             BankRepository ObjbankRepository = new BankRepository(context);
 
-            context.Customers.Add(new Customer { Id = 1, Name = "Sam", BankId = 1, Email = "sam@gmail.com" });
+            context.Customers.Add(new Customer { Id = 1, FirstName = "Sam",  Email = "sam@gmail.com",LastName="sam",CreatedDate=System.DateTime.Now,CreatedById=1,IsDeleted=false,PhoneNo="65879546" });
             context.SaveChanges();
 
             // Assert
-            var result = context.Customers.Single(a => a.Name == "Sam");
+            var result = context.Customers.Single(a => a.FirstName == "Sam");
 
-            result.Name.ShouldContain("Kot");
+            result.FirstName.ShouldContain("Kot");
         }
 
         [Fact(DisplayName = "Customer Exists Test")]
@@ -36,9 +36,9 @@ namespace Bank.XunitTest.Test.TestList
 
 
             // Assert
-            var result = context.Customers.Single(a => a.Name == "Sam");
+            var result = context.Customers.Single(a => a.FirstName == "Sam");
 
-            result.Name.ShouldBe("Sam");
+            result.FirstName.ShouldBe("Sam");
         }
 
         [Fact(DisplayName = "Customer Belomngs From Perticular Bank Test")]
@@ -49,9 +49,9 @@ namespace Bank.XunitTest.Test.TestList
 
 
             // Assert
-            var result = context.Customers.Single(a => a.BankId == 2);
+            var result = context.Customers.Single(a => a.CreatedById == 2);
 
-            result.Name.ShouldBe("Peater");
+            result.FirstName.ShouldBe("Peater");
         }
     }
 }

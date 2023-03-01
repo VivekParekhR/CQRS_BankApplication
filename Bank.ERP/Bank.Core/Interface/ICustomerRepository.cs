@@ -7,8 +7,7 @@ namespace Bank.Core.Interface
     public interface ICustomerRepository
     {
         Task<int> AddCustomerAsync(Customer customer);
-        Task<Customer> GetCustomerByIdAsync(int id);
-        bool CheckEmailWithBankExists(string email, int bankId);
-        Task<int> GetBankByCustomerIdAsync(int customerId);
+        Task<Customer> GetCustomerByIdAsync(int id);  
+        bool CheckEmailWithPhoneExists(string email, string PhoneNo);
     }
 }

@@ -19,16 +19,16 @@ namespace Bank.XunitTest.Test.TestList
             var context = BankUnitTestContext.Get();
             BankRepository ObjbankRepository = new BankRepository(context);
 
-            decimal retData = context.Accounts.Where(x => x.Id == 2).Select(x => x.Balance).SingleOrDefault();
-            var retDataTwo = context.Accounts.Where(x => x.Id == 1).Select(x => x.Balance).SingleOrDefault();
+            decimal retData = context.CustomerBanks.Where(x => x.Id == 2).Select(x => x.Balance).SingleOrDefault();
+            var retDataTwo = context.CustomerBanks.Where(x => x.Id == 1).Select(x => x.Balance).SingleOrDefault();
 
             if (retData > retDataTwo)
             {
-                context.Transactions.Add(new Transaction { Id = 5, Amount = 5000, BankId = 1, FromAccountId = 1, ToAccountId = 2, TransactionId = Guid.NewGuid() });
+                context.Transactions.Add(new Transaction {Id = 5, Amount = 5000, BankId = 1, CustomerId = 2, TransactionId = Guid.NewGuid(),TransactionType=Infrastructure.Enum.TransactionType.Deposite,TransectionDate=System.DateTime.Now,TransectionRemarks="Test" });
                 context.SaveChanges();
             }
              
-            decimal getretData = context.Accounts.Where(x => x.Id == 1).Select(x => x.Balance).SingleOrDefault();
+            decimal getretData = context.CustomerBanks.Where(x => x.Id == 1).Select(x => x.Balance).SingleOrDefault();
             getretData.ShouldBeGreaterThan(100);
         }
 
@@ -38,17 +38,17 @@ namespace Bank.XunitTest.Test.TestList
             var context = BankUnitTestContext.Get();
             BankRepository ObjbankRepository = new BankRepository(context);
 
-            decimal retData = context.Accounts.Where(x => x.Id == 1).Select(x => x.Balance).SingleOrDefault();
-            var retDataTwo = context.Accounts.Where(x => x.Id == 2).Select(x => x.Balance).SingleOrDefault();
+            decimal retData = context.CustomerBanks.Where(x => x.Id == 1).Select(x => x.Balance).SingleOrDefault();
+            var retDataTwo = context.CustomerBanks.Where(x => x.Id == 2).Select(x => x.Balance).SingleOrDefault();
 
             if (retData > retDataTwo)
             {
-                context.Transactions.Add(new Transaction { Id = 5, Amount = 5000, BankId = 1, FromAccountId = 1, ToAccountId = 2, TransactionId = Guid.NewGuid() });
+                context.Transactions.Add(new Transaction { Id = 5, Amount = 5000, BankId = 1, CustomerId = 1, TransactionId = Guid.NewGuid(), TransactionType = Infrastructure.Enum.TransactionType.Withdrawal, TransectionDate = System.DateTime.Now, TransectionRemarks = "Test" });
                 context.SaveChanges();
             }
 
 
-            decimal getretData = context.Accounts.Where(x => x.Id == 1).Select(x => x.Balance).SingleOrDefault();
+            decimal getretData = context.CustomerBanks.Where(x => x.Id == 1).Select(x => x.Balance).SingleOrDefault();
             getretData.ShouldBeGreaterThan(4000);  
         }
     }

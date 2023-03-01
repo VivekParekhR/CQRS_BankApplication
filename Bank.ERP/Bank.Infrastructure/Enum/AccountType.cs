@@ -2,10 +2,7 @@
 {
     public enum AccountType
     {
-        Current,
-        Savings,
-        Salary,
-        Fixed_Deposit,
-        Recurring
+        Current=1,
+        Savings
     }
 }

@@ -2,22 +2,23 @@
 using Bank.Application.SystemActors.AccountFeature.Command;
 using Bank.Core.Entity;
 using Bank.Core.Interface;
+using Bank.Infrastructure.Enum;
 using MediatR; 
 #endregion
 
 namespace Bank.Application.SystemActors.AccountFeature.CommandHandler
 {
-    public class CreateAccountCommandHandler : IRequestHandler<CreateAccountCommand, int>
+    public class CustomerBankCreateCommandHandler : IRequestHandler<CustomerBankCreateCommand, int>
     {
         #region Property
-        private readonly IAccountRepository _repository; 
+        private readonly ICustomerBankRepository _repository; 
         #endregion
 
         /// <summary>
         /// Constructor
         /// </summary>
         /// <param name="repository"></param>
-        public CreateAccountCommandHandler(IAccountRepository repository)
+        public CustomerBankCreateCommandHandler(ICustomerBankRepository repository)
         {
             _repository = repository;
         }
@@ -28,17 +29,20 @@ namespace Bank.Application.SystemActors.AccountFeature.CommandHandler
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public async Task<int> Handle(CreateAccountCommand request, CancellationToken cancellationToken)
+        public async Task<int> Handle(CustomerBankCreateCommand request, CancellationToken cancellationToken)
         {
-            var account = new Account
+            var account = new CustomerBank
             {
-                AccountNumber = Guid.NewGuid(),
+                AccountNumber = request.AccountNumber,
                 Balance = request.Balance,
                 CustomerId = request.CustomerId,
-                AccountType = request.AccountType
+                AccountType = request.AccountType,
+                BankId = request.BankId,    
+                CreatedById = Convert.ToInt32(SystemUser.Admin),
+                CreatedDate = System.DateTime.Now
             };
 
-            await _repository.AddAccountAsync(account);
+            await _repository.AddCustomerBankAsync(account);
             return account.Id;
         }
     }

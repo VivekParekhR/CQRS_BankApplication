@@ -1,6 +1,7 @@
 ﻿#region Using
 using Bank.Application.SystemActors.BankFeature.Command;
 using Bank.Core.Interface;
+using Bank.Infrastructure.Enum;
 using MediatR;
 
 #endregion
@@ -32,8 +33,9 @@ namespace Bank.Application.SystemActors.BankFeature.CommandHandler
             var bank = new Bank.Core.Entity.Bank
             {
                 Name = request.Name,
-                IFSCCode = request.IFSCCode,
                 BranchId = request.BranchId,
+                CreatedById = Convert.ToInt32(SystemUser.Admin),
+                CreatedDate = System.DateTime.Now
             };
 
             await _repository.AddBankAsync(bank);

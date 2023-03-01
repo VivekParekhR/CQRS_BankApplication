@@ -1,6 +1,7 @@
 ﻿#region Using
 using Bank.Application.SystemActors.BranchFeature.Command;
 using Bank.Core.Interface;
+using Bank.Infrastructure.Enum;
 using MediatR; 
 #endregion
 
@@ -31,7 +32,10 @@ namespace Bank.Application.SystemActors.BranchFeature.CommandHandler
         {
             var branch = new Bank.Core.Entity.Branch
             {
-                Name = request.Name
+                Name = request.Name,
+                BranchCode = request.BranchCode,
+                CreatedById = Convert.ToInt32(SystemUser.Admin),
+                CreatedDate = System.DateTime.Now
             };
 
             await _repository.AddBranchAsync(branch);

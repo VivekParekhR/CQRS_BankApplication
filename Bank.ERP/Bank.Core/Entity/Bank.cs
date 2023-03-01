@@ -1,14 +1,20 @@
 ﻿
+using System.ComponentModel.DataAnnotations;
+
 namespace Bank.Core.Entity
 {
-    public class Bank
-    {
+    public class Bank 
+    { 
+        [Key]
         public int Id { get; set; }
+
+        [MaxLength(100)]
         public string Name { get; set; }
-        public string IFSCCode { get; set; }
         public int BranchId { get; set; }
-        public IList<Customer> Customers { get; set; }
-        public IList<Transaction> Transactions { get; set; }
+        public int CreatedById { get; set; }
+        public DateTime CreatedDate { get; set; }
+        public Nullable<int> UpdatedById { get; set; }
+        public Nullable<DateTime> UpdatedDate { get; set; }
     } 
 
 }

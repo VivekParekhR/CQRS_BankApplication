@@ -19,11 +19,11 @@ namespace Bank.Application.Validators
         public CreateCustomerCommandValidator(ICustomerRepository repository)
         {
             _repository = repository;
-            RuleFor(c => c.Name).NotEmpty();
-            RuleFor(c => c.Email).EmailAddress().NotEmpty();
-            RuleFor(c => c.BankId).NotEmpty().NotEqual(0);
-            RuleFor(c => c.Email).Must((o, Email) => { return _repository.CheckEmailWithBankExists(Email, o.BankId); })
-                                 .WithMessage("Email with this Bank already exists, Please Try with different Email or diff Bank.");
+            RuleFor(c => c.FirstName).NotEmpty();
+            RuleFor(c => c.LastName).NotEmpty();
+            RuleFor(c => c.Email).EmailAddress().NotEmpty(); 
+            RuleFor(c => c.Email).Must((o, Email) => { return _repository.CheckEmailWithPhoneExists(Email, o.PhoneNo); })
+                                 .WithMessage("Customer with this Email and Phone already exists, Please Try with different Email or diff phone.");
 
         }
     }

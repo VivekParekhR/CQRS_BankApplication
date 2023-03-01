@@ -2,6 +2,7 @@
 using Bank.Application.SystemActors.CustomerFeature.Command;
 using Bank.Core.Entity;
 using Bank.Core.Interface;
+using Bank.Infrastructure.Enum;
 using MediatR; 
 #endregion
 
@@ -32,9 +33,13 @@ namespace Bank.Application.SystemActors.CustomerFeature.CommandHandler
         {
             var customer = new Customer
             {
-                Name = request.Name,
+                FirstName = request.FirstName,
+                LastName = request.LastName,
+                PhoneNo = request.PhoneNo,
                 Email = request.Email,
-                BankId = request.BankId
+                IsDeleted = false,
+                CreatedById = Convert.ToInt32(SystemUser.Admin),
+                CreatedDate = System.DateTime.Now
             };
 
             await _repository.AddCustomerAsync(customer);

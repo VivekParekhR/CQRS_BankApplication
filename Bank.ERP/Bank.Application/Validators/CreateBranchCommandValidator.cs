@@ -19,6 +19,7 @@ namespace Bank.Application.Validators
         public CreateBranchCommandValidator(IBranchRepository repository)
         {
             _repository = repository;
+            RuleFor(c => c.BranchCode).NotEmpty();
             RuleFor(c => c.Name).NotEmpty()
                   .Custom((property, context) =>
                   {

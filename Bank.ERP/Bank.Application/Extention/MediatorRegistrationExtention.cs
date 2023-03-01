@@ -17,7 +17,6 @@ namespace Bank.Application.Extention
            this IServiceCollection services)
         {
             //// Resolve Behaviours
-            //services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(Program).Assembly));
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly()));
 
             return services;

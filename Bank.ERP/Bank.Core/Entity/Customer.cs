@@ -1,10 +1,29 @@
-﻿namespace Bank.Core.Entity
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Bank.Core.Entity
 {
-    public class Customer
+    public class Customer 
     {
+        [Key]
         public int Id { get; set; }
-        public string Name { get; set; }
+
+        [MaxLength(200)]
+        public string FirstName { get; set; }
+
+        [MaxLength(200)]
+        public string LastName { get; set; }
+
+        [MaxLength(20)]
+        public string PhoneNo { get; set; }
+
+        [MaxLength(200)]
         public string Email { get; set; }
-        public int BankId { get; set; }
+        public bool IsDeleted { get; set; }
+
+        public int CreatedById { get; set; }
+        public DateTime CreatedDate { get; set; }
+        public Nullable<int> UpdatedById { get; set; }
+        public Nullable<DateTime> UpdatedDate { get; set; }
+
     }
 }

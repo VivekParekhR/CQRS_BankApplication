@@ -19,7 +19,7 @@ namespace Bank.XunitTest.Test.TestList
             var context = BankUnitTestContext.Get();
             BankRepository ObjbankRepository = new BankRepository(context);
 
-            context.Branches.Add(new Core.Entity.Branch { Name = "branchOne", Id = 3 });
+            context.Branches.Add(new Core.Entity.Branch { Name = "branchOne", Id = 3,BranchCode="Test",CreatedById=1,CreatedDate=System.DateTime.Now });
             context.SaveChanges();
 
             // Assert

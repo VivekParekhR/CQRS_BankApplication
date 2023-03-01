@@ -15,7 +15,7 @@ namespace Bank.XunitTest.Test.TestList
             var context = BankUnitTestContext.Get();
             BankRepository ObjbankRepository = new BankRepository(context);
 
-            context.Banks.Add(new Core.Entity.Bank { Id = 3, Name = "Kotak", BranchId = 3, IFSCCode = "KO60352" });
+            context.Banks.Add(new Core.Entity.Bank { Id = 3, Name = "Kotak", BranchId = 1,CreatedById=1,CreatedDate=System.DateTime.Now});
             context.SaveChanges();
 
             // Assert

@@ -6,21 +6,21 @@ using FluentValidation;
 
 namespace Bank.Application.Validators
 {
-    public class CreateAccountCommandValidator : AbstractValidator<CreateAccountCommand>
+    public class CreateAccountCommandValidator : AbstractValidator<CustomerBankCreateCommand>
     {
         #region Property
-        private readonly IAccountRepository _repository;
+        private readonly ICustomerBankRepository _repository;
         #endregion
 
         /// <summary>
         /// CreateAccountCommandValidator
         /// </summary>
         /// <param name="repository"></param>
-        public CreateAccountCommandValidator(IAccountRepository repository)
+        public CreateAccountCommandValidator(ICustomerBankRepository repository)
         {
             _repository = repository; 
             RuleFor(c => c.Balance).GreaterThanOrEqualTo(1);
-            RuleFor(c => c.CustomerId).NotEmpty().NotEqual(0).Must((o, CustomerId) => { return _repository.CheckCustomerWithSameAccountTypeExists(CustomerId, o.AccountType); })
+            RuleFor(c => c.CustomerId).NotEmpty().NotEqual(0).Must((o, CustomerId) => { return _repository.CheckCustomerWithSameAccountTypeExists(CustomerId, o.AccountType,o.BankId); })
                                  .WithMessage("Either Customer not exists Or Customer with this AccountType already exists, Please Try with different AccountType And Customer.");
         }
     }

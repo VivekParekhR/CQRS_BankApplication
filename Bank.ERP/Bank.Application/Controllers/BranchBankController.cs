@@ -9,7 +9,7 @@ namespace Bank.Application.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class BranchBankController : ControllerBase
+    public class BankController : ControllerBase
     {
         #region Property
         private readonly IMediator _mediator; 
@@ -19,7 +19,7 @@ namespace Bank.Application.Controllers
         /// Consturctor
         /// </summary>
         /// <param name="mediator"></param>
-        public BranchBankController(IMediator mediator)
+        public BankController(IMediator mediator)
         {
             _mediator = mediator;
         }

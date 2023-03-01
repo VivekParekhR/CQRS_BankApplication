@@ -3,10 +3,12 @@ using Bank.Core.ViewModel;
 using MediatR;
 
 #endregion
-namespace Bank.Application.SystemActors.TransectionHistoryFeature.Query
+namespace Bank.Application.SystemActors.TransectionFeature.Query
 {
     public class GetTransactionHistoryByAccountNumberQuery : IRequest<TransactionHistoryViewModel>
     {
-        public Guid AccountNumber { get; set; }
+        public int BankId { get; set; }
+        public int CustomerId { get; set; }
+
     }
 }

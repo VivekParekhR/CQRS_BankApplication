@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "u75jE99Ohvm8scw/BRbg0X/Vpm1SEY6QnkGXU+/GWpDxztNFg+lLUAQfqzl/dibt4217Zo7UPcHdd5t6zDyoqA==",
+  "dgSpecHash": "EW9+tyLLaqmTV9pEkfO0zOqZCgUzLiw6K5pWBh6KSSlTJigc+bv7JMp8PN8dfuvSkKk7C6/ePgAz0evDNQJ32g==",
   "success": true,
-  "projectFilePath": "D:\\Vivek\\Interview\\Company\\Cygnet\\Bank.ERP\\Bank.Core\\Bank.Core.csproj",
+  "projectFilePath": "C:\\Users\\HP\\Desktop\\CQRS\\Bank.ERP\\Bank.Core\\Bank.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\HP\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

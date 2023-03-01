@@ -13,8 +13,8 @@ namespace Bank.Application.Validators
         /// </summary>
         public TransferCommandValidator()
         {
-            RuleFor(c => c.SourceAccountId).NotEmpty().NotEqual(0);
-            RuleFor(c => c.DestinationAccountId).NotEmpty().NotEqual(0);
+            RuleFor(c => c.CustomerId).NotEmpty().NotEqual(0);
+            RuleFor(c => c.BankId).NotEmpty().NotEqual(0);
             RuleFor(c => c.Amount).NotEmpty().GreaterThanOrEqualTo(1);
         }
     }
