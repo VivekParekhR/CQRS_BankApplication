@@ -14,7 +14,8 @@ namespace Bank.Core.ViewModel
         public int BankId { get; set; }
         public string BankName { get; set; }
         public int CustomerId { get; set; }
-
+        public string CustomerName { get; set; }
+        
         [MaxLength(50)]
         public string AccountNumber { get; set; }
         public string AccountType { get; set; }

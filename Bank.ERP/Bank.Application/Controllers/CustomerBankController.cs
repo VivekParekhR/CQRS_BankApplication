@@ -40,12 +40,12 @@ namespace Bank.Application.Controllers
         }
 
         /// <summary>
-        /// TransferPayment
+        /// TransferFund
         /// </summary>
         /// <param name="command"></param>
         /// <returns></returns>
-        [HttpPost("CreateTransection")]
-        public async Task<IActionResult> CreateTransection(TransferCommand command)
+        [HttpPost("TransferFund")]
+        public async Task<IActionResult> TransferFund(TransferCommand command)
         {
             var transactionId = await _mediator.Send(command);
 
@@ -53,12 +53,12 @@ namespace Bank.Application.Controllers
         }
 
         /// <summary>
-        /// CheckBalance
+        /// GetCustomerAccountBalance
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        [HttpGet("CheckBalanceForBankAccounts/{customerId}")]
-        public async Task<ActionResult> CheckBalance(int customerId)
+        [HttpGet("GetCustomerAccountBalance/{customerId}")]
+        public async Task<ActionResult> GetCustomerAccountBalance(int customerId)
         {
             var account = await _mediator.Send(new GetCustomerBankByIdQuery { CustomerId = customerId });
 

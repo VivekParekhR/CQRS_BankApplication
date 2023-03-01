@@ -568,11 +568,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\HP\\Desktop\\CQRS\\Bank.ERP\\Bank.Infrastructure\\Bank.Infrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\HP\\Desktop\\CQRS2\\CQRS_BankApplication\\Bank.ERP\\Bank.Infrastructure\\Bank.Infrastructure.csproj",
       "projectName": "Bank.Infrastructure",
-      "projectPath": "C:\\Users\\HP\\Desktop\\CQRS\\Bank.ERP\\Bank.Infrastructure\\Bank.Infrastructure.csproj",
+      "projectPath": "C:\\Users\\HP\\Desktop\\CQRS2\\CQRS_BankApplication\\Bank.ERP\\Bank.Infrastructure\\Bank.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\HP\\Desktop\\CQRS\\Bank.ERP\\Bank.Infrastructure\\obj\\",
+      "outputPath": "C:\\Users\\HP\\Desktop\\CQRS2\\CQRS_BankApplication\\Bank.ERP\\Bank.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
