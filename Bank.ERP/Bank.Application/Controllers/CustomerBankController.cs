@@ -36,7 +36,7 @@ namespace Bank.Application.Controllers
         {
             var accountId = await _mediator.Send(command);
 
-            return CreatedAtAction(nameof(CheckBalance), new { id = accountId }, accountId);
+            return Ok(accountId);
         }
 
         /// <summary>
@@ -44,8 +44,8 @@ namespace Bank.Application.Controllers
         /// </summary>
         /// <param name="command"></param>
         /// <returns></returns>
-        [HttpPost("WidrowlOrDepositeMoney")]
-        public async Task<IActionResult> TransferPayment(TransferCommand command)
+        [HttpPost("CreateTransection")]
+        public async Task<IActionResult> CreateTransection(TransferCommand command)
         {
             var transactionId = await _mediator.Send(command);
 

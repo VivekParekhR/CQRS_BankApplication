@@ -171,8 +171,8 @@ namespace Bank.Core.Migrations
                     b.Property<int>("CustomerId")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("IsDeleted")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
 
                     b.Property<int?>("UpdatedById")
                         .HasColumnType("int");
@@ -217,6 +217,10 @@ namespace Bank.Core.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("BankId");
+
+                    b.HasIndex("CustomerId");
+
                     b.ToTable("Transactions");
                 });
 
@@ -227,6 +231,25 @@ namespace Bank.Core.Migrations
                         .HasForeignKey("BranchId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Bank.Core.Entity.Transaction", b =>
+                {
+                    b.HasOne("Bank.Core.Entity.Bank", "bank")
+                        .WithMany()
+                        .HasForeignKey("BankId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Bank.Core.Entity.Customer", "customer")
+                        .WithMany()
+                        .HasForeignKey("CustomerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("bank");
+
+                    b.Navigation("customer");
                 });
 
             modelBuilder.Entity("Bank.Core.Entity.Branch", b =>
