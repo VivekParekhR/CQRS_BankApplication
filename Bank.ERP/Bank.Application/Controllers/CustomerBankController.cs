@@ -3,6 +3,10 @@ using Bank.Application.SystemActors.AccountFeature.Command;
 using Bank.Application.SystemActors.AccountFeature.Query;
 using Bank.Application.SystemActors.TransectionFeature.Command;
 using Bank.Core.Entity;
+using Bank.Infrastructure.Enum;
+using Bank.Infrastructure.StaticProvider;
+using Bank.Shared.ServiceMessagingObject;
+using MassTransit;
 using MediatR;
 using Microsoft.AspNetCore.Mvc; 
 #endregion
@@ -14,16 +18,18 @@ namespace Bank.Application.Controllers
     public class CustomerBankController : ControllerBase
     {
         #region Property
-        private readonly IMediator _mediator; 
+        private readonly IMediator _mediator;
+        private readonly IBus _bus;
         #endregion
 
         /// <summary>
         /// Constructor
         /// </summary>
         /// <param name="mediator"></param>
-        public CustomerBankController(IMediator mediator)
+        public CustomerBankController(IMediator mediator, IBus bus)
         {
             _mediator = mediator;
+            _bus = bus;
         }
 
         /// <summary>
@@ -47,8 +53,25 @@ namespace Bank.Application.Controllers
         [HttpPost("TransferFund")]
         public async Task<IActionResult> TransferFund(TransferCommand command)
         {
+           
             var transactionId = await _mediator.Send(command);
+           
+            Uri uri = new Uri("rabbitmq://localhost/"+ ERPConstant.RabbitMQ_EmailQueue);
 
+            var endPoint = await _bus.GetSendEndpoint(uri);
+
+            EmailNotification objEmailNotification = new EmailNotification();
+            
+            objEmailNotification.Subject = "Transfer Fund From Bank : "+ command.BankId;
+            objEmailNotification.Body = "Frund Transfer Time :" + objEmailNotification.MessageForQueueGenerationTime + " <br/>" +
+                                        "Amount :" + command.Amount + " <br/>" +
+                                        "TransactionType :" + Convert.ToString((TransactionType)command.TransactionType) + " <br/>" +
+                                        "TransectionRemarks :" + command.TransectionRemarks + " <br/>" +
+                                        "For Referance Transection Id is :" + transactionId;
+            objEmailNotification.FromAddress = ERPConstant.FromEmail;
+            objEmailNotification.ToAddress = ERPConstant.ToEmail;
+            objEmailNotification.PhonNo = ERPConstant.PhonNo;
+            await endPoint.Send(objEmailNotification);
             return Ok(transactionId);
         }
 

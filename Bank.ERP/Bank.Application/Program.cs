@@ -10,6 +10,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
+using MassTransit.MultiBus;
+using MassTransit;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -35,6 +37,9 @@ builder.Services.AddValidatorGroup();
 
 // behaviour
 builder.Services.AddBehaviourDependencyGroup();
+
+// Add MassTransit to publish/subscribe message from RabbitMQ server
+builder.Services.AddMassTransitGroup();
 
 var app = builder.Build();
 

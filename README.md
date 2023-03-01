@@ -4,6 +4,8 @@
 
     In our example, we will be using Mediator pattern to implement the CQRS and Clean architecture. Mediator pattern is a behavioural design pattern that allows objects to communicate with each other through a mediator object, which centralizes communication between objects and decouples them from each other.
 
+    Along with this implemented Event Driven pattern for Email and sms sevice (Notification service) here for communication between two service using RabbitMQ which will help in communication further more to abstract this RabbitMQ layer using MassTransit  
+
 # Application Fundamental
     Requirement Statement: We need to create application on Bank. In This application admin can create Branch, Bank, Customer, Account and other side customers can do Transaction between their account and show their balance in different account.
 
@@ -38,6 +40,9 @@
     Microsoft.EntityFrameworkCore.InMemory 7.0.3
     Shouldly 4.1.0
     xunit 2.4.1
+    MassTransit 8.0.13 
+    RabbitMQ 8.0.13
+    
 
 # IDE for application
     
@@ -58,7 +63,10 @@
     Microsoft.EntityFrameworkCore.InMemory 7.0.3
     Shouldly 4.1.0
     xunit 2.4.1
-    xunit.runner.visualstudio 2.4.3
+    xunit.runner.visualstudio 2.4.3,
+    MassTransit 8.0.13
+    MassTransit.AspNetCore 7.3.1
+    MassTransit.RabbitMQ 8.0.13
     
 # Project Structure
     Bank.ERP.sln
@@ -97,6 +105,14 @@
             if we want to integrate Third-party message handler then we can do it over her
         Bank.Infrastructure
             Enum
+            Extension
+        Bank.Notification
+            Consumer
+            Controller
+            Extension
+        Bank.Shared
+            ServiceMessagingObject
+            Utility
             Extension
         Bank.XunitTest.Test
             Infrastructure
