@@ -62,8 +62,11 @@ namespace Bank.Core.Repository
 
             var customerBank = _dbContext.CustomerBanks;
             var bank = _dbContext.Banks;
+            var customer = _dbContext.Customers;
+
 
             var returnValue = (from e in customerBank
+                               join c in customer on e.CustomerId equals c.Id
                                join o in bank on e.BankId equals o.Id
                                select new CustomerBankViewModel
                                {
@@ -73,7 +76,8 @@ namespace Bank.Core.Repository
                                     BankId = e.BankId,  
                                     BankName=o.Name,
                                     CustomerId = e.CustomerId,
-                                    CreatedDate=e.CreatedDate,
+                                    CustomerName = c.FirstName + " "+c.LastName,
+                                    CreatedDate = e.CreatedDate,
                                     CreatedById=e.CreatedById,  
                                     Id=e.Id,
                                     UpdatedById=e.UpdatedById,
