@@ -11,9 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bank.Core", "Bank.Core\Bank
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bank.XunitTest.Test", "Bank.XunitTest.Test\Bank.XunitTest.Test.csproj", "{9B374A46-CCBE-4717-8236-558B9BB1640B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bank.Shared", "Bank.Shared\Bank.Shared.csproj", "{38C9F7CA-542A-48BD-AA75-EC8DADA1DC31}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bank.Shared", "Bank.Shared\Bank.Shared.csproj", "{38C9F7CA-542A-48BD-AA75-EC8DADA1DC31}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bank.Notification", "Bank.Notification\Bank.Notification.csproj", "{981471F4-E4C9-46D7-8CC1-4A818643FF90}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bank.Notification", "Bank.Notification\Bank.Notification.csproj", "{981471F4-E4C9-46D7-8CC1-4A818643FF90}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bank.Domain", "Bank.Domain\Bank.Domain.csproj", "{8FACE1AF-AC69-45AF-A017-ED65DB054F97}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{981471F4-E4C9-46D7-8CC1-4A818643FF90}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{981471F4-E4C9-46D7-8CC1-4A818643FF90}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{981471F4-E4C9-46D7-8CC1-4A818643FF90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FACE1AF-AC69-45AF-A017-ED65DB054F97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FACE1AF-AC69-45AF-A017-ED65DB054F97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FACE1AF-AC69-45AF-A017-ED65DB054F97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FACE1AF-AC69-45AF-A017-ED65DB054F97}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

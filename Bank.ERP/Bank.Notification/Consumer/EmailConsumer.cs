@@ -9,8 +9,8 @@ namespace Bank.Notification.Consumer
         public async Task Consume(ConsumeContext<EmailNotification> context)
         {
             var data = context.Message;
-            EmailUtility.sendEmail(data);
-            SMSUtility.sendMessage(data);
+            await EmailUtility.SendEmail(data);
+            await SMSUtility.SendMessage(data);
             Console.WriteLine(data);    
         }
     }

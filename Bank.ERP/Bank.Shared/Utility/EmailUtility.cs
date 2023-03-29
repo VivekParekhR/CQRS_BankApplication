@@ -1,4 +1,4 @@
-﻿using Bank.Infrastructure.StaticProvider;
+﻿using Bank.Shared.Common;
 using Bank.Shared.ServiceMessagingObject;
 using System;
 using System.Collections.Generic;
@@ -12,15 +12,14 @@ namespace Bank.Shared.Utility
 {
     public static class EmailUtility
     {
-        public static void sendEmail(EmailNotification emailNotification)
+        public static async Task SendEmail(EmailNotification emailNotification)
         {
-            bool isMailSent = false;
             try
             {
-                MailMessage newMail = new MailMessage();
+                MailMessage newMail = new();
 
                 // SMTP HOST
-                SmtpClient client = new SmtpClient(ERPConstant.SmtpClient);
+                SmtpClient client = new(ERPConstant.SmtpClient);
 
                 // FROM
                 newMail.From = new MailAddress(emailNotification.FromAddress, emailNotification.FromName);
@@ -44,9 +43,8 @@ namespace Bank.Shared.Utility
                 
                 // NETWORK Credential
                 client.Credentials = new System.Net.NetworkCredential(ERPConstant.SmtpUserName, ERPConstant.SmtpUserPassword);
-
-                client.Send(newMail); // Send the constructed mail
-
+ 
+                await client.SendMailAsync(newMail); 
                 Console.WriteLine("Email Sent");
             }
             catch (Exception ex)

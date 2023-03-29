@@ -1,8 +1,8 @@
 ﻿#region Using
-using Bank.Core.Context;
-using Bank.Core.Entity;
-using Bank.Infrastructure.Enum;
-using Microsoft.EntityFrameworkCore; 
+using Bank.Domain.Entity;
+using Bank.Domain.Enum;
+using Bank.Infrastructure.Persistence;
+using Microsoft.EntityFrameworkCore;
 #endregion
 
 namespace Bank.XunitTest.Test.Infrstructure
@@ -29,8 +29,8 @@ namespace Bank.XunitTest.Test.Infrstructure
 
             var bankes = new[]
             {
-                new Core.Entity.Bank {Id = 1, Name = "HDFC",BranchId=1 ,CreatedById=1,CreatedDate=System.DateTime.Now },
-                new Core.Entity.Bank {Id = 2, Name = "ICICI", BranchId=2 ,CreatedById=1,CreatedDate=System.DateTime.Now}
+                new Domain.Entity.Bank {Id = 1, Name = "HDFC",BranchId=1 ,CreatedById=1,CreatedDate=System.DateTime.Now },
+                new Domain.Entity.Bank {Id = 2, Name = "ICICI", BranchId=2 ,CreatedById=1,CreatedDate=System.DateTime.Now}
             };
             context.Banks.AddRange(bankes);
 

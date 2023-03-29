@@ -1,5 +1,4 @@
-﻿using Bank.Infrastructure.Enum;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -12,13 +11,13 @@ namespace Bank.Core.ViewModel
     {
         public int Id { get; set; }
         public int BankId { get; set; }
-        public string BankName { get; set; }
+        public string? BankName { get; set; }
         public int CustomerId { get; set; }
-        public string CustomerName { get; set; }
+        public string? CustomerName { get; set; }
         
         [MaxLength(50)]
-        public string AccountNumber { get; set; }
-        public string AccountType { get; set; }
+        public string? AccountNumber { get; set; }
+        public string? AccountType { get; set; }
         public decimal Balance { get; set; }  
         public int CreatedById { get; set; }
         public DateTime CreatedDate { get; set; }

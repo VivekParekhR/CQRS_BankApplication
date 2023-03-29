@@ -1,6 +1,7 @@
 ﻿#region Using
-using Bank.Core.Repository;
+using Bank.Infrastructure.Repository;
 using Bank.XunitTest.Test.Infrstructure;
+using Microsoft.EntityFrameworkCore;
 using Shouldly;
 
 #endregion
@@ -15,8 +16,8 @@ namespace Bank.XunitTest.Test.TestList
             var context = BankUnitTestContext.Get();
             BankRepository ObjbankRepository = new BankRepository(context);
 
-            context.Banks.Add(new Core.Entity.Bank { Id = 3, Name = "Kotak", BranchId = 1,CreatedById=1,CreatedDate=System.DateTime.Now});
-            context.SaveChanges();
+            context.Banks.Add(new Domain.Entity.Bank { Id = 3, Name = "Kotak", BranchId = 1,CreatedById=1,CreatedDate=System.DateTime.Now});
+            await context.SaveChangesAsync();
 
             // Assert
             var result = context.Banks.Single(a => a.Name == "Kotak");
@@ -32,7 +33,7 @@ namespace Bank.XunitTest.Test.TestList
 
 
             // Assert
-            var result = context.Banks.Single(a => a.Name == "HDFC");
+            var result = await context.Banks.SingleAsync(a => a.Name == "HDFC");
 
             result.Name.ShouldBe("HDFC");
         }
@@ -45,7 +46,7 @@ namespace Bank.XunitTest.Test.TestList
 
 
             // Assert
-            var branchOne = context.Banks.Single(a => a.Name == "Union");
+            var branchOne = await context.Banks.SingleAsync(a => a.Name == "Union");
 
             branchOne.Name.ShouldBe("Union");
         }

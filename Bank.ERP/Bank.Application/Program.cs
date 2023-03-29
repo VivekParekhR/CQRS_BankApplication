@@ -1,7 +1,5 @@
 using Bank.Application.Behaviour;
-using Bank.Application.Extention;
-using Bank.Application.Container;
-using Bank.Application.ServiceContainer;
+using Bank.Application.Extention; 
 using Bank.Application.Validators;
 using FluentValidation;
 using MediatR;
@@ -12,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 using MassTransit.MultiBus;
 using MassTransit;
+using Bank.Infrastructure.ServiceContainer;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,13 +23,10 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // Add Mediator
-builder.Services.AddMediatorRegistrationGroup(); 
+builder.Services.AddMediatorRegistrationGroup();
 
-// Add context  
-builder.Services.AddContextGroup(builder.Configuration);
-
-// Add repositories
-builder.Services.AddRepositoryGroup();
+// Add repositories and context  
+builder.Services.AddServices(builder.Configuration);
 
 // Add Validators
 builder.Services.AddValidatorGroup();

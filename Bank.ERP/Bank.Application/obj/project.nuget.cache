@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "8tcM4TYhTHaOUq2oZWE63W82Eqi7OSGRABOfzUr0MzrEYFw0CRKwWxEIx18puqPC4E79kD1b/KAzMVXNLQC8vA==",
+  "dgSpecHash": "Vvwe/VBLOSIOpqije2kCSxLvR48xXYtOI0FOkxFlWPUOtAMeR7GZHO9lC0fXmt9AQPItFLFrTEZi29kuJCB0gA==",
   "success": true,
   "projectFilePath": "C:\\Users\\HP\\Desktop\\CQRS2\\CQRS_BankApplication\\Bank.ERP\\Bank.Application\\Bank.Application.csproj",
   "expectedPackageFiles": [
@@ -9,11 +9,11 @@
     "C:\\Users\\HP\\.nuget\\packages\\fluentvalidation\\11.5.1\\fluentvalidation.11.5.1.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.5.1\\fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
-    "C:\\Users\\HP\\.nuget\\packages\\masstransit\\8.0.13\\masstransit.8.0.13.nupkg.sha512",
-    "C:\\Users\\HP\\.nuget\\packages\\masstransit.abstractions\\8.0.13\\masstransit.abstractions.8.0.13.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\masstransit\\8.0.14\\masstransit.8.0.14.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\masstransit.abstractions\\8.0.14\\masstransit.abstractions.8.0.14.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\masstransit.aspnetcore\\7.3.1\\masstransit.aspnetcore.7.3.1.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\masstransit.extensions.dependencyinjection\\7.3.1\\masstransit.extensions.dependencyinjection.7.3.1.nupkg.sha512",
-    "C:\\Users\\HP\\.nuget\\packages\\masstransit.rabbitmq\\8.0.13\\masstransit.rabbitmq.8.0.13.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\masstransit.rabbitmq\\8.0.14\\masstransit.rabbitmq.8.0.14.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\mediatr\\12.0.1\\mediatr.12.0.1.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\11.0.0\\mediatr.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",

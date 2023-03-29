@@ -1,5 +1,4 @@
-﻿using Bank.Infrastructure.Enum;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +13,7 @@ namespace Bank.Core.ViewModel
         public Guid TransactionId { get; set; }
         public decimal Amount { get; set; }
         public DateTime TransectionDate { get; set; }
-        public string TransactionType { get; set; }
-        public string TransectionRemarks { get; set; }
+        public string? TransactionType { get; set; }
+        public string? TransectionRemarks { get; set; }
     }
 }

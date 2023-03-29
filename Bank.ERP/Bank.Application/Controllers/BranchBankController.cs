@@ -1,8 +1,8 @@
 ﻿#region MyRegion
-using Bank.Application.SystemActors.BankFeature.Command;
-using Bank.Application.SystemActors.BankFeature.Query;
+using Bank.Core.Modules.BankFeature.CreateBank;
+using Bank.Core.Modules.BankFeature.GetBankById;
 using MediatR;
-using Microsoft.AspNetCore.Mvc; 
+using Microsoft.AspNetCore.Mvc;
 #endregion
 
 namespace Bank.Application.Controllers

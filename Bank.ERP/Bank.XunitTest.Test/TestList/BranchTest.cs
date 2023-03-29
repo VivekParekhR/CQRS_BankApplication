@@ -1,6 +1,6 @@
-﻿using Bank.Application.SystemActors.BranchFeature.CommandHandler;
-using Bank.Core.Repository;
+﻿using Bank.Infrastructure.Repository;
 using Bank.XunitTest.Test.Infrstructure;
+using Microsoft.EntityFrameworkCore;
 using Shouldly;
 using System;
 using System.Collections.Generic;
@@ -19,8 +19,8 @@ namespace Bank.XunitTest.Test.TestList
             var context = BankUnitTestContext.Get();
             BankRepository ObjbankRepository = new BankRepository(context);
 
-            context.Branches.Add(new Core.Entity.Branch { Name = "branchOne", Id = 3,BranchCode="Test",CreatedById=1,CreatedDate=System.DateTime.Now });
-            context.SaveChanges();
+            context.Branches.Add(new Domain.Entity.Branch { Name = "branchOne", Id = 3,BranchCode="Test",CreatedById=1,CreatedDate=System.DateTime.Now });
+            await context.SaveChangesAsync();
 
             // Assert
             var branchOne = context.Branches.Single(a => a.Name == "branchOne");
@@ -36,7 +36,7 @@ namespace Bank.XunitTest.Test.TestList
 
 
             // Assert
-            var branchOne = context.Branches.Single(a => a.Name == "PeopleFirstBranch");
+            var branchOne =await context.Branches.SingleAsync(a => a.Name == "PeopleFirstBranch");
 
             branchOne.Name.ShouldBe("PeopleFirstBranch");
         }
@@ -49,7 +49,7 @@ namespace Bank.XunitTest.Test.TestList
 
 
             // Assert
-            var branchOne = context.Branches.Single(a => a.Name == "POBranch");
+            var branchOne = await context.Branches.SingleAsync(a => a.Name == "POBranch");
 
             branchOne.Name.ShouldBe("POBranch");
         }

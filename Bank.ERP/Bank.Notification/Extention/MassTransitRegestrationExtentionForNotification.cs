@@ -1,5 +1,5 @@
-﻿using Bank.Infrastructure.StaticProvider;
-using Bank.Notification.Consumer;
+﻿using Bank.Notification.Consumer;
+using Bank.Shared.Common;
 using MassTransit;
 
 namespace Bank.Notification.Extention

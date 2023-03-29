@@ -1,8 +1,8 @@
 ﻿#region Using
-using Bank.Application.SystemActors.BranchFeature.Command;
-using Bank.Application.SystemActors.BranchFeature.Query;
+using Bank.Core.Modules.BranchFeature.CreateBranch;
+using Bank.Core.Modules.BranchFeature.GetBranchById;
 using MediatR;
-using Microsoft.AspNetCore.Mvc; 
+using Microsoft.AspNetCore.Mvc;
 #endregion
 
 namespace Bank.Application.Controllers

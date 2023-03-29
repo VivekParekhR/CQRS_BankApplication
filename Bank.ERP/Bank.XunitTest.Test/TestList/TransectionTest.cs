@@ -1,5 +1,6 @@
-﻿using Bank.Core.Entity;
-using Bank.Core.Repository;
+﻿using Bank.Domain.Entity;
+using Bank.Domain.Enum;
+using Bank.Infrastructure.Repository;
 using Bank.XunitTest.Test.Infrstructure;
 using Shouldly;
 using System;
@@ -24,8 +25,8 @@ namespace Bank.XunitTest.Test.TestList
 
             if (retData > retDataTwo)
             {
-                context.Transactions.Add(new Transaction {Id = 5, Amount = 5000, BankId = 1, CustomerId = 2, TransactionId = Guid.NewGuid(),TransactionType=Infrastructure.Enum.TransactionType.Deposite,TransectionDate=System.DateTime.Now,TransectionRemarks="Test" });
-                context.SaveChanges();
+                context.Transactions.Add(new Transaction {Id = 5, Amount = 5000, BankId = 1, CustomerId = 2, TransactionId = Guid.NewGuid(),TransactionType= TransactionType.Deposite,TransectionDate=System.DateTime.Now,TransectionRemarks="Test" });
+                await context.SaveChangesAsync();
             }
              
             decimal getretData = context.CustomerBanks.Where(x => x.Id == 1).Select(x => x.Balance).SingleOrDefault();
@@ -43,8 +44,8 @@ namespace Bank.XunitTest.Test.TestList
 
             if (retData > retDataTwo)
             {
-                context.Transactions.Add(new Transaction { Id = 5, Amount = 5000, BankId = 1, CustomerId = 1, TransactionId = Guid.NewGuid(), TransactionType = Infrastructure.Enum.TransactionType.Withdrawal, TransectionDate = System.DateTime.Now, TransectionRemarks = "Test" });
-                context.SaveChanges();
+                context.Transactions.Add(new Transaction { Id = 5, Amount = 5000, BankId = 1, CustomerId = 1, TransactionId = Guid.NewGuid(), TransactionType =  TransactionType.Withdrawal, TransectionDate = System.DateTime.Now, TransectionRemarks = "Test" });
+                await context.SaveChangesAsync();
             }
 
 

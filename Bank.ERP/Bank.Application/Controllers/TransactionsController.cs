@@ -1,5 +1,6 @@
 ﻿#region Using
-using Bank.Application.SystemActors.TransectionFeature.Query; 
+using Bank.Core.Modules.TransectionFeature.GetTransactionById;
+using Bank.Core.Modules.TransectionFeature.GetTransactionHistoryByAccountNumber;
 using MediatR;
 using Microsoft.AspNetCore.Mvc; 
 #endregion
@@ -32,7 +33,7 @@ namespace Bank.Application.Controllers
         [HttpGet("GetTransectionHistory/{CustomerId}/{BankId}")]
         public async Task<ActionResult> GetTransactionHistoryByCustomerAndBankId(int CustomerId, int BankId)
         {
-            var transactionHistory = await _mediator.Send(new GetTransactionHistoryByAccountNumberQuery { BankId = BankId, CustomerId = CustomerId });
+            var transactionHistory =  await _mediator.Send(new GetTransactionHistoryByAccountNumberQuery { BankId = BankId, CustomerId = CustomerId });
 
             if (transactionHistory == null)
             {

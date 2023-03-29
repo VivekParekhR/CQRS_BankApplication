@@ -15,3 +15,15 @@ D:\Vivek\Interview\Company\Cygnet\Bank.ERP\Bank.Domain\obj\Debug\net6.0\Bank.Dom
 D:\Vivek\Interview\Company\Cygnet\Bank.ERP\Bank.Domain\obj\Debug\net6.0\refint\Bank.Domain.dll
 D:\Vivek\Interview\Company\Cygnet\Bank.ERP\Bank.Domain\obj\Debug\net6.0\Bank.Domain.pdb
 D:\Vivek\Interview\Company\Cygnet\Bank.ERP\Bank.Domain\obj\Debug\net6.0\ref\Bank.Domain.dll
+C:\Users\HP\Desktop\CQRS2\CQRS_BankApplication\Bank.ERP\Bank.Domain\bin\Debug\net6.0\Bank.Domain.deps.json
+C:\Users\HP\Desktop\CQRS2\CQRS_BankApplication\Bank.ERP\Bank.Domain\bin\Debug\net6.0\Bank.Domain.dll
+C:\Users\HP\Desktop\CQRS2\CQRS_BankApplication\Bank.ERP\Bank.Domain\bin\Debug\net6.0\Bank.Domain.pdb
+C:\Users\HP\Desktop\CQRS2\CQRS_BankApplication\Bank.ERP\Bank.Domain\obj\Debug\net6.0\Bank.Domain.csproj.AssemblyReference.cache
+C:\Users\HP\Desktop\CQRS2\CQRS_BankApplication\Bank.ERP\Bank.Domain\obj\Debug\net6.0\Bank.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\Desktop\CQRS2\CQRS_BankApplication\Bank.ERP\Bank.Domain\obj\Debug\net6.0\Bank.Domain.AssemblyInfoInputs.cache
+C:\Users\HP\Desktop\CQRS2\CQRS_BankApplication\Bank.ERP\Bank.Domain\obj\Debug\net6.0\Bank.Domain.AssemblyInfo.cs
+C:\Users\HP\Desktop\CQRS2\CQRS_BankApplication\Bank.ERP\Bank.Domain\obj\Debug\net6.0\Bank.Domain.csproj.CoreCompileInputs.cache
+C:\Users\HP\Desktop\CQRS2\CQRS_BankApplication\Bank.ERP\Bank.Domain\obj\Debug\net6.0\Bank.Domain.dll
+C:\Users\HP\Desktop\CQRS2\CQRS_BankApplication\Bank.ERP\Bank.Domain\obj\Debug\net6.0\refint\Bank.Domain.dll
+C:\Users\HP\Desktop\CQRS2\CQRS_BankApplication\Bank.ERP\Bank.Domain\obj\Debug\net6.0\Bank.Domain.pdb
+C:\Users\HP\Desktop\CQRS2\CQRS_BankApplication\Bank.ERP\Bank.Domain\obj\Debug\net6.0\ref\Bank.Domain.dll

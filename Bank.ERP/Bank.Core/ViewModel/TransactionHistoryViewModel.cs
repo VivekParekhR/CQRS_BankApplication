@@ -1,12 +1,12 @@
 ﻿#region Using
-using Bank.Core.Entity;
+using Bank.Domain.Entity;
 
 #endregion
 namespace Bank.Core.ViewModel
 {
     public class TransactionHistoryViewModel
     { 
-        public Entity.Bank Bank { get; set; }
+        public Bank.Domain.Entity.Bank Bank { get; set; }
         public Customer Customer { get; set; }
         public List<TransactionHistory> Transactions { get; set; } 
     } 

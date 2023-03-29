@@ -8,8 +8,8 @@ namespace Bank.Shared.ServiceMessagingObject
 {
     public class SMSNotification
     {
-        public string FromMobile { get; set; }
-        public string ToMobile { get; set; }
-        public string Message { get; set; }
+        public string? FromMobile { get; set; }
+        public string? ToMobile { get; set; }
+        public string? Message { get; set; }
     }
 }

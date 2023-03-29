@@ -1,8 +1,8 @@
 ﻿#region Using
-using Bank.Application.SystemActors.CustomerFeature.Command;
-using Bank.Application.SystemActors.CustomerFeature.Query;
+using Bank.Core.Modules.CustomerFeature.CreateCustomer;
+using Bank.Core.Modules.CustomerFeature.GetCustomerById;
 using MediatR;
-using Microsoft.AspNetCore.Mvc; 
+using Microsoft.AspNetCore.Mvc;
 #endregion
 
 namespace Bank.Application.Controllers

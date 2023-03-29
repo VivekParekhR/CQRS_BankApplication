@@ -1,17 +1,12 @@
-﻿using Bank.Infrastructure.StaticProvider;
+﻿using Bank.Shared.Common;
 using Bank.Shared.ServiceMessagingObject;
-using RestSharp;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks; 
+using RestSharp; 
 
 namespace Bank.Shared.Utility
 {
     public static class SMSUtility
     {
-        public static async Task sendMessage(EmailNotification emailNotification)
+        public static async Task SendMessage(EmailNotification emailNotification)
         {
             var url = "https://api.ultramsg.com/instance33374/messages/chat";
             var client = new RestClient(url);

@@ -1089,30 +1089,6 @@
             "rid": "win"
           }
         }
-      },
-      "Bank.Core/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "Bank.Infrastructure": "1.0.0",
-          "Microsoft.EntityFrameworkCore": "7.0.3"
-        },
-        "compile": {
-          "bin/placeholder/Bank.Core.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Bank.Core.dll": {}
-        }
-      },
-      "Bank.Infrastructure/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "compile": {
-          "bin/placeholder/Bank.Infrastructure.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Bank.Infrastructure.dll": {}
-        }
       }
     }
   },
@@ -3335,21 +3311,10 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
-    },
-    "Bank.Core/1.0.0": {
-      "type": "project",
-      "path": "../Bank.Core/Bank.Core.csproj",
-      "msbuildProject": "../Bank.Core/Bank.Core.csproj"
-    },
-    "Bank.Infrastructure/1.0.0": {
-      "type": "project",
-      "path": "../Bank.Infrastructure/Bank.Infrastructure.csproj",
-      "msbuildProject": "../Bank.Infrastructure/Bank.Infrastructure.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "Bank.Core >= 1.0.0",
       "FluentValidation >= 11.5.1",
       "MediatR >= 12.0.1",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.3",
@@ -3364,11 +3329,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Vivek\\Interview\\Company\\Cygnet\\Bank.ERP\\Bank.Domain\\Bank.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\HP\\Desktop\\CQRS2\\CQRS_BankApplication\\Bank.ERP\\Bank.Domain\\Bank.Domain.csproj",
       "projectName": "Bank.Domain",
-      "projectPath": "D:\\Vivek\\Interview\\Company\\Cygnet\\Bank.ERP\\Bank.Domain\\Bank.Domain.csproj",
+      "projectPath": "C:\\Users\\HP\\Desktop\\CQRS2\\CQRS_BankApplication\\Bank.ERP\\Bank.Domain\\Bank.Domain.csproj",
       "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "D:\\Vivek\\Interview\\Company\\Cygnet\\Bank.ERP\\Bank.Domain\\obj\\",
+      "outputPath": "C:\\Users\\HP\\Desktop\\CQRS2\\CQRS_BankApplication\\Bank.ERP\\Bank.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -3388,11 +3353,7 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {
-            "D:\\Vivek\\Interview\\Company\\Cygnet\\Bank.ERP\\Bank.Core\\Bank.Core.csproj": {
-              "projectPath": "D:\\Vivek\\Interview\\Company\\Cygnet\\Bank.ERP\\Bank.Core\\Bank.Core.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {

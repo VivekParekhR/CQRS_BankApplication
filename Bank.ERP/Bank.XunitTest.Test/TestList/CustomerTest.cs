@@ -1,6 +1,7 @@
-﻿using Bank.Core.Entity;
-using Bank.Core.Repository;
+﻿using Bank.Domain.Entity;
+using Bank.Infrastructure.Repository;
 using Bank.XunitTest.Test.Infrstructure;
+using Microsoft.EntityFrameworkCore;
 using Shouldly;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,7 @@ namespace Bank.XunitTest.Test.TestList
             BankRepository ObjbankRepository = new BankRepository(context);
 
             context.Customers.Add(new Customer { Id = 1, FirstName = "Sam",  Email = "sam@gmail.com",LastName="sam",CreatedDate=System.DateTime.Now,CreatedById=1,IsDeleted=false,PhoneNo="65879546" });
-            context.SaveChanges();
+            await context.SaveChangesAsync();
 
             // Assert
             var result = context.Customers.Single(a => a.FirstName == "Sam");
@@ -36,7 +37,7 @@ namespace Bank.XunitTest.Test.TestList
 
 
             // Assert
-            var result = context.Customers.Single(a => a.FirstName == "Sam");
+            var result = await context.Customers.SingleAsync(a => a.FirstName == "Sam");
 
             result.FirstName.ShouldBe("Sam");
         }
@@ -49,7 +50,7 @@ namespace Bank.XunitTest.Test.TestList
 
 
             // Assert
-            var result = context.Customers.Single(a => a.CreatedById == 2);
+            var result = await context.Customers.SingleAsync(a => a.CreatedById == 2);
 
             result.FirstName.ShouldBe("Peater");
         }

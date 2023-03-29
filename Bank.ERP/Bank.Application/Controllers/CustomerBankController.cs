@@ -1,14 +1,12 @@
 ﻿#region Using
-using Bank.Application.SystemActors.AccountFeature.Command;
-using Bank.Application.SystemActors.AccountFeature.Query;
-using Bank.Application.SystemActors.TransectionFeature.Command;
-using Bank.Core.Entity;
-using Bank.Infrastructure.Enum;
-using Bank.Infrastructure.StaticProvider;
+using Bank.Core.Modules.CustomerBankFeature.CustomerBankCreate;
+using Bank.Core.Modules.CustomerBankFeature.GetCustomerBankById;
+using Bank.Core.Modules.TransectionFeature.TransferAmount;
+using Bank.Shared.Common;
 using Bank.Shared.ServiceMessagingObject;
 using MassTransit;
 using MediatR;
-using Microsoft.AspNetCore.Mvc; 
+using Microsoft.AspNetCore.Mvc;
 #endregion
 
 namespace Bank.Application.Controllers
@@ -64,8 +62,7 @@ namespace Bank.Application.Controllers
             
             objEmailNotification.Subject = "Transfer Fund From Bank : "+ command.BankId;
             objEmailNotification.Body = "Frund Transfer Time :" + objEmailNotification.MessageForQueueGenerationTime + " <br/>" +
-                                        "Amount :" + command.Amount + " <br/>" +
-                                        "TransactionType :" + Convert.ToString((TransactionType)command.TransactionType) + " <br/>" +
+                                        "Amount :" + command.Amount + " <br/>"  +
                                         "TransectionRemarks :" + command.TransectionRemarks + " <br/>" +
                                         "For Referance Transection Id is :" + transactionId;
             objEmailNotification.FromAddress = ERPConstant.FromEmail;
