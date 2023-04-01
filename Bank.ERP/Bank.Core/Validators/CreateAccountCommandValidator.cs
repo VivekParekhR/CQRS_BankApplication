@@ -4,7 +4,7 @@ using FluentValidation;
 using Bank.Core.Modules.CustomerBankFeature.CustomerBankCreate;
 #endregion
 
-namespace Bank.Application.Validators
+namespace Bank.Core.Validators
 {
     public class CreateAccountCommandValidator : AbstractValidator<CustomerBankCreateCommand>
     {

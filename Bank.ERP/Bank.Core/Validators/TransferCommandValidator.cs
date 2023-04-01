@@ -3,7 +3,7 @@ using Bank.Core.Modules.TransectionFeature.TransferAmount;
 using FluentValidation;
 
 #endregion
-namespace Bank.Application.Validators
+namespace Bank.Core.Validators
 {
 
     public class TransferCommandValidator : AbstractValidator<TransferCommand>

@@ -4,7 +4,7 @@ using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 
 #endregion
-namespace Bank.Application.Extention
+namespace Bank.Core.Extention
 {
     public static class BehaviourDependancyRegistrationExtention
     {

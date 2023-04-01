@@ -5,7 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using System.Reflection; 
 #endregion
 
-namespace Bank.Application.Extention
+namespace Bank.Core.Extention
 {
     public static class MediatorRegistrationExtention
     {

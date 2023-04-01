@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bank.Core.Common
+namespace Bank.Core.Constant
 {
     public class ERPConstant
-    { 
+    {
         public const string RabbitMQ_URL = "rabbitmq://localhost";
         public const string RabbitMQ_UserName = "guest";
-        public const string RabbitMQ_Password = "guest"; 
+        public const string RabbitMQ_Password = "guest";
     }
 }

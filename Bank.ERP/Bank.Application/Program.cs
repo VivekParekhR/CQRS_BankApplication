@@ -1,5 +1,5 @@
 #region Using
-using Bank.Application.Extention;
+using Bank.Core.Extention;
 using Bank.Infrastructure.ServiceContainer; 
 #endregion
 
@@ -18,10 +18,7 @@ builder.Services.AddMediatorRegistrationGroup();
 
 // Add repositories and context  
 builder.Services.AddServices(builder.Configuration);
-
-// Add Validators
-builder.Services.AddValidatorGroup();
-
+ 
 // behaviour
 builder.Services.AddBehaviourDependencyGroup();
 

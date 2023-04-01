@@ -1,9 +1,10 @@
-﻿using Bank.Core.Common;
+﻿
+using Bank.Core.Constant;
 using MassTransit;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
-namespace Bank.Application.Extention
+namespace Bank.Core.Extention
 {
     public static class MassTransitRegestrationExtention
     {
