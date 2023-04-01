@@ -27,7 +27,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Bank.Core\Bank.Core.csproj" />
     <ProjectReference Include="..\Bank.Infrastructure\Bank.Infrastructure.csproj" />
-    <ProjectReference Include="..\Bank.Shared\Bank.Shared.csproj" />
   </ItemGroup>
 
 </Project>

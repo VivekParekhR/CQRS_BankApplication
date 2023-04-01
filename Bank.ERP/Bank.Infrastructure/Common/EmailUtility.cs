@@ -1,5 +1,4 @@
-﻿using Bank.Shared.Common;
-using Bank.Shared.ServiceMessagingObject;
+﻿using Bank.Domain.Entity; 
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +7,7 @@ using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bank.Shared.Utility
+namespace Bank.Infrastructure.Common
 {
     public static class EmailUtility
     {

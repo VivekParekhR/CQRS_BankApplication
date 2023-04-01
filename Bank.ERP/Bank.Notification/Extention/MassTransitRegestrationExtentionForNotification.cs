@@ -1,5 +1,6 @@
-﻿using Bank.Notification.Consumer;
-using Bank.Shared.Common;
+﻿using Bank.Infrastructure.Common;
+using Bank.Notification.Consumer;
+ 
 using MassTransit;
 
 namespace Bank.Notification.Extention

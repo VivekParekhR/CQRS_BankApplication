@@ -1,8 +1,7 @@
-﻿using Bank.Shared.Common;
-using Bank.Shared.ServiceMessagingObject;
+﻿using Bank.Domain.Entity; 
 using RestSharp; 
 
-namespace Bank.Shared.Utility
+namespace Bank.Infrastructure.Common
 {
     public static class SMSUtility
     {

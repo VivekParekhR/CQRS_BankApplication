@@ -1,16 +1,7 @@
-using Bank.Application.Behaviour;
-using Bank.Application.Extention; 
-using Bank.Application.Validators;
-using FluentValidation;
-using MediatR;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using System.Reflection;
-using MassTransit.MultiBus;
-using MassTransit;
-using Bank.Infrastructure.ServiceContainer;
+#region Using
+using Bank.Application.Extention;
+using Bank.Infrastructure.ServiceContainer; 
+#endregion
 
 var builder = WebApplication.CreateBuilder(args);
 

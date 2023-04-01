@@ -1,5 +1,6 @@
-﻿using Bank.Shared.ServiceMessagingObject;
-using Bank.Shared.Utility;
+﻿
+using Bank.Domain.Entity;
+using Bank.Infrastructure.Common;
 using MassTransit;
 
 namespace Bank.Notification.Consumer

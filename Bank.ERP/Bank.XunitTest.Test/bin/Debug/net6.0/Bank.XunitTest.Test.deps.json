@@ -978,11 +978,11 @@
           }
         }
       },
-      "RestSharp/108.0.3": {
+      "RestSharp/109.0.1": {
         "runtime": {
           "lib/net6.0/RestSharp.dll": {
-            "assemblyVersion": "108.0.3.0",
-            "fileVersion": "108.0.3.0"
+            "assemblyVersion": "109.0.1.0",
+            "fileVersion": "109.0.1.0"
           }
         }
       },
@@ -1856,7 +1856,6 @@
         "dependencies": {
           "Bank.Core": "1.0.0",
           "Bank.Infrastructure": "1.0.0",
-          "Bank.Shared": "1.0.0",
           "FluentValidation": "11.5.1",
           "FluentValidation.DependencyInjectionExtensions": "11.5.1",
           "MediatR": "12.0.1",
@@ -1905,19 +1904,11 @@
           "Bank.Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.3",
           "Microsoft.Extensions.Configuration.Abstractions": "7.0.0",
-          "Newtonsoft.Json": "13.0.2"
+          "Newtonsoft.Json": "13.0.2",
+          "RestSharp": "109.0.1"
         },
         "runtime": {
           "Bank.Infrastructure.dll": {}
-        }
-      },
-      "Bank.Shared/1.0.0": {
-        "dependencies": {
-          "Bank.Infrastructure": "1.0.0",
-          "RestSharp": "108.0.3"
-        },
-        "runtime": {
-          "Bank.Shared.dll": {}
         }
       }
     }
@@ -2390,12 +2381,12 @@
       "path": "rabbitmq.client/6.4.0",
       "hashPath": "rabbitmq.client.6.4.0.nupkg.sha512"
     },
-    "RestSharp/108.0.3": {
+    "RestSharp/109.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-phq1AkVhqVXHZxvWDV4fJEJKCR5OHNFUGx2Ix8o5EFShS6654oZhth4X2RWvaU/W7UexIswW0T+lTirxfLU2Ow==",
-      "path": "restsharp/108.0.3",
-      "hashPath": "restsharp.108.0.3.nupkg.sha512"
+      "sha512": "sha512-OkJ23uaV8qwCKuR7RKBUFlnXxIDZ7P1jEaoDawXgysujIcWZgIwE6p90kJZxY9EVv9ESjZtGlSmP8k+kOfDH9g==",
+      "path": "restsharp/109.0.1",
+      "hashPath": "restsharp.109.0.1.nupkg.sha512"
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
       "type": "package",
@@ -3134,11 +3125,6 @@
       "sha512": ""
     },
     "Bank.Infrastructure/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Bank.Shared/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

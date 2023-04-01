@@ -2,8 +2,7 @@
 using Bank.Core.Modules.CustomerBankFeature.CustomerBankCreate;
 using Bank.Core.Modules.CustomerBankFeature.GetCustomerBankById;
 using Bank.Core.Modules.TransectionFeature.TransferAmount;
-using Bank.Shared.Common;
-using Bank.Shared.ServiceMessagingObject;
+using Bank.Infrastructure.Common;
 using MassTransit;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;

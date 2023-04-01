@@ -1358,7 +1358,7 @@
           }
         }
       },
-      "RestSharp/108.0.3": {
+      "RestSharp/109.0.1": {
         "type": "package",
         "compile": {
           "lib/net6.0/RestSharp.dll": {
@@ -3103,7 +3103,6 @@
         "dependencies": {
           "Bank.Core": "1.0.0",
           "Bank.Infrastructure": "1.0.0",
-          "Bank.Shared": "1.0.0",
           "FluentValidation": "11.5.1",
           "FluentValidation.DependencyInjectionExtensions": "11.5.1",
           "MediatR": "12.0.1",
@@ -3170,27 +3169,14 @@
           "Bank.Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.3",
           "Microsoft.Extensions.Configuration.Abstractions": "7.0.0",
-          "Newtonsoft.Json": "13.0.2"
+          "Newtonsoft.Json": "13.0.2",
+          "RestSharp": "109.0.1"
         },
         "compile": {
           "bin/placeholder/Bank.Infrastructure.dll": {}
         },
         "runtime": {
           "bin/placeholder/Bank.Infrastructure.dll": {}
-        }
-      },
-      "Bank.Shared/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "Bank.Infrastructure": "1.0.0",
-          "RestSharp": "108.0.3"
-        },
-        "compile": {
-          "bin/placeholder/Bank.Shared.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Bank.Shared.dll": {}
         }
       }
     }
@@ -5481,20 +5467,22 @@
         "rabbitmq.client.nuspec"
       ]
     },
-    "RestSharp/108.0.3": {
-      "sha512": "phq1AkVhqVXHZxvWDV4fJEJKCR5OHNFUGx2Ix8o5EFShS6654oZhth4X2RWvaU/W7UexIswW0T+lTirxfLU2Ow==",
+    "RestSharp/109.0.1": {
+      "sha512": "OkJ23uaV8qwCKuR7RKBUFlnXxIDZ7P1jEaoDawXgysujIcWZgIwE6p90kJZxY9EVv9ESjZtGlSmP8k+kOfDH9g==",
       "type": "package",
-      "path": "restsharp/108.0.3",
+      "path": "restsharp/109.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "lib/net5.0/RestSharp.dll",
-        "lib/net5.0/RestSharp.xml",
+        "lib/net471/RestSharp.dll",
+        "lib/net471/RestSharp.xml",
         "lib/net6.0/RestSharp.dll",
         "lib/net6.0/RestSharp.xml",
+        "lib/net7.0/RestSharp.dll",
+        "lib/net7.0/RestSharp.xml",
         "lib/netstandard2.0/RestSharp.dll",
         "lib/netstandard2.0/RestSharp.xml",
-        "restsharp.108.0.3.nupkg.sha512",
+        "restsharp.109.0.1.nupkg.sha512",
         "restsharp.nuspec",
         "restsharp.png"
       ]
@@ -9749,11 +9737,6 @@
       "type": "project",
       "path": "../Bank.Infrastructure/Bank.Infrastructure.csproj",
       "msbuildProject": "../Bank.Infrastructure/Bank.Infrastructure.csproj"
-    },
-    "Bank.Shared/1.0.0": {
-      "type": "project",
-      "path": "../Bank.Shared/Bank.Shared.csproj",
-      "msbuildProject": "../Bank.Shared/Bank.Shared.csproj"
     }
   },
   "projectFileDependencyGroups": {
