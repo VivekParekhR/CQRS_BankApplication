@@ -1,6 +1,6 @@
 ﻿
-using Bank.Domain.Entity;
-using Bank.Infrastructure.Common;
+using Bank.Core.Common;
+using Bank.Core.ViewModel;
 using MassTransit;
 
 namespace Bank.Notification.Consumer

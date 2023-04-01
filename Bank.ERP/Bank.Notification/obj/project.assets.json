@@ -1522,7 +1522,8 @@
           "MassTransit.RabbitMQ": "8.0.14",
           "Microsoft.EntityFrameworkCore": "7.0.3",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.3",
-          "Newtonsoft.Json": "13.0.2"
+          "Newtonsoft.Json": "13.0.2",
+          "RestSharp": "109.0.1"
         },
         "compile": {
           "bin/placeholder/Bank.Core.dll": {}
@@ -1546,24 +1547,6 @@
         },
         "runtime": {
           "bin/placeholder/Bank.Domain.dll": {}
-        }
-      },
-      "Bank.Infrastructure/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "Bank.Core": "1.0.0",
-          "Bank.Domain": "1.0.0",
-          "Microsoft.EntityFrameworkCore": "7.0.3",
-          "Microsoft.Extensions.Configuration.Abstractions": "7.0.0",
-          "Newtonsoft.Json": "13.0.2",
-          "RestSharp": "109.0.1"
-        },
-        "compile": {
-          "bin/placeholder/Bank.Infrastructure.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Bank.Infrastructure.dll": {}
         }
       }
     }
@@ -4396,16 +4379,11 @@
       "type": "project",
       "path": "../Bank.Domain/Bank.Domain.csproj",
       "msbuildProject": "../Bank.Domain/Bank.Domain.csproj"
-    },
-    "Bank.Infrastructure/1.0.0": {
-      "type": "project",
-      "path": "../Bank.Infrastructure/Bank.Infrastructure.csproj",
-      "msbuildProject": "../Bank.Infrastructure/Bank.Infrastructure.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "Bank.Infrastructure >= 1.0.0",
+      "Bank.Core >= 1.0.0",
       "MassTransit >= 8.0.14",
       "MassTransit.AspNetCore >= 7.3.1",
       "MassTransit.RabbitMQ >= 8.0.14",
@@ -4447,8 +4425,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\HP\\Desktop\\CQRS2\\CQRS_BankApplication\\Bank.ERP\\Bank.Infrastructure\\Bank.Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\HP\\Desktop\\CQRS2\\CQRS_BankApplication\\Bank.ERP\\Bank.Infrastructure\\Bank.Infrastructure.csproj"
+            "C:\\Users\\HP\\Desktop\\CQRS2\\CQRS_BankApplication\\Bank.ERP\\Bank.Core\\Bank.Core.csproj": {
+              "projectPath": "C:\\Users\\HP\\Desktop\\CQRS2\\CQRS_BankApplication\\Bank.ERP\\Bank.Core\\Bank.Core.csproj"
             }
           }
         }

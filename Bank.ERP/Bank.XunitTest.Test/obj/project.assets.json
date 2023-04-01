@@ -3135,7 +3135,8 @@
           "MassTransit.RabbitMQ": "8.0.14",
           "Microsoft.EntityFrameworkCore": "7.0.3",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.3",
-          "Newtonsoft.Json": "13.0.2"
+          "Newtonsoft.Json": "13.0.2",
+          "RestSharp": "109.0.1"
         },
         "compile": {
           "bin/placeholder/Bank.Core.dll": {}

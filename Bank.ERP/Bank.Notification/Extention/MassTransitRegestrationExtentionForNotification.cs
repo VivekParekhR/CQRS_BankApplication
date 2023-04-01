@@ -1,4 +1,4 @@
-﻿using Bank.Infrastructure.Common;
+﻿using Bank.Core.Constant;
 using Bank.Notification.Consumer;
  
 using MassTransit;

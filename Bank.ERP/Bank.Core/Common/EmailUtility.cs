@@ -1,13 +1,9 @@
-﻿using Bank.Domain.Entity; 
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Bank.Core.Constant;
+using Bank.Core.ViewModel;
 using System.Net;
 using System.Net.Mail;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Bank.Infrastructure.Common
+namespace Bank.Core.Common
 {
     public static class EmailUtility
     {

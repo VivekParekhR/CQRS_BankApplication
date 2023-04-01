@@ -8,7 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "Bank.Notification/1.0.0": {
         "dependencies": {
-          "Bank.Infrastructure": "1.0.0",
+          "Bank.Core": "1.0.0",
           "MassTransit": "8.0.14",
           "MassTransit.AspNetCore": "7.3.1",
           "MassTransit.RabbitMQ": "8.0.14",
@@ -888,7 +888,8 @@
           "MassTransit.RabbitMQ": "8.0.14",
           "Microsoft.EntityFrameworkCore": "7.0.3",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.3",
-          "Newtonsoft.Json": "13.0.2"
+          "Newtonsoft.Json": "13.0.2",
+          "RestSharp": "109.0.1"
         },
         "runtime": {
           "Bank.Core.dll": {}
@@ -904,19 +905,6 @@
         },
         "runtime": {
           "Bank.Domain.dll": {}
-        }
-      },
-      "Bank.Infrastructure/1.0.0": {
-        "dependencies": {
-          "Bank.Core": "1.0.0",
-          "Bank.Domain": "1.0.0",
-          "Microsoft.EntityFrameworkCore": "7.0.3",
-          "Microsoft.Extensions.Configuration.Abstractions": "7.0.0",
-          "Newtonsoft.Json": "13.0.2",
-          "RestSharp": "109.0.1"
-        },
-        "runtime": {
-          "Bank.Infrastructure.dll": {}
         }
       }
     }
@@ -1563,11 +1551,6 @@
       "sha512": ""
     },
     "Bank.Domain/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Bank.Infrastructure/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

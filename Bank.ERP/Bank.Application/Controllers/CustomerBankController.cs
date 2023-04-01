@@ -1,8 +1,10 @@
 ﻿#region Using
+using Bank.Core.Constant;
 using Bank.Core.Modules.CustomerBankFeature.CustomerBankCreate;
 using Bank.Core.Modules.CustomerBankFeature.GetCustomerBankById;
 using Bank.Core.Modules.TransectionFeature.TransferAmount;
-using Bank.Infrastructure.Common;
+using Bank.Core.ViewModel;
+//using Bank.Infrastructure.Common;
 using MassTransit;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;

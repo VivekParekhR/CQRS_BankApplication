@@ -15,7 +15,8 @@
           "Microsoft.EntityFrameworkCore": "7.0.3",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.3",
           "Microsoft.EntityFrameworkCore.Tools": "7.0.3",
-          "Newtonsoft.Json": "13.0.2"
+          "Newtonsoft.Json": "13.0.2",
+          "RestSharp": "109.0.1"
         },
         "runtime": {
           "Bank.Core.dll": {}
@@ -611,6 +612,14 @@
           "lib/netstandard2.0/RabbitMQ.Client.dll": {
             "assemblyVersion": "6.0.0.0",
             "fileVersion": "6.4.0.0"
+          }
+        }
+      },
+      "RestSharp/109.0.1": {
+        "runtime": {
+          "lib/net6.0/RestSharp.dll": {
+            "assemblyVersion": "109.0.1.0",
+            "fileVersion": "109.0.1.0"
           }
         }
       },
@@ -1255,6 +1264,13 @@
       "sha512": "sha512-1znR1gGU+xYVSpO5z8nQolcUKA/yydnxQn7Ug9+RUXxTSLMm/eE58VKGwahPBjELXvDnX0k/kBrAitFLRjx9LA==",
       "path": "rabbitmq.client/6.4.0",
       "hashPath": "rabbitmq.client.6.4.0.nupkg.sha512"
+    },
+    "RestSharp/109.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OkJ23uaV8qwCKuR7RKBUFlnXxIDZ7P1jEaoDawXgysujIcWZgIwE6p90kJZxY9EVv9ESjZtGlSmP8k+kOfDH9g==",
+      "path": "restsharp/109.0.1",
+      "hashPath": "restsharp.109.0.1.nupkg.sha512"
     },
     "System.Buffers/4.5.1": {
       "type": "package",

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "YsC/GfVj2Qf+yRzr3PoAsSnGi9PjHluXtT8/4HScx0rm9iYn+pzdowrHyqDXKggbgM+es+7AFXd9g0JDQyfC2Q==",
+  "dgSpecHash": "cZymtohdr1Tpr3tMyhUHy4zMZY+NC3upi4S9GX8b2usymUHovZVvgAenfJA17O8sMUAHNo+5wz/ngl/1gtKVCA==",
   "success": true,
   "projectFilePath": "C:\\Users\\HP\\Desktop\\CQRS2\\CQRS_BankApplication\\Bank.ERP\\Bank.XunitTest.Test\\Bank.XunitTest.Test.csproj",
   "expectedPackageFiles": [

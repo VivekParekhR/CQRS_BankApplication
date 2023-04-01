@@ -1,7 +1,8 @@
-﻿using Bank.Domain.Entity; 
-using RestSharp; 
+﻿using Bank.Core.Constant;
+using Bank.Core.ViewModel;
+using RestSharp;
 
-namespace Bank.Infrastructure.Common
+namespace Bank.Core.Common
 {
     public static class SMSUtility
     {
