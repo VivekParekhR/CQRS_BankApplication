@@ -10,3 +10,15 @@ C:\Users\HP\Desktop\CQRS2\CQRS_BankApplication\Bank.ERP\Bank.Domain\obj\Debug\ne
 C:\Users\HP\Desktop\CQRS2\CQRS_BankApplication\Bank.ERP\Bank.Domain\obj\Debug\net6.0\refint\Bank.Domain.dll
 C:\Users\HP\Desktop\CQRS2\CQRS_BankApplication\Bank.ERP\Bank.Domain\obj\Debug\net6.0\Bank.Domain.pdb
 C:\Users\HP\Desktop\CQRS2\CQRS_BankApplication\Bank.ERP\Bank.Domain\obj\Debug\net6.0\ref\Bank.Domain.dll
+D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Domain\bin\Debug\net6.0\Bank.Domain.deps.json
+D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Domain\bin\Debug\net6.0\Bank.Domain.dll
+D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Domain\bin\Debug\net6.0\Bank.Domain.pdb
+D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Domain\obj\Debug\net6.0\Bank.Domain.csproj.AssemblyReference.cache
+D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Domain\obj\Debug\net6.0\Bank.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Domain\obj\Debug\net6.0\Bank.Domain.AssemblyInfoInputs.cache
+D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Domain\obj\Debug\net6.0\Bank.Domain.AssemblyInfo.cs
+D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Domain\obj\Debug\net6.0\Bank.Domain.csproj.CoreCompileInputs.cache
+D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Domain\obj\Debug\net6.0\Bank.Domain.dll
+D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Domain\obj\Debug\net6.0\refint\Bank.Domain.dll
+D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Domain\obj\Debug\net6.0\Bank.Domain.pdb
+D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Domain\obj\Debug\net6.0\ref\Bank.Domain.dll

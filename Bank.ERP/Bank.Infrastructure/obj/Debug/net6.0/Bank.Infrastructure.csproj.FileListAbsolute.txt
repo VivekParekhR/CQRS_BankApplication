@@ -15,3 +15,20 @@ C:\Users\HP\Desktop\CQRS2\CQRS_BankApplication\Bank.ERP\Bank.Infrastructure\obj\
 C:\Users\HP\Desktop\CQRS2\CQRS_BankApplication\Bank.ERP\Bank.Infrastructure\obj\Debug\net6.0\refint\Bank.Infrastructure.dll
 C:\Users\HP\Desktop\CQRS2\CQRS_BankApplication\Bank.ERP\Bank.Infrastructure\obj\Debug\net6.0\Bank.Infrastructure.pdb
 C:\Users\HP\Desktop\CQRS2\CQRS_BankApplication\Bank.ERP\Bank.Infrastructure\obj\Debug\net6.0\ref\Bank.Infrastructure.dll
+D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Infrastructure\bin\Debug\net6.0\Bank.Infrastructure.deps.json
+D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Infrastructure\bin\Debug\net6.0\Bank.Infrastructure.dll
+D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Infrastructure\bin\Debug\net6.0\Bank.Infrastructure.pdb
+D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Infrastructure\bin\Debug\net6.0\Bank.Core.dll
+D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Infrastructure\bin\Debug\net6.0\Bank.Domain.dll
+D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Infrastructure\bin\Debug\net6.0\Bank.Core.pdb
+D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Infrastructure\bin\Debug\net6.0\Bank.Domain.pdb
+D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Infrastructure\obj\Debug\net6.0\Bank.Infrastructure.csproj.AssemblyReference.cache
+D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Infrastructure\obj\Debug\net6.0\Bank.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Infrastructure\obj\Debug\net6.0\Bank.Infrastructure.AssemblyInfoInputs.cache
+D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Infrastructure\obj\Debug\net6.0\Bank.Infrastructure.AssemblyInfo.cs
+D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Infrastructure\obj\Debug\net6.0\Bank.Infrastructure.csproj.CoreCompileInputs.cache
+D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Infrastructure\obj\Debug\net6.0\Bank.Infrastructure.csproj.CopyComplete
+D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Infrastructure\obj\Debug\net6.0\Bank.Infrastructure.dll
+D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Infrastructure\obj\Debug\net6.0\refint\Bank.Infrastructure.dll
+D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Infrastructure\obj\Debug\net6.0\Bank.Infrastructure.pdb
+D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Infrastructure\obj\Debug\net6.0\ref\Bank.Infrastructure.dll

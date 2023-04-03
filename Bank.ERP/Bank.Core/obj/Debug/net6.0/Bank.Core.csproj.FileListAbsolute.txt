@@ -15,3 +15,20 @@ C:\Users\HP\Desktop\CQRS2\CQRS_BankApplication\Bank.ERP\Bank.Core\obj\Debug\net6
 C:\Users\HP\Desktop\CQRS2\CQRS_BankApplication\Bank.ERP\Bank.Core\obj\Debug\net6.0\Bank.Core.pdb
 C:\Users\HP\Desktop\CQRS2\CQRS_BankApplication\Bank.ERP\Bank.Core\obj\Debug\net6.0\Bank.Core.genruntimeconfig.cache
 C:\Users\HP\Desktop\CQRS2\CQRS_BankApplication\Bank.ERP\Bank.Core\obj\Debug\net6.0\ref\Bank.Core.dll
+D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Core\bin\Debug\net6.0\Bank.Core.deps.json
+D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Core\bin\Debug\net6.0\Bank.Core.runtimeconfig.json
+D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Core\bin\Debug\net6.0\Bank.Core.dll
+D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Core\bin\Debug\net6.0\Bank.Core.pdb
+D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Core\bin\Debug\net6.0\Bank.Domain.dll
+D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Core\bin\Debug\net6.0\Bank.Domain.pdb
+D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Core\obj\Debug\net6.0\Bank.Core.csproj.AssemblyReference.cache
+D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Core\obj\Debug\net6.0\Bank.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Core\obj\Debug\net6.0\Bank.Core.AssemblyInfoInputs.cache
+D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Core\obj\Debug\net6.0\Bank.Core.AssemblyInfo.cs
+D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Core\obj\Debug\net6.0\Bank.Core.csproj.CoreCompileInputs.cache
+D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Core\obj\Debug\net6.0\Bank.Core.csproj.CopyComplete
+D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Core\obj\Debug\net6.0\Bank.Core.dll
+D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Core\obj\Debug\net6.0\refint\Bank.Core.dll
+D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Core\obj\Debug\net6.0\Bank.Core.pdb
+D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Core\obj\Debug\net6.0\Bank.Core.genruntimeconfig.cache
+D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Core\obj\Debug\net6.0\ref\Bank.Core.dll
