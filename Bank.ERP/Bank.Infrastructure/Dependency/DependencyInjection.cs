@@ -9,14 +9,14 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Bank.Infrastructure.ServiceContainer
 {
-    public static class DependencyRegistaration
+    public static class DependencyInjection
     {
         /// <summary>
         /// Extention to resolve dependancy of repository
         /// </summary>
         /// <param name="services"></param>
         /// <returns></returns>
-        public static IServiceCollection AddServices(
+        public static IServiceCollection AddInfrastructure(
           this IServiceCollection services, IConfiguration config)
         {
             // Add Connection string

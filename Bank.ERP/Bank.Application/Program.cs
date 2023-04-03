@@ -1,30 +1,17 @@
 #region Using
-using Bank.Core.Extention;
+using Bank.Core.Dependency; 
 using Bank.Infrastructure.ServiceContainer; 
 #endregion
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
 builder.Services.AddControllers();
-
 builder.Services.AddEndpointsApiExplorer();
-
 builder.Services.AddSwaggerGen();
 
-// Add Mediator
-builder.Services.AddMediatorRegistrationGroup();
-
-// Add repositories and context  
-builder.Services.AddServices(builder.Configuration);
+builder.Services.AddCore();
+builder.Services.AddInfrastructure(builder.Configuration);
  
-// behaviour
-builder.Services.AddBehaviourDependencyGroup();
-
-// Add MassTransit to publish/subscribe message from RabbitMQ server
-builder.Services.AddMassTransitGroup();
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -35,7 +22,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseAuthorization();
-
 app.MapControllers();
 
 app.Run();

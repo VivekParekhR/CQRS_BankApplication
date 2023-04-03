@@ -1,17 +1,13 @@
 using Bank.Notification.Extention;
 
 var builder = WebApplication.CreateBuilder(args);
-
-// Add services to the container.
-
-// Add MassTransit to publish/subscribe message from RabbitMQ server
-builder.Services.AddMassTransitForNotificationGroup();
-
-
+ 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddNotification();
 
 var app = builder.Build();
 

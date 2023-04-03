@@ -5,9 +5,9 @@ using MassTransit;
 
 namespace Bank.Notification.Extention
 {
-    public static class MassTransitRegestrationExtentionForNotification
+    public static class DependencyInjection
     {
-        public static IServiceCollection AddMassTransitForNotificationGroup(
+        public static IServiceCollection AddNotification(
           this IServiceCollection services)
         {
             //// Resolve Behaviours
