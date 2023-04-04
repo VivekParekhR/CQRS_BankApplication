@@ -1,4 +1,5 @@
 ﻿#region Using
+using Bank.Api.ResponseType;
 using Bank.Core.Constant;
 using Bank.Core.Modules.CustomerBankFeature.CustomerBankCreate;
 using Bank.Core.Modules.CustomerBankFeature.GetCustomerBankById;
@@ -35,8 +36,15 @@ namespace Bank.Api.Controllers
         /// OpenAccount
         /// </summary>
         /// <param name="command"></param>
-        /// <returns></returns>
+        /// <returns>Customerbank id</returns>
+        /// <response code="200">Successfully return customerbank id.</response>
+        /// <response code="400">One or more validation errors have occurred.</response> 
+        /// <response code="500">Internal server error.</response>  
+        [HttpPost]
         [HttpPost("CreateAccount")]
+        [ProducesResponseType(typeof(int), StatusCodes.Status200OK)] 
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> CustomerBankCreate(CustomerBankCreateCommand command)
         {
             var accountId = await _mediator.Send(command);
@@ -48,8 +56,16 @@ namespace Bank.Api.Controllers
         /// TransferFund
         /// </summary>
         /// <param name="command"></param>
-        /// <returns></returns>
+        /// <returns>bank object</returns>
+        /// <response code="200">Successfully return transactionId.</response>
+        /// <response code="400">One or more validation errors have occurred.</response> 
+        /// <response code="404">Bank object not found.</response>  
+        /// <response code="500">Internal server error.</response>  
         [HttpPost("TransferFund")]
+        [ProducesResponseType(typeof(int), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> TransferFund(TransferCommand command)
         {
            
@@ -77,8 +93,14 @@ namespace Bank.Api.Controllers
         /// GetCustomerAccountBalance
         /// </summary>
         /// <param name="id"></param>
-        /// <returns></returns>
+        /// <returns>List<CustomerBankViewModel> list</returns>
+        /// <response code="200">Successfully return List<CustomerBankViewModel>.</response> 
+        /// <response code="404">List<CustomerBankViewModel> list is not found.</response>  
+        /// <response code="500">Internal server error.</response>  
         [HttpGet("GetCustomerAccountBalance/{customerId}")]
+        [ProducesResponseType(typeof(List<CustomerBankViewModel>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult> GetCustomerAccountBalance(int customerId)
         {
             var account = await _mediator.Send(new GetCustomerBankByIdQuery { CustomerId = customerId });

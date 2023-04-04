@@ -1,4 +1,5 @@
 ﻿#region Using
+using Bank.Api.ResponseType;
 using Bank.Core.Modules.CustomerFeature.CreateCustomer;
 using Bank.Core.Modules.CustomerFeature.GetCustomerById;
 using MediatR;
@@ -28,8 +29,13 @@ namespace Bank.Api.Controllers
         /// CreateCustomer
         /// </summary>
         /// <param name="command"></param>
-        /// <returns></returns>
+        /// <response code="201">Successfully created and redirect to action.</response>
+        /// <response code="400">One or more validation errors have occurred.</response> 
+        /// <response code="500">Internal server error.</response>  
         [HttpPost]
+        [ProducesResponseType(typeof(RedirectResponse<int>), StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> CreateCustomer(CreateCustomerCommand command)
         {
             var customerId = await _mediator.Send(command);
@@ -41,8 +47,16 @@ namespace Bank.Api.Controllers
         /// GetCustomerById
         /// </summary>
         /// <param name="id"></param>
-        /// <returns></returns>
+        /// <returns>customer object</returns> 
+        /// <response code="200">Successfully return customer object.</response>
+        /// <response code="400">One or more validation errors have occurred.</response> 
+        /// <response code="404">Customer object not found.</response>  
+        /// <response code="500">Internal server error.</response>  
         [HttpGet("{id}")]
+        [ProducesResponseType(typeof(Domain.Entity.Customer), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult> GetCustomerById(int id)
         {
             var customer = await _mediator.Send(new GetCustomerByIdQuery { Id = id });

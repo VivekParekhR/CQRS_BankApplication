@@ -1,4 +1,5 @@
 ﻿#region Using
+using Bank.Api.ResponseType;
 using Bank.Core.Modules.BranchFeature.CreateBranch;
 using Bank.Core.Modules.BranchFeature.GetBranchById;
 using MediatR;
@@ -27,9 +28,14 @@ namespace Bank.Api.Controllers
         /// <summary>
         /// CreateBranch
         /// </summary>
-        /// <param name="command"></param>
-        /// <returns></returns>
+        /// <param name="command"></param> 
+        /// <response code="201">Successfully created and redirect to action.</response>
+        /// <response code="400">One or more validation errors have occurred.</response> 
+        /// <response code="500">Internal server error.</response>  
         [HttpPost]
+        [ProducesResponseType(typeof(RedirectResponse<int>), StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> CreateBranch(CreateBranchCommand command)
         {
             var branchId = await _mediator.Send(command);
@@ -41,8 +47,16 @@ namespace Bank.Api.Controllers
         /// GetBranchById
         /// </summary>
         /// <param name="id"></param>
-        /// <returns></returns>
+        /// <returns>branch object</returns> 
+        /// <response code="200">Successfully return branch object.</response>
+        /// <response code="400">One or more validation errors have occurred.</response> 
+        /// <response code="404">Branch object not found.</response>  
+        /// <response code="500">Internal server error.</response>  
         [HttpGet("{id}")]
+        [ProducesResponseType(typeof(Domain.Entity.Branch), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult> GetBranchById(int id)
         {
             var branch = await _mediator.Send(new GetBranchByIdQuery { Id = id });
