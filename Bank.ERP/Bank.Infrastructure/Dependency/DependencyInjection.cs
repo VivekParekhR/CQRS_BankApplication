@@ -1,5 +1,6 @@
 ﻿#region MyRegion 
 using Bank.Core.Interface;
+using Bank.Domain.Interface;
 using Bank.Infrastructure.Persistence;
 using Bank.Infrastructure.Repository;
 using Microsoft.EntityFrameworkCore;
@@ -24,11 +25,12 @@ namespace Bank.Infrastructure.ServiceContainer
                 options.UseSqlServer(config.GetConnectionString("ConnectionString")));
 
             // Resolve Dependancy
-            services.AddScoped<IBankRepository, BankRepository>();
-            services.AddScoped<IBranchRepository, BranchRepository>();
-            services.AddScoped<ICustomerRepository, CustomerRepository>();
-            services.AddScoped<ICustomerBankRepository, CustomerBankRepository>();
-            services.AddScoped<ITransactionRepository, TransactionRepository>(); 
+            services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            services.AddTransient<IBankRepository, BankRepository>();
+            services.AddTransient<IBranchRepository, BranchRepository>();
+            services.AddTransient<ICustomerRepository, CustomerRepository>();
+            services.AddTransient<ICustomerBankRepository, CustomerBankRepository>();
+            services.AddTransient<ITransactionRepository, TransactionRepository>(); 
             return services;
         }
 

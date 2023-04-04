@@ -16,7 +16,7 @@ using System.Security.Cryptography.X509Certificates;
 
 namespace Bank.Infrastructure.Repository
 {
-    public class TransactionRepository : ITransactionRepository
+    public class TransactionRepository : GenericRepository<Transaction>, ITransactionRepository
     {
         #region Property
         private readonly BankDbContext _dbContext;
@@ -26,7 +26,7 @@ namespace Bank.Infrastructure.Repository
         /// Constructor
         /// </summary>
         /// <param name="dbContext"></param>
-        public TransactionRepository(BankDbContext dbContext)
+        public TransactionRepository(BankDbContext dbContext) : base(dbContext)
         {
             _dbContext = dbContext;
         }
@@ -38,7 +38,7 @@ namespace Bank.Infrastructure.Repository
         /// <returns></returns>
         public async Task<int> AddTransactionAsync(Transaction transaction)
         {
-            await _dbContext.Transactions.AddAsync(transaction);
+            await Add(transaction);
             await _dbContext.SaveChangesAsync();
             return transaction.Id;
         }
@@ -52,7 +52,7 @@ namespace Bank.Infrastructure.Repository
         /// <returns></returns>
         public async Task<Transaction> GetTransactionByIdAsync(int id)
         {
-            return await _dbContext.Transactions.FindAsync(id);
+            return await GetById(id);
         }
         public async Task<string> GetTransactionHistoryByAccountIdAsync(int BankId, int CustomerId) {
 

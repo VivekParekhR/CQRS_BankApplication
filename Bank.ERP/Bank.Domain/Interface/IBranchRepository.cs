@@ -1,10 +1,11 @@
 ﻿#region Using
-using Bank.Domain.Entity; 
+using Bank.Domain.Entity;
+using Bank.Domain.Interface;
 #endregion
 
 namespace Bank.Core.Interface
 {
-    public interface IBranchRepository
+    public interface IBranchRepository : IGenericRepository<Branch>
     {
         Task<int> AddBranchAsync(Branch branch);
         Task<Branch> GetBranchByIdAsync(int id);

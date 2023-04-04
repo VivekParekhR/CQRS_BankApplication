@@ -13,7 +13,7 @@ using System.Text.Json.Serialization;
 #endregion
 namespace Bank.Infrastructure.Repository
 {
-    public class CustomerBankRepository : ICustomerBankRepository
+    public class CustomerBankRepository : GenericRepository<CustomerBank>, ICustomerBankRepository
     {
         #region Property
         private readonly BankDbContext _dbContext; 
@@ -23,7 +23,7 @@ namespace Bank.Infrastructure.Repository
         /// Constructor
         /// </summary>
         /// <param name="dbContext"></param>
-        public CustomerBankRepository(BankDbContext dbContext)
+        public CustomerBankRepository(BankDbContext dbContext) : base(dbContext)
         {
             _dbContext = dbContext;
         }
@@ -35,7 +35,7 @@ namespace Bank.Infrastructure.Repository
         /// <returns></returns>
         public async Task<int> AddCustomerBankAsync(CustomerBank account)
         {
-            await _dbContext.CustomerBanks.AddAsync(account);
+            await Add(account);
             await _dbContext.SaveChangesAsync();
             return account.Id;
         }
@@ -47,9 +47,8 @@ namespace Bank.Infrastructure.Repository
         /// <returns></returns>
         public async Task<CustomerBank> GetCustomerBankByIdAsync(int id)
         {
-            return await _dbContext.CustomerBanks.Where(x => x.Id == id).FirstOrDefaultAsync();
+            return await GetById(id);
         }
-
         /// <summary>
         /// GetCustomerBankByBankIdAndCustomerIdAsync
         /// </summary>
@@ -57,9 +56,8 @@ namespace Bank.Infrastructure.Repository
         /// <param name="customerId"></param>
         /// <returns></returns>
         public async Task<CustomerBank> GetCustomerBankByBankIdAndCustomerIdAsync(int customerId)
-        { 
-            return await _dbContext.CustomerBanks.Where(x=>x.CustomerId == customerId).FirstOrDefaultAsync();
-
+        {
+            return await FindAsync(x => x.CustomerId == customerId);
         }
 
         public async Task<string> GetCustomerBankByCustomerIdAsync(int customerId) {
@@ -101,7 +99,7 @@ namespace Bank.Infrastructure.Repository
         /// <returns></returns>
         public async Task<int> UpdateCustomerBankAsync(CustomerBank account)
         {
-            _dbContext.CustomerBanks.Update(account);
+            Update(account);
             await _dbContext.SaveChangesAsync();
             return account.Id;
         }
@@ -116,7 +114,7 @@ namespace Bank.Infrastructure.Repository
         public bool CheckCustomerWithSameAccountTypeExists(int CustomerId, AccountType AccountType,int bankId)
         {
             bool retVal = true; 
-            var returnData = _dbContext.CustomerBanks.Where(x => x.CustomerId == CustomerId && x.BankId== bankId && x.AccountType == AccountType).FirstOrDefault();
+            var returnData = Find(x => x.CustomerId == CustomerId && x.BankId== bankId && x.AccountType == AccountType).FirstOrDefault();
             if (returnData != null)
             {
                 return false;

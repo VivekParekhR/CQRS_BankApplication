@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 #endregion
 namespace Bank.Infrastructure.Repository
 {
-    public class CustomerRepository : ICustomerRepository
+    public class CustomerRepository : GenericRepository<Customer>, ICustomerRepository
     {
         #region Property
 
@@ -19,7 +19,7 @@ namespace Bank.Infrastructure.Repository
         /// Constructor
         /// </summary>
         /// <param name="dbContext"></param>
-        public CustomerRepository(BankDbContext dbContext)
+        public CustomerRepository(BankDbContext dbContext) : base(dbContext)
         {
             _dbContext = dbContext;
         }
@@ -31,7 +31,7 @@ namespace Bank.Infrastructure.Repository
         /// <returns></returns>
         public async Task<int> AddCustomerAsync(Customer customer)
         {
-            await _dbContext.Customers.AddAsync(customer);
+            await Add(customer);
             await _dbContext.SaveChangesAsync();
             return customer.Id;
         }
@@ -44,7 +44,7 @@ namespace Bank.Infrastructure.Repository
         /// <returns></returns>
         public async Task<Customer> GetCustomerByIdAsync(int id)
         {
-            return await _dbContext.Customers.Where(x => x.Id == id).FirstOrDefaultAsync();
+            return await GetById(id);
         }
          
         /// <summary>
@@ -55,7 +55,7 @@ namespace Bank.Infrastructure.Repository
         /// <returns></returns>
         public bool CheckEmailWithPhoneExists(string email, string PhoneNo) {
             bool retVal = true;
-            var retval = _dbContext.Customers.Where(x => x.Email == email && x.PhoneNo == PhoneNo).FirstOrDefault();
+            var retval = Find(x => x.Email == email && x.PhoneNo == PhoneNo).FirstOrDefault();
             if (retval != null)
             {
                 retVal = false;

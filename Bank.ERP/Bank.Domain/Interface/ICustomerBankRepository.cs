@@ -1,9 +1,10 @@
 ﻿using Bank.Domain.Entity; 
 using Bank.Domain.Enum;
+using Bank.Domain.Interface;
 
 namespace Bank.Core.Interface
 {
-    public interface ICustomerBankRepository
+    public interface ICustomerBankRepository : IGenericRepository<CustomerBank>
     {
         Task<int> AddCustomerBankAsync(CustomerBank account);
         Task<int> UpdateCustomerBankAsync(CustomerBank account);

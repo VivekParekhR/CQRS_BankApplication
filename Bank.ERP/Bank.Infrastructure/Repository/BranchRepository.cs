@@ -2,11 +2,12 @@
 using Bank.Core.Interface;
 using Bank.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
+using Bank.Domain.Entity;
 
 #endregion
 namespace Bank.Infrastructure.Repository
 {
-    public class BranchRepository : IBranchRepository
+    public class BranchRepository : GenericRepository<Branch>, IBranchRepository
     {
         #region Property
         private readonly BankDbContext _dbContext; 
@@ -16,7 +17,7 @@ namespace Bank.Infrastructure.Repository
         /// Constructor
         /// </summary>
         /// <param name="dbContext"></param>
-        public BranchRepository(BankDbContext dbContext)
+        public BranchRepository(BankDbContext dbContext) : base(dbContext)
         {
             _dbContext = dbContext;
         }
@@ -26,9 +27,9 @@ namespace Bank.Infrastructure.Repository
         /// </summary>
         /// <param name="branch"></param>
         /// <returns></returns>
-        public async Task<int> AddBranchAsync(Domain.Entity.Branch branch)
+        public async Task<int> AddBranchAsync(Branch branch)
         {
-            await _dbContext.Branches.AddAsync(branch);
+            await Add(branch);
             await _dbContext.SaveChangesAsync();
             return branch.Id;
         }
@@ -38,11 +39,9 @@ namespace Bank.Infrastructure.Repository
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public async Task<Domain.Entity.Branch> GetBranchByIdAsync(int id)
+        public async Task<Branch> GetBranchByIdAsync(int id)
         {
-            return await _dbContext.Branches
-                                   .Include(x => x.Banks)
-                                   .Where(x => x.Id == id).FirstOrDefaultAsync();
+            return await GetById(id);
         }
 
         /// <summary>
@@ -53,7 +52,7 @@ namespace Bank.Infrastructure.Repository
         public bool CheckBranchExists(string branchName)
         {
             bool retVal = true;
-            var retval = _dbContext.Branches.Where(x => x.Name == branchName).FirstOrDefault();
+            var retval = Find(x => x.Name == branchName).FirstOrDefault();
             if (retval != null)
             {
                 retVal = false;

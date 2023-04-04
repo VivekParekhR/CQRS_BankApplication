@@ -3,10 +3,11 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using Bank.Core.ViewModel;
 using Bank.Infrastructure.Persistence;
+using Bank.Domain.Entity;
 
 namespace Bank.Infrastructure.Repository
 {
-    public class BankRepository : IBankRepository
+    public class BankRepository : GenericRepository<Bank.Domain.Entity.Bank>, IBankRepository
     {
         #region Property
         private readonly BankDbContext _dbContext; 
@@ -16,7 +17,7 @@ namespace Bank.Infrastructure.Repository
         /// Constructor
         /// </summary>
         /// <param name="dbContext"></param>
-        public BankRepository(BankDbContext dbContext)
+        public BankRepository(BankDbContext dbContext) : base(dbContext)
         {
             _dbContext = dbContext;
         }
@@ -28,7 +29,7 @@ namespace Bank.Infrastructure.Repository
         /// <returns></returns>
         public async Task<int> AddBankAsync(Domain.Entity.Bank bank)
         {
-            await _dbContext.Banks.AddAsync(bank);
+            await Add(bank);
             await _dbContext.SaveChangesAsync();
             return bank.Id;
         }
@@ -40,8 +41,7 @@ namespace Bank.Infrastructure.Repository
         /// <returns></returns>
         public async Task<Domain.Entity.Bank> GetBankByIdAsync(int id)
         {
-            return await _dbContext.Banks  
-                                   .Where(x=>x.Id==id).FirstOrDefaultAsync();
+            return await GetById(id);
         }
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Bank.Infrastructure.Repository
         public bool CheckBankExists(string bankName,int branchId)
         {
             bool retVal = true;
-            var retval = _dbContext.Banks.Where(x => x.Name == bankName && x.BranchId == branchId).FirstOrDefault();
+            var retval = Find(x => x.Name == bankName && x.BranchId == branchId).FirstOrDefault();
             if (retval != null)
             {
                 retVal = false;
