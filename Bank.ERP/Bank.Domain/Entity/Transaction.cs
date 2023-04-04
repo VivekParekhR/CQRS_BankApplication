@@ -15,7 +15,7 @@ namespace Bank.Domain.Entity
         public TransactionType TransactionType { get; set; }
         public string TransectionRemarks { get; set; }
 
-        public virtual Bank bank { get; set; }
-        public virtual Customer customer { get; set; }  
+        public virtual Bank Bank { get; set; }
+        public virtual Customer Customer { get; set; }  
     }
 }

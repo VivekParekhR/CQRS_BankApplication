@@ -1,4 +1,5 @@
 ﻿using Bank.Domain.Entity;
+using Bank.Infrastructure.Persistence.ModelConfiguration;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Cryptography.X509Certificates;
 
@@ -28,11 +29,12 @@ namespace Bank.Infrastructure.Persistence
         /// <param name="modelBuilder"></param>
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Branch>().HasKey(b => b.Id);
-            modelBuilder.Entity<Domain.Entity.Bank>().HasKey(b => b.Id);
-            modelBuilder.Entity<Customer>().HasKey(c => c.Id);
-            modelBuilder.Entity<CustomerBank>().HasKey(a => a.Id);
-            modelBuilder.Entity<Transaction>().HasKey(t => t.Id);
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.ApplyConfiguration(new BankConfiguration());
+            modelBuilder.ApplyConfiguration(new BranchConfiguration());
+            modelBuilder.ApplyConfiguration(new CustomerConfiguration());
+            modelBuilder.ApplyConfiguration(new CustomerBankConfiguration());
+            modelBuilder.ApplyConfiguration(new TransactionConfiguration());
         }
     }
 }

@@ -56,8 +56,8 @@ namespace Bank.Infrastructure.Repository
         }
         public async Task<string> GetTransactionHistoryByAccountIdAsync(int BankId, int CustomerId) {
 
-            var Iquery = _dbContext.Transactions.Include(x => x.customer)
-                                                       .Include(x => x.bank)
+            var Iquery = _dbContext.Transactions.Include(x => x.Customer)
+                                                       .Include(x => x.Bank)
                                                        .Where(x => x.BankId == BankId && x.CustomerId == CustomerId);
 
             List<TransactionHistory> lstTranHistory = new();
@@ -74,8 +74,8 @@ namespace Bank.Infrastructure.Repository
             TransactionHistoryViewModel objTransactionHistoryViewModel = new()
             {
                 Transactions = lstTranHistory,
-                Bank = Iquery.Select(x => x.bank).FirstOrDefault(),
-                Customer = Iquery.Select(x => x.customer).FirstOrDefault()
+                Bank = Iquery.Select(x => x.Bank).FirstOrDefault(),
+                Customer = Iquery.Select(x => x.Customer).FirstOrDefault()
             };
            
             return JsonConvert.SerializeObject(objTransactionHistoryViewModel);

@@ -40,7 +40,6 @@ namespace Bank.Api.Controllers
         /// <response code="200">Successfully return customerbank id.</response>
         /// <response code="400">One or more validation errors have occurred.</response> 
         /// <response code="500">Internal server error.</response>  
-        [HttpPost]
         [HttpPost("CreateAccount")]
         [ProducesResponseType(typeof(int), StatusCodes.Status200OK)] 
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
