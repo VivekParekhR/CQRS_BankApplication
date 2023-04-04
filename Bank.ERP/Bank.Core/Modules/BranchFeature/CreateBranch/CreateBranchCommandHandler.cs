@@ -1,6 +1,7 @@
 ﻿#region Using
 using Bank.Core.Interface;
 using Bank.Domain.Enum;
+using Bank.Domain.Interface;
 using MediatR;
 #endregion
 
@@ -9,16 +10,16 @@ namespace Bank.Core.Modules.BranchFeature.CreateBranch
     public class CreateBranchCommandHandler : IRequestHandler<CreateBranchCommand, int>
     {
         #region Property
-        private readonly IBranchRepository _repository;
+        private readonly IUnitOfWork _unitOfWork;
         #endregion
 
         /// <summary>
         /// Constructor
         /// </summary>
-        /// <param name="repository"></param>
-        public CreateBranchCommandHandler(IBranchRepository repository)
+        /// <param name="unitOfWork"></param>
+        public CreateBranchCommandHandler(IUnitOfWork unitOfWork)
         {
-            _repository = repository;
+            _unitOfWork = unitOfWork;
         }
 
         /// <summary>
@@ -37,7 +38,8 @@ namespace Bank.Core.Modules.BranchFeature.CreateBranch
                 CreatedDate = DateTime.Now
             };
 
-            await _repository.AddBranchAsync(branch);
+            await _unitOfWork.BranchService.Add(branch);
+            _unitOfWork.Complete();
             return branch.Id;
         }
     }

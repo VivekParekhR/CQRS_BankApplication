@@ -5,10 +5,7 @@ namespace Bank.Domain.Entity
 {
     public class Bank 
     { 
-        [Key]
         public int Id { get; set; }
-
-        [MaxLength(100)]
         public string Name { get; set; }
         public int BranchId { get; set; }
         public int CreatedById { get; set; }

@@ -1,6 +1,7 @@
 ﻿#region Using
 using Bank.Core.Interface;
 using Bank.Core.ViewModel;
+using Bank.Domain.Interface;
 using MediatR;
 using Newtonsoft.Json;
 using System.Text.Json.Serialization;
@@ -11,16 +12,16 @@ namespace Bank.Core.Modules.CustomerBankFeature.GetCustomerBankById
     public class GetCustomerBankByIdQueryHandler : IRequestHandler<GetCustomerBankByIdQuery, List<CustomerBankViewModel>>
     {
         #region Property
-        private readonly ICustomerBankRepository _repository;
+        private readonly IUnitOfWork _unitOfWork;
         #endregion
 
         /// <summary>
         /// Constructor
         /// </summary>
-        /// <param name="repository"></param>
-        public GetCustomerBankByIdQueryHandler(ICustomerBankRepository repository)
+        /// <param name="unitOfWork"></param>
+        public GetCustomerBankByIdQueryHandler(IUnitOfWork unitOfWork)
         {
-            _repository = repository;
+            _unitOfWork = unitOfWork; 
         }
 
         /// <summary>
@@ -31,8 +32,7 @@ namespace Bank.Core.Modules.CustomerBankFeature.GetCustomerBankById
         /// <returns></returns>
         public async Task<List<CustomerBankViewModel>> Handle(GetCustomerBankByIdQuery request, CancellationToken cancellationToken)
         {
-            var retVal = await _repository.GetCustomerBankByCustomerIdAsync(request.CustomerId);
-
+            var retVal = await _unitOfWork.CustomerBankService.GetCustomerBankByCustomerIdAsync(request.CustomerId); 
             return JsonConvert.DeserializeObject<List<CustomerBankViewModel>>(retVal);
         }
     }

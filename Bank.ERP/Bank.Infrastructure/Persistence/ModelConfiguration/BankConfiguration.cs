@@ -11,7 +11,7 @@ namespace Bank.Infrastructure.Persistence.ModelConfiguration
         {
             builder.HasKey(x => x.Id);
 
-            builder.Property(x => x.Name).IsRequired();
+            builder.Property(x => x.Name).IsRequired().HasMaxLength(100);
 
             builder.Property(x => x.BranchId).IsRequired();
 

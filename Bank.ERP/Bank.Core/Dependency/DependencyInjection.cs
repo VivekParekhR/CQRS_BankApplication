@@ -1,5 +1,6 @@
 ﻿using Bank.Application.Behaviour;
 using Bank.Core.Constant;
+using FluentValidation;
 using MassTransit;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
@@ -16,7 +17,7 @@ namespace Bank.Core.Dependency
     {
         public static IServiceCollection AddCore(this IServiceCollection services)
         {
-
+            services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly()));
 
             services.AddMassTransit(x =>
@@ -33,6 +34,7 @@ namespace Bank.Core.Dependency
 
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(LoggingBehaviour<,>));
+           
             return services;
         }
     }

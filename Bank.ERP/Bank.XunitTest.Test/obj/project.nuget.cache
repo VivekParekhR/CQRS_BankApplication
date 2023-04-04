@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "+TqUbhteF4kGkqIv45Ler1fI7aG6fJrOhlCwObatbTGfzFUqNcJFWut3L5huhnVrrzw2QWA22p8+w8tvZMj2RQ==",
+  "dgSpecHash": "jzi7Pd/+NA1FXu2bn4sw0H0oiM9IlKUiWUgPH2YufeZ4/5YuVmDWVanSY9aLJlekxDPxV8tMLFIeEWHcPraDwg==",
   "success": true,
   "projectFilePath": "D:\\Vivek\\company\\Cygnet Infotech\\PracticalTest\\CQRS_BankApplication\\Bank.ERP\\Bank.XunitTest.Test\\Bank.XunitTest.Test.csproj",
   "expectedPackageFiles": [
@@ -10,6 +10,7 @@
     "C:\\Users\\HP\\.nuget\\packages\\diffengine\\10.0.0\\diffengine.10.0.0.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\emptyfiles\\2.8.0\\emptyfiles.2.8.0.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\fluentvalidation\\11.5.1\\fluentvalidation.11.5.1.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.5.1\\fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\masstransit\\8.0.14\\masstransit.8.0.14.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\masstransit.abstractions\\8.0.14\\masstransit.abstractions.8.0.14.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\masstransit.aspnetcore\\7.3.1\\masstransit.aspnetcore.7.3.1.nupkg.sha512",

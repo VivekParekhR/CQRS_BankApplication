@@ -6,9 +6,7 @@ using Bank.Domain.Interface;
 namespace Bank.Core.Interface
 {
     public interface IBranchRepository : IGenericRepository<Branch>
-    {
-        Task<int> AddBranchAsync(Branch branch);
-        Task<Branch> GetBranchByIdAsync(int id);
+    { 
         bool CheckBranchExists(string branchName);
     }
 }

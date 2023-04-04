@@ -4,6 +4,7 @@ using Bank.Core.Exceptions;
 using Bank.Core.Interface;
 using Bank.Domain.Entity;
 using Bank.Domain.Enum;
+using Bank.Domain.Interface;
 using MediatR;
 
 #endregion
@@ -12,19 +13,16 @@ namespace Bank.Core.Modules.TransectionFeature.TransferAmount
     public class TransferCommandHandler : IRequestHandler<TransferCommand, int>
     {
         #region Property
-        private readonly ICustomerBankRepository _customerBankRepository;
-        private readonly ITransactionRepository _transactionRepository;
+        private readonly IUnitOfWork _unitOfWork; 
         #endregion
 
         /// <summary>
         /// Constructor
         /// </summary>
         /// <param name="bankRepository"></param>
-        public TransferCommandHandler(ICustomerBankRepository customerBankRepository,
-                                      ITransactionRepository transactionRepository)
+        public TransferCommandHandler(IUnitOfWork unitOfWork)
         {
-            _customerBankRepository = customerBankRepository;
-            _transactionRepository = transactionRepository;
+            _unitOfWork = unitOfWork;
         }
 
         /// <summary>
@@ -37,7 +35,7 @@ namespace Bank.Core.Modules.TransectionFeature.TransferAmount
         /// <exception cref="InsufficientFundsException"></exception>
         public async Task<int> Handle(TransferCommand command, CancellationToken cancellationToken)
         {
-            var CustomerBankObject = await _customerBankRepository.GetCustomerBankByBankIdAndCustomerIdAsync(command.CustomerId);
+            var CustomerBankObject = await _unitOfWork.CustomerBankService.GetCustomerBankByBankIdAndCustomerIdAsync(command.CustomerId);
 
             if (CustomerBankObject == null)
             {
@@ -62,15 +60,18 @@ namespace Bank.Core.Modules.TransectionFeature.TransferAmount
                 TransectionDate = DateTime.Now,
                 TransectionRemarks = command.TransectionRemarks
             };
-            var retValue = await _transactionRepository.AddTransactionAsync(TransactionAdd);
 
+            await _unitOfWork.TransactionService.Add(TransactionAdd);
+           
             CustomerBankObject.Balance = command.TransactionType == TransactionType.Deposite ?
                                             CustomerBankObject.Balance + command.Amount :
                                                 CustomerBankObject.Balance - command.Amount;
 
-            await _customerBankRepository.UpdateCustomerBankAsync(CustomerBankObject);
+            _unitOfWork.CustomerBankService.Update(CustomerBankObject);
 
-            return retValue;
+            _unitOfWork.Complete();
+
+            return TransactionAdd.Id;
         }
     }
 }

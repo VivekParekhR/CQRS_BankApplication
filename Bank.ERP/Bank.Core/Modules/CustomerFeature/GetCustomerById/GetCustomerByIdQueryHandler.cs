@@ -1,6 +1,7 @@
 ﻿#region Using
 using Bank.Core.Interface;
 using Bank.Domain.Entity;
+using Bank.Domain.Interface;
 using MediatR;
 
 #endregion
@@ -9,16 +10,16 @@ namespace Bank.Core.Modules.CustomerFeature.GetCustomerById
     public class GetCustomerByIdQueryHandler : IRequestHandler<GetCustomerByIdQuery, Customer>
     {
         #region Property
-        private readonly ICustomerRepository _repository;
+        private readonly IUnitOfWork _unitOfWork; 
         #endregion
 
         /// <summary>
         /// Constuctor
         /// </summary>
         /// <param name="repository"></param>
-        public GetCustomerByIdQueryHandler(ICustomerRepository repository)
+        public GetCustomerByIdQueryHandler(IUnitOfWork unitOfWork)
         {
-            _repository = repository;
+            _unitOfWork = unitOfWork; 
         }
 
         /// <summary>
@@ -29,7 +30,7 @@ namespace Bank.Core.Modules.CustomerFeature.GetCustomerById
         /// <returns></returns>
         public async Task<Customer> Handle(GetCustomerByIdQuery request, CancellationToken cancellationToken)
         {
-            return await _repository.GetCustomerByIdAsync(request.Id);
+            return await _unitOfWork.CustomerService.GetById(request.Id); 
         }
     }
 }

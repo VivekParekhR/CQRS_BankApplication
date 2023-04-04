@@ -29,31 +29,8 @@ namespace Bank.Infrastructure.Repository
         public TransactionRepository(BankDbContext dbContext) : base(dbContext)
         {
             _dbContext = dbContext;
-        }
+        }  
 
-        /// <summary>
-        /// AddTransactionAsync
-        /// </summary>
-        /// <param name="transaction"></param>
-        /// <returns></returns>
-        public async Task<int> AddTransactionAsync(Transaction transaction)
-        {
-            await Add(transaction);
-            await _dbContext.SaveChangesAsync();
-            return transaction.Id;
-        }
-
- 
-
-        /// <summary>
-        /// GetTransactionByIdAsync
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        public async Task<Transaction> GetTransactionByIdAsync(int id)
-        {
-            return await GetById(id);
-        }
         public async Task<string> GetTransactionHistoryByAccountIdAsync(int BankId, int CustomerId) {
 
             var Iquery = _dbContext.Transactions.Include(x => x.Customer)

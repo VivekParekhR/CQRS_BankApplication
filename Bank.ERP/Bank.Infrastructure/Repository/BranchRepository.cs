@@ -21,29 +21,7 @@ namespace Bank.Infrastructure.Repository
         {
             _dbContext = dbContext;
         }
-
-        /// <summary>
-        /// AddBranchAsync
-        /// </summary>
-        /// <param name="branch"></param>
-        /// <returns></returns>
-        public async Task<int> AddBranchAsync(Branch branch)
-        {
-            await Add(branch);
-            await _dbContext.SaveChangesAsync();
-            return branch.Id;
-        }
-
-        /// <summary>
-        /// GetBranchByIdAsync
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        public async Task<Branch> GetBranchByIdAsync(int id)
-        {
-            return await GetById(id);
-        }
-
+         
         /// <summary>
         /// CheckBranchExists
         /// </summary>

@@ -2,6 +2,8 @@
 using Bank.Core.Interface;
 using Bank.Domain.Entity;
 using Bank.Domain.Enum;
+using Bank.Domain.Interface;
+using MassTransit;
 using MediatR;
 #endregion
 
@@ -10,16 +12,16 @@ namespace Bank.Core.Modules.CustomerBankFeature.CustomerBankCreate
     public class CustomerBankCreateCommandHandler : IRequestHandler<CustomerBankCreateCommand, int>
     {
         #region Property
-        private readonly ICustomerBankRepository _repository;
+        private readonly IUnitOfWork _unitOfWork;
         #endregion
 
         /// <summary>
         /// Constructor
         /// </summary>
-        /// <param name="repository"></param>
-        public CustomerBankCreateCommandHandler(ICustomerBankRepository repository)
+        /// <param name="unitOfWork"></param>
+        public CustomerBankCreateCommandHandler(IUnitOfWork unitOfWork)
         {
-            _repository = repository;
+            _unitOfWork = unitOfWork;
         }
 
         /// <summary>
@@ -41,7 +43,8 @@ namespace Bank.Core.Modules.CustomerBankFeature.CustomerBankCreate
                 CreatedDate = DateTime.Now
             };
 
-            await _repository.AddCustomerBankAsync(account);
+            await _unitOfWork.CustomerBankService.Add(account);
+            _unitOfWork.Complete(); 
             return account.Id;
         }
     }

@@ -1,6 +1,6 @@
 USE [master]
 GO
-/****** Object:  Database [BankDb1]    Script Date: 27-02-2023 22:31:53 ******/
+/****** Object:  Database [BankDb1]    Script Date: 04-04-2023 09:39:09 ******/
 CREATE DATABASE [BankDb1]
  CONTAINMENT = NONE
  ON  PRIMARY 
@@ -80,7 +80,7 @@ ALTER DATABASE [BankDb1] SET QUERY_STORE = OFF
 GO
 USE [BankDb1]
 GO
-/****** Object:  Table [dbo].[__EFMigrationsHistory]    Script Date: 27-02-2023 22:31:53 ******/
+/****** Object:  Table [dbo].[__EFMigrationsHistory]    Script Date: 04-04-2023 09:39:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -94,86 +94,90 @@ CREATE TABLE [dbo].[__EFMigrationsHistory](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Accounts]    Script Date: 27-02-2023 22:31:53 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[Accounts](
-	[Id] [int] IDENTITY(1,1) NOT NULL,
-	[AccountNumber] [uniqueidentifier] NOT NULL,
-	[Balance] [decimal](18, 2) NOT NULL,
-	[CustomerId] [int] NOT NULL,
-	[AccountType] [int] NOT NULL,
- CONSTRAINT [PK_Accounts] PRIMARY KEY CLUSTERED 
-(
-	[Id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[Banks]    Script Date: 27-02-2023 22:31:53 ******/
+/****** Object:  Table [dbo].[Banks]    Script Date: 04-04-2023 09:39:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Banks](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
-	[Name] [nvarchar](max) NOT NULL,
-	[IFSCCode] [nvarchar](max) NOT NULL,
+	[Name] [nvarchar](100) NOT NULL,
 	[BranchId] [int] NOT NULL,
+	[CreatedById] [int] NOT NULL,
+	[CreatedDate] [datetime2](7) NOT NULL,
+	[UpdatedById] [int] NULL,
+	[UpdatedDate] [datetime2](7) NULL,
  CONSTRAINT [PK_Banks] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Branches]    Script Date: 27-02-2023 22:31:53 ******/
+/****** Object:  Table [dbo].[Branches]    Script Date: 04-04-2023 09:39:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Branches](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
-	[Name] [nvarchar](max) NOT NULL,
+	[Name] [nvarchar](100) NOT NULL,
+	[BranchCode] [nvarchar](15) NOT NULL,
+	[CreatedById] [int] NOT NULL,
+	[CreatedDate] [datetime2](7) NOT NULL,
+	[UpdatedById] [int] NULL,
+	[UpdatedDate] [datetime2](7) NULL,
  CONSTRAINT [PK_Branches] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Customers]    Script Date: 27-02-2023 22:31:53 ******/
+/****** Object:  Table [dbo].[CustomerBanks]    Script Date: 04-04-2023 09:39:09 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[CustomerBanks](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[BankId] [int] NOT NULL,
+	[CustomerId] [int] NOT NULL,
+	[AccountNumber] [nvarchar](50) NOT NULL,
+	[AccountType] [int] NOT NULL,
+	[Balance] [decimal](18, 2) NOT NULL,
+	[IsDeleted] [bit] NOT NULL,
+	[CreatedById] [int] NOT NULL,
+	[CreatedDate] [datetime2](7) NOT NULL,
+	[UpdatedById] [int] NULL,
+	[UpdatedDate] [datetime2](7) NULL,
+ CONSTRAINT [PK_CustomerBanks] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Customers]    Script Date: 04-04-2023 09:39:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Customers](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
-	[Name] [nvarchar](max) NOT NULL,
-	[Email] [nvarchar](max) NOT NULL,
-	[BankId] [int] NOT NULL,
+	[FirstName] [nvarchar](200) NOT NULL,
+	[LastName] [nvarchar](200) NOT NULL,
+	[PhoneNo] [nvarchar](20) NOT NULL,
+	[Email] [nvarchar](200) NOT NULL,
+	[IsDeleted] [bit] NOT NULL,
+	[CreatedById] [int] NOT NULL,
+	[CreatedDate] [datetime2](7) NOT NULL,
+	[UpdatedById] [int] NULL,
+	[UpdatedDate] [datetime2](7) NULL,
  CONSTRAINT [PK_Customers] PRIMARY KEY CLUSTERED 
-(
-	[Id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[TransactionHistories]    Script Date: 27-02-2023 22:31:53 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[TransactionHistories](
-	[Id] [int] IDENTITY(1,1) NOT NULL,
-	[Amount] [decimal](18, 2) NOT NULL,
-	[Date] [datetime2](7) NOT NULL,
-	[AccountId] [int] NOT NULL,
- CONSTRAINT [PK_TransactionHistories] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Transactions]    Script Date: 27-02-2023 22:31:53 ******/
+/****** Object:  Table [dbo].[Transactions]    Script Date: 04-04-2023 09:39:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -181,38 +185,34 @@ GO
 CREATE TABLE [dbo].[Transactions](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[TransactionId] [uniqueidentifier] NOT NULL,
-	[Amount] [decimal](18, 2) NOT NULL,
-	[FromAccountId] [int] NOT NULL,
-	[ToAccountId] [int] NOT NULL,
 	[BankId] [int] NOT NULL,
+	[CustomerId] [int] NOT NULL,
+	[Amount] [decimal](18, 2) NOT NULL,
+	[TransectionDate] [datetime2](7) NOT NULL,
+	[TransactionType] [int] NOT NULL,
+	[TransectionRemarks] [nvarchar](max) NOT NULL,
  CONSTRAINT [PK_Transactions] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Banks_BranchId]    Script Date: 27-02-2023 22:31:53 ******/
+/****** Object:  Index [IX_Banks_BranchId]    Script Date: 04-04-2023 09:39:09 ******/
 CREATE NONCLUSTERED INDEX [IX_Banks_BranchId] ON [dbo].[Banks]
 (
 	[BranchId] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Customers_BankId]    Script Date: 27-02-2023 22:31:53 ******/
-CREATE NONCLUSTERED INDEX [IX_Customers_BankId] ON [dbo].[Customers]
-(
-	[BankId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-GO
-/****** Object:  Index [IX_TransactionHistories_AccountId]    Script Date: 27-02-2023 22:31:53 ******/
-CREATE NONCLUSTERED INDEX [IX_TransactionHistories_AccountId] ON [dbo].[TransactionHistories]
-(
-	[AccountId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-GO
-/****** Object:  Index [IX_Transactions_BankId]    Script Date: 27-02-2023 22:31:53 ******/
+/****** Object:  Index [IX_Transactions_BankId]    Script Date: 04-04-2023 09:39:09 ******/
 CREATE NONCLUSTERED INDEX [IX_Transactions_BankId] ON [dbo].[Transactions]
 (
 	[BankId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_Transactions_CustomerId]    Script Date: 04-04-2023 09:39:09 ******/
+CREATE NONCLUSTERED INDEX [IX_Transactions_CustomerId] ON [dbo].[Transactions]
+(
+	[CustomerId] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 GO
 ALTER TABLE [dbo].[Banks]  WITH CHECK ADD  CONSTRAINT [FK_Banks_Branches_BranchId] FOREIGN KEY([BranchId])
@@ -221,23 +221,15 @@ ON DELETE CASCADE
 GO
 ALTER TABLE [dbo].[Banks] CHECK CONSTRAINT [FK_Banks_Branches_BranchId]
 GO
-ALTER TABLE [dbo].[Customers]  WITH CHECK ADD  CONSTRAINT [FK_Customers_Banks_BankId] FOREIGN KEY([BankId])
-REFERENCES [dbo].[Banks] ([Id])
-ON DELETE CASCADE
-GO
-ALTER TABLE [dbo].[Customers] CHECK CONSTRAINT [FK_Customers_Banks_BankId]
-GO
-ALTER TABLE [dbo].[TransactionHistories]  WITH CHECK ADD  CONSTRAINT [FK_TransactionHistories_Accounts_AccountId] FOREIGN KEY([AccountId])
-REFERENCES [dbo].[Accounts] ([Id])
-ON DELETE CASCADE
-GO
-ALTER TABLE [dbo].[TransactionHistories] CHECK CONSTRAINT [FK_TransactionHistories_Accounts_AccountId]
-GO
 ALTER TABLE [dbo].[Transactions]  WITH CHECK ADD  CONSTRAINT [FK_Transactions_Banks_BankId] FOREIGN KEY([BankId])
 REFERENCES [dbo].[Banks] ([Id])
-ON DELETE CASCADE
 GO
 ALTER TABLE [dbo].[Transactions] CHECK CONSTRAINT [FK_Transactions_Banks_BankId]
+GO
+ALTER TABLE [dbo].[Transactions]  WITH CHECK ADD  CONSTRAINT [FK_Transactions_Customers_CustomerId] FOREIGN KEY([CustomerId])
+REFERENCES [dbo].[Customers] ([Id])
+GO
+ALTER TABLE [dbo].[Transactions] CHECK CONSTRAINT [FK_Transactions_Customers_CustomerId]
 GO
 USE [master]
 GO

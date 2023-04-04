@@ -29,27 +29,6 @@ namespace Bank.Infrastructure.Repository
         }
 
         /// <summary>
-        /// AddAccountAsync
-        /// </summary>
-        /// <param name="account"></param>
-        /// <returns></returns>
-        public async Task<int> AddCustomerBankAsync(CustomerBank account)
-        {
-            await Add(account);
-            await _dbContext.SaveChangesAsync();
-            return account.Id;
-        }
-
-        /// <summary>
-        /// GetAccountByIdAsync
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        public async Task<CustomerBank> GetCustomerBankByIdAsync(int id)
-        {
-            return await GetById(id);
-        }
-        /// <summary>
         /// GetCustomerBankByBankIdAndCustomerIdAsync
         /// </summary>
         /// <param name="bankId"></param>
@@ -60,6 +39,11 @@ namespace Bank.Infrastructure.Repository
             return await FindAsync(x => x.CustomerId == customerId);
         }
 
+        /// <summary>
+        /// GetCustomerBankByCustomerIdAsync
+        /// </summary>
+        /// <param name="customerId"></param>
+        /// <returns></returns>
         public async Task<string> GetCustomerBankByCustomerIdAsync(int customerId) {
 
             var customerBank = _dbContext.CustomerBanks;
@@ -90,18 +74,6 @@ namespace Bank.Infrastructure.Repository
             var retVal = await returnValue.Where(x=>x.CustomerId==customerId).ToListAsync();
 
             return JsonConvert.SerializeObject(retVal);
-        }
-
-        /// <summary>
-        /// UpdateAccountAsync
-        /// </summary>
-        /// <param name="account"></param>
-        /// <returns></returns>
-        public async Task<int> UpdateCustomerBankAsync(CustomerBank account)
-        {
-            Update(account);
-            await _dbContext.SaveChangesAsync();
-            return account.Id;
         }
 
         /// <summary>

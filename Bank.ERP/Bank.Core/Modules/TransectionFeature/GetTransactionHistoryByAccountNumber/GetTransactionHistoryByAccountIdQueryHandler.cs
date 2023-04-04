@@ -1,6 +1,7 @@
 ﻿#region Using
 using Bank.Core.Interface;
 using Bank.Core.ViewModel;
+using Bank.Domain.Interface;
 using MediatR;
 using Newtonsoft.Json;
 #endregion
@@ -10,16 +11,16 @@ namespace Bank.Core.Modules.TransectionFeature.GetTransactionHistoryByAccountNum
     public class GetTransactionHistoryByAccountIdQueryHandler : IRequestHandler<GetTransactionHistoryByAccountNumberQuery, TransactionHistoryViewModel>
     {
         #region Property
-        private readonly ITransactionRepository _repository;
+        private readonly IUnitOfWork _unitOfWork; 
         #endregion
 
         /// <summary>
         /// Constructor
         /// </summary>
         /// <param name="repository"></param>
-        public GetTransactionHistoryByAccountIdQueryHandler(ITransactionRepository repository)
+        public GetTransactionHistoryByAccountIdQueryHandler(IUnitOfWork unitOfWork)
         {
-            _repository = repository;
+            _unitOfWork = unitOfWork; 
         }
 
         /// <summary>
@@ -30,8 +31,8 @@ namespace Bank.Core.Modules.TransectionFeature.GetTransactionHistoryByAccountNum
         /// <returns></returns>
         public async Task<TransactionHistoryViewModel> Handle(GetTransactionHistoryByAccountNumberQuery request, CancellationToken cancellationToken)
         {
-            var retVal = await _repository.GetTransactionHistoryByAccountIdAsync(request.BankId, request.CustomerId);
-            return JsonConvert.DeserializeObject<TransactionHistoryViewModel>(retVal);
+           var retVal = await _unitOfWork.TransactionService.GetTransactionHistoryByAccountIdAsync(request.BankId, request.CustomerId);
+           return JsonConvert.DeserializeObject<TransactionHistoryViewModel>(retVal);
         }
     }
 }

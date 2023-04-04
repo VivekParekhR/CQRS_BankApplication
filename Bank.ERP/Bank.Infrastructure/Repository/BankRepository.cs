@@ -21,29 +21,7 @@ namespace Bank.Infrastructure.Repository
         {
             _dbContext = dbContext;
         }
-
-        /// <summary>
-        /// AddBankAsync
-        /// </summary>
-        /// <param name="bank"></param>
-        /// <returns></returns>
-        public async Task<int> AddBankAsync(Domain.Entity.Bank bank)
-        {
-            await Add(bank);
-            await _dbContext.SaveChangesAsync();
-            return bank.Id;
-        }
-
-        /// <summary>
-        /// GetBankByIdAsync
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        public async Task<Domain.Entity.Bank> GetBankByIdAsync(int id)
-        {
-            return await GetById(id);
-        }
-
+         
         /// <summary>
         /// CheckBankExists
         /// </summary>

@@ -1,5 +1,6 @@
 ﻿#region Using
 using Bank.Core.Interface;
+using Bank.Domain.Interface;
 using MediatR;
 #endregion
 
@@ -8,16 +9,16 @@ namespace Bank.Core.Modules.BranchFeature.GetBranchById
     public class GetBranchByIdQueryHandler : IRequestHandler<GetBranchByIdQuery, Domain.Entity.Branch>
     {
         #region Property
-        private readonly IBranchRepository _repository;
+        private readonly IUnitOfWork _unitOfWork;
         #endregion
 
         /// <summary>
         /// Constructor
         /// </summary>
-        /// <param name="repository"></param>
-        public GetBranchByIdQueryHandler(IBranchRepository repository)
+        /// <param name="unitOfWork"></param>
+        public GetBranchByIdQueryHandler(IUnitOfWork unitOfWork)
         {
-            _repository = repository;
+            _unitOfWork = unitOfWork;
         }
 
         /// <summary>
@@ -28,7 +29,7 @@ namespace Bank.Core.Modules.BranchFeature.GetBranchById
         /// <returns></returns>
         public async Task<Domain.Entity.Branch> Handle(GetBranchByIdQuery request, CancellationToken cancellationToken)
         {
-            return await _repository.GetBranchByIdAsync(request.Id);
+            return await  _unitOfWork.BranchService.GetById(request.Id);
         }
     }
 }

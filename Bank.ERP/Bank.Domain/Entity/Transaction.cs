@@ -4,8 +4,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Bank.Domain.Entity
 {
     public class Transaction
-    {
-        [Key]
+    { 
         public int Id { get; set; }
         public Guid TransactionId { get; set; }
         public int BankId { get; set; }
@@ -14,7 +13,6 @@ namespace Bank.Domain.Entity
         public DateTime TransectionDate { get; set; }
         public TransactionType TransactionType { get; set; }
         public string TransectionRemarks { get; set; }
-
         public virtual Bank Bank { get; set; }
         public virtual Customer Customer { get; set; }  
     }

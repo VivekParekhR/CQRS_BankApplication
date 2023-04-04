@@ -25,6 +25,7 @@ namespace Bank.Infrastructure.ServiceContainer
                 options.UseSqlServer(config.GetConnectionString("ConnectionString")));
 
             // Resolve Dependancy
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
             services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddTransient<IBankRepository, BankRepository>();
             services.AddTransient<IBranchRepository, BranchRepository>();

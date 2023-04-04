@@ -23,29 +23,6 @@ namespace Bank.Infrastructure.Repository
         {
             _dbContext = dbContext;
         }
-
-        /// <summary>
-        /// AddCustomerAsync
-        /// </summary>
-        /// <param name="customer"></param>
-        /// <returns></returns>
-        public async Task<int> AddCustomerAsync(Customer customer)
-        {
-            await Add(customer);
-            await _dbContext.SaveChangesAsync();
-            return customer.Id;
-        }
-
-
-        /// <summary>
-        /// GetCustomerByIdAsync
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        public async Task<Customer> GetCustomerByIdAsync(int id)
-        {
-            return await GetById(id);
-        }
          
         /// <summary>
         /// 
