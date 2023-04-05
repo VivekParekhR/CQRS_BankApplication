@@ -1710,6 +1710,14 @@
           "System.Xml.ReaderWriter": "4.3.0"
         }
       },
+      "Ulid/1.2.6": {
+        "runtime": {
+          "lib/net5.0/Ulid.dll": {
+            "assemblyVersion": "1.2.6.0",
+            "fileVersion": "1.2.6.0"
+          }
+        }
+      },
       "xunit/2.4.1": {
         "dependencies": {
           "xunit.analyzers": "0.10.0",
@@ -1779,7 +1787,8 @@
           "Microsoft.EntityFrameworkCore": "7.0.3",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.3",
           "Newtonsoft.Json": "13.0.2",
-          "RestSharp": "109.0.1"
+          "RestSharp": "109.0.1",
+          "Ulid": "1.2.6"
         },
         "runtime": {
           "Bank.Core.dll": {}
@@ -1788,10 +1797,12 @@
       "Bank.Domain/1.0.0": {
         "dependencies": {
           "FluentValidation": "11.5.1",
+          "MassTransit": "8.0.14",
           "MediatR": "12.0.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.3",
           "Microsoft.Extensions.Configuration.Abstractions": "7.0.0",
-          "Microsoft.Extensions.Logging.Abstractions": "7.0.0"
+          "Microsoft.Extensions.Logging.Abstractions": "7.0.0",
+          "Ulid": "1.2.6"
         },
         "runtime": {
           "Bank.Domain.dll": {}
@@ -2874,6 +2885,13 @@
       "sha512": "sha512-5zJ0XDxAIg8iy+t4aMnQAu0MqVbqyvfoUVl1yDV61xdo3Vth45oA2FoY4pPkxYAH5f8ixpmTqXeEIya95x0aCQ==",
       "path": "system.xml.xdocument/4.3.0",
       "hashPath": "system.xml.xdocument.4.3.0.nupkg.sha512"
+    },
+    "Ulid/1.2.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TDfJ/q4nJJ7LTxHErWYXRFs7laAUJhnT7Do+fpxxNg+uQOC1GKWLFuyJMKyMyIxQhFjWNC5XcFbr7R6HP9PFgw==",
+      "path": "ulid/1.2.6",
+      "hashPath": "ulid.1.2.6.nupkg.sha512"
     },
     "xunit/2.4.1": {
       "type": "package",

@@ -9,11 +9,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace Bank.Core.Migrations
+namespace Bank.Infrastructure.Migrations
 {
     [DbContext(typeof(BankDbContext))]
-    [Migration("20230301025002_inital")]
-    partial class inital
+    [Migration("20230405133128_afterDomainEventTestThree")]
+    partial class afterDomainEventTestThree
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,7 +25,7 @@ namespace Bank.Core.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Bank.Core.Entity.Bank", b =>
+            modelBuilder.Entity("Bank.Domain.Entity.Bank", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -60,7 +60,7 @@ namespace Bank.Core.Migrations
                     b.ToTable("Banks");
                 });
 
-            modelBuilder.Entity("Bank.Core.Entity.Branch", b =>
+            modelBuilder.Entity("Bank.Domain.Entity.Branch", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -95,7 +95,7 @@ namespace Bank.Core.Migrations
                     b.ToTable("Branches");
                 });
 
-            modelBuilder.Entity("Bank.Core.Entity.Customer", b =>
+            modelBuilder.Entity("Bank.Domain.Entity.Customer", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -143,7 +143,7 @@ namespace Bank.Core.Migrations
                     b.ToTable("Customers");
                 });
 
-            modelBuilder.Entity("Bank.Core.Entity.CustomerBank", b =>
+            modelBuilder.Entity("Bank.Domain.Entity.CustomerBank", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -188,7 +188,7 @@ namespace Bank.Core.Migrations
                     b.ToTable("CustomerBanks");
                 });
 
-            modelBuilder.Entity("Bank.Core.Entity.Transaction", b =>
+            modelBuilder.Entity("Bank.Domain.Entity.Transaction", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -227,35 +227,35 @@ namespace Bank.Core.Migrations
                     b.ToTable("Transactions");
                 });
 
-            modelBuilder.Entity("Bank.Core.Entity.Bank", b =>
+            modelBuilder.Entity("Bank.Domain.Entity.Bank", b =>
                 {
-                    b.HasOne("Bank.Core.Entity.Branch", null)
+                    b.HasOne("Bank.Domain.Entity.Branch", null)
                         .WithMany("Banks")
                         .HasForeignKey("BranchId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Bank.Core.Entity.Transaction", b =>
+            modelBuilder.Entity("Bank.Domain.Entity.Transaction", b =>
                 {
-                    b.HasOne("Bank.Core.Entity.Bank", "bank")
+                    b.HasOne("Bank.Domain.Entity.Bank", "Bank")
                         .WithMany()
                         .HasForeignKey("BankId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("Bank.Core.Entity.Customer", "customer")
+                    b.HasOne("Bank.Domain.Entity.Customer", "Customer")
                         .WithMany()
                         .HasForeignKey("CustomerId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.Navigation("bank");
+                    b.Navigation("Bank");
 
-                    b.Navigation("customer");
+                    b.Navigation("Customer");
                 });
 
-            modelBuilder.Entity("Bank.Core.Entity.Branch", b =>
+            modelBuilder.Entity("Bank.Domain.Entity.Branch", b =>
                 {
                     b.Navigation("Banks");
                 });

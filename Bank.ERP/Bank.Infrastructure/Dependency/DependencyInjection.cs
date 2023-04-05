@@ -2,10 +2,12 @@
 using Bank.Core.Interface;
 using Bank.Domain.Interface;
 using Bank.Infrastructure.Persistence;
+using Bank.Infrastructure.Persistence.Interceptors;
 using Bank.Infrastructure.Repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 #endregion
 
 namespace Bank.Infrastructure.ServiceContainer
@@ -20,9 +22,13 @@ namespace Bank.Infrastructure.ServiceContainer
         public static IServiceCollection AddInfrastructure(
           this IServiceCollection services, IConfiguration config)
         {
+            services.AddSingleton<DomainEventToOutbox>();
             // Add Connection string
-            services.AddDbContext<BankDbContext>(options =>
-                options.UseSqlServer(config.GetConnectionString("ConnectionString")));
+            services.AddDbContext<BankDbContext>((serviceProvide, options) =>
+            {
+                var interceptors = serviceProvide.GetService<DomainEventToOutbox>();
+                options.UseSqlServer(config.GetConnectionString("ConnectionString")).AddInterceptors(interceptors);
+            });
 
             // Resolve Dependancy
             services.AddTransient<IUnitOfWork, UnitOfWork>();

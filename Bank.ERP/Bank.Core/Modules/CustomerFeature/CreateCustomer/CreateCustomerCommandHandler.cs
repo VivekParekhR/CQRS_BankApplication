@@ -42,8 +42,13 @@ namespace Bank.Core.Modules.CustomerFeature.CreateCustomer
                 CreatedDate = DateTime.Now
             };
 
+            Customer.GenerateDomainEvent(new Domain.Events.CustomerCreatedDomainEvent
+            {
+                Customer = customer
+            });
+
             await _unitOfWork.CustomerService.Add(customer);
-            _unitOfWork.Complete();  
+            await _unitOfWork.Complete();  
             return customer.Id;
         }
     }

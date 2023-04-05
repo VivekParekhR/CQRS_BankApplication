@@ -43,8 +43,13 @@ namespace Bank.Core.Modules.CustomerBankFeature.CustomerBankCreate
                 CreatedDate = DateTime.Now
             };
 
+            CustomerBank.GenerateDomainEvent(new Domain.Events.CustomerBankCreatedDomainEvent
+            {
+                CustomerBank = account
+            });
+
             await _unitOfWork.CustomerBankService.Add(account);
-            _unitOfWork.Complete(); 
+            await _unitOfWork.Complete(); 
             return account.Id;
         }
     }

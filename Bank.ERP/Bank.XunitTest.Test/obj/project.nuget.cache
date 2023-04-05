@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "jzi7Pd/+NA1FXu2bn4sw0H0oiM9IlKUiWUgPH2YufeZ4/5YuVmDWVanSY9aLJlekxDPxV8tMLFIeEWHcPraDwg==",
+  "dgSpecHash": "s3ii43lNMFUNNjo6+Jd8UUkRhKYXEn2GgpZjdhxqRBo0MFeySWEqItHV7GhXSi/zwyVjFecTYGo8nc7O690J1w==",
   "success": true,
   "projectFilePath": "D:\\Vivek\\company\\Cygnet Infotech\\PracticalTest\\CQRS_BankApplication\\Bank.ERP\\Bank.XunitTest.Test\\Bank.XunitTest.Test.csproj",
   "expectedPackageFiles": [
@@ -155,6 +155,7 @@
     "C:\\Users\\HP\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\ulid\\1.2.6\\ulid.1.2.6.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\xunit\\2.4.1\\xunit.2.4.1.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\xunit.abstractions\\2.0.3\\xunit.abstractions.2.0.3.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\xunit.analyzers\\0.10.0\\xunit.analyzers.0.10.0.nupkg.sha512",

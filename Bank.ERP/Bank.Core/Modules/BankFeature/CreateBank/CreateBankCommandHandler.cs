@@ -39,8 +39,14 @@ namespace Bank.Core.Modules.Bank.CreateBank
                 CreatedDate = DateTime.Now
             };
 
+
+            Domain.Entity.Bank.GenerateDomainEvent(new Domain.Events.BankCreatedDomainEvent
+            {
+                Bank = bank
+            });
+
             await _unitOfWork.BankService.Add(bank);
-            _unitOfWork.Complete();
+            await _unitOfWork.Complete();
             return bank.Id;
         }
     }

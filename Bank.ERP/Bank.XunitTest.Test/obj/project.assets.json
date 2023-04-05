@@ -2832,6 +2832,19 @@
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
       },
+      "Ulid/1.2.6": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/Ulid.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0/Ulid.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "xunit/2.4.1": {
         "type": "package",
         "dependencies": {
@@ -2940,7 +2953,8 @@
           "Microsoft.EntityFrameworkCore": "7.0.3",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.3",
           "Newtonsoft.Json": "13.0.2",
-          "RestSharp": "109.0.1"
+          "RestSharp": "109.0.1",
+          "Ulid": "1.2.6"
         },
         "compile": {
           "bin/placeholder/Bank.Core.dll": {}
@@ -2954,10 +2968,12 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "FluentValidation": "11.5.1",
+          "MassTransit": "8.0.14",
           "MediatR": "12.0.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.3",
           "Microsoft.Extensions.Configuration.Abstractions": "7.0.0",
-          "Microsoft.Extensions.Logging.Abstractions": "7.0.0"
+          "Microsoft.Extensions.Logging.Abstractions": "7.0.0",
+          "Ulid": "1.2.6"
         },
         "compile": {
           "bin/placeholder/Bank.Domain.dll": {}
@@ -8971,6 +8987,26 @@
         "ref/xamarinwatchos10/_._",
         "system.xml.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xdocument.nuspec"
+      ]
+    },
+    "Ulid/1.2.6": {
+      "sha512": "TDfJ/q4nJJ7LTxHErWYXRFs7laAUJhnT7Do+fpxxNg+uQOC1GKWLFuyJMKyMyIxQhFjWNC5XcFbr7R6HP9PFgw==",
+      "type": "package",
+      "path": "ulid/1.2.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "lib/net5.0/Ulid.dll",
+        "lib/net5.0/Ulid.xml",
+        "lib/netcoreapp2.1/Ulid.dll",
+        "lib/netcoreapp2.1/Ulid.xml",
+        "lib/netcoreapp3.1/Ulid.dll",
+        "lib/netcoreapp3.1/Ulid.xml",
+        "lib/netstandard2.0/Ulid.dll",
+        "lib/netstandard2.0/Ulid.xml",
+        "ulid.1.2.6.nupkg.sha512",
+        "ulid.nuspec"
       ]
     },
     "xunit/2.4.1": {

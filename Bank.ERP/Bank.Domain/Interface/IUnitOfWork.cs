@@ -14,6 +14,6 @@ namespace Bank.Domain.Interface
         ICustomerRepository CustomerService { get; }
         ICustomerBankRepository CustomerBankService { get; }
         ITransactionRepository TransactionService { get; }
-        int Complete();
+        Task<int> Complete();
     }
 }

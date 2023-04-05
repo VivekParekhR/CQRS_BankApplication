@@ -61,15 +61,25 @@ namespace Bank.Core.Modules.TransectionFeature.TransferAmount
                 TransectionRemarks = command.TransectionRemarks
             };
 
-            await _unitOfWork.TransactionService.Add(TransactionAdd);
-           
             CustomerBankObject.Balance = command.TransactionType == TransactionType.Deposite ?
-                                            CustomerBankObject.Balance + command.Amount :
-                                                CustomerBankObject.Balance - command.Amount;
+                                         CustomerBankObject.Balance + command.Amount :
+                                             CustomerBankObject.Balance - command.Amount;
+
+
+            Transaction.GenerateDomainEvent(new Domain.Events.TransactionCreatedDomainEvent
+            {
+                Transaction = TransactionAdd,
+                CustomerBank = CustomerBankObject
+            });
+
+
+
+
+            await _unitOfWork.TransactionService.Add(TransactionAdd);
 
             _unitOfWork.CustomerBankService.Update(CustomerBankObject);
 
-            _unitOfWork.Complete();
+            await _unitOfWork.Complete();
 
             return TransactionAdd.Id;
         }

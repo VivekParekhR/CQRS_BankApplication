@@ -1,5 +1,6 @@
 ﻿#region Using
 using Bank.Core.Interface;
+using Bank.Domain.Entity;
 using Bank.Domain.Enum;
 using Bank.Domain.Interface;
 using MediatR;
@@ -38,8 +39,13 @@ namespace Bank.Core.Modules.BranchFeature.CreateBranch
                 CreatedDate = DateTime.Now
             };
 
+            Branch.GenerateDomainEvent(new Domain.Events.BranchCreatedDomainEvent
+            {
+                Branch = branch
+            });
+
             await _unitOfWork.BranchService.Add(branch);
-            _unitOfWork.Complete();
+            await _unitOfWork.Complete();
             return branch.Id;
         }
     }

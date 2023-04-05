@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "EohQJQ++l8q71mMHXocLqV8pAI1DUK0DxbJfz/1rNV4+/n6MAE17dMxvipnyNy4CvODn8jkUflwsPgmW6Z2UWw==",
+  "dgSpecHash": "WlL+ZZLbrbUYtT1YER3ZoMOQRgBBfpfidAZK7hG28wehOZCfBGTa6nKpv7opNqwbzE4/Ygk/MUOgCOcSdfXIBw==",
   "success": true,
   "projectFilePath": "D:\\Vivek\\company\\Cygnet Infotech\\PracticalTest\\CQRS_BankApplication\\Bank.ERP\\Bank.Core\\Bank.Core.csproj",
   "expectedPackageFiles": [
@@ -90,7 +90,8 @@
     "C:\\Users\\HP\\.nuget\\packages\\system.threading.channels\\6.0.0\\system.threading.channels.6.0.0.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
-    "C:\\Users\\HP\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512"
+    "C:\\Users\\HP\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\ulid\\1.2.6\\ulid.1.2.6.nupkg.sha512"
   ],
   "logs": []
 }

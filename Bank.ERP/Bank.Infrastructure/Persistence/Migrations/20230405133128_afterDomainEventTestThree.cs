@@ -2,10 +2,10 @@
 
 #nullable disable
 
-namespace Bank.Core.Migrations
+namespace Bank.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class afterupdateRepo : Migration
+    public partial class afterDomainEventTestThree : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

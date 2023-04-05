@@ -442,3 +442,4 @@ D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Ban
 D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.XunitTest.Test\obj\Debug\net6.0\Bank.XunitTest.Test.genruntimeconfig.cache
 D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.XunitTest.Test\obj\Debug\net6.0\ref\Bank.XunitTest.Test.dll
 D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.XunitTest.Test\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
+D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.XunitTest.Test\bin\Debug\net6.0\Ulid.dll

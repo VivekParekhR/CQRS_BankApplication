@@ -3,10 +3,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Bank.Core.Migrations
+namespace Bank.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class inital : Migration
+    public partial class afterDomainEventTestTwo : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -118,13 +118,13 @@ namespace Bank.Core.Migrations
                         column: x => x.BankId,
                         principalTable: "Banks",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Transactions_Customers_CustomerId",
                         column: x => x.CustomerId,
                         principalTable: "Customers",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(

@@ -9,11 +9,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace Bank.Core.Migrations
+namespace Bank.Infrastructure.Migrations
 {
     [DbContext(typeof(BankDbContext))]
-    [Migration("20230404034929_afterupdateUnitOfWork")]
-    partial class afterupdateUnitOfWork
+    [Migration("20230405132913_afterDomainEventTestTwo")]
+    partial class afterDomainEventTestTwo
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -44,7 +44,8 @@ namespace Bank.Core.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<int?>("UpdatedById")
                         .HasColumnType("int");
