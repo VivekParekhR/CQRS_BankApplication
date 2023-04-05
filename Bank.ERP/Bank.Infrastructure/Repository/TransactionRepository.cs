@@ -1,17 +1,11 @@
 ﻿#region Using
-using Bank.Core.Interface;
 using Bank.Core.ViewModel;
 using Bank.Domain.Entity;
 using Bank.Domain.Enum;
+using Bank.Domain.Interface;
 using Bank.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.VisualBasic;
-using Newtonsoft.Json;
-using System;
-using System.Linq.Expressions;
-using System.Reflection.Metadata;
-using System.Security.Cryptography.X509Certificates; 
-
+using Newtonsoft.Json; 
 #endregion
 
 namespace Bank.Infrastructure.Repository

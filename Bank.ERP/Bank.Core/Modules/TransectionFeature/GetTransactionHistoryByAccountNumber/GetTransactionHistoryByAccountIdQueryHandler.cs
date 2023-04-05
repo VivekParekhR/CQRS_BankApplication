@@ -1,5 +1,4 @@
 ﻿#region Using
-using Bank.Core.Interface;
 using Bank.Core.ViewModel;
 using Bank.Domain.Interface;
 using MediatR;

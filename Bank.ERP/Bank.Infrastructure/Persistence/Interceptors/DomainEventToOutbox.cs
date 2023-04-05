@@ -1,15 +1,22 @@
 ﻿#region Using
-using Bank.Domain.Entity;
+using Bank.Core.EventBus;
+using Bank.Core.ViewModel;
 using Bank.Domain.Shared;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using Newtonsoft.Json;
-using static MassTransit.ValidationResultExtensions;
 #endregion
 
 namespace Bank.Infrastructure.Persistence.Interceptors
 {
     public sealed class DomainEventToOutbox : SaveChangesInterceptor
     {
+
+        private readonly IEventBusProvider _IEventBusProvider;
+
+        public DomainEventToOutbox(IEventBusProvider IEventBusProvider)
+        {
+            _IEventBusProvider = IEventBusProvider;
+        }
         public override ValueTask<int> SavedChangesAsync(SaveChangesCompletedEventData eventData, int result, CancellationToken cancellationToken = default)
         {
             var persistContext = eventData.Context;
@@ -27,7 +34,7 @@ namespace Bank.Infrastructure.Persistence.Interceptors
                                                 x.ClearEvent();
                                                 return domainevents;
                                             })
-                                            .Select(x => new OutBox
+                                            .Select(x => new DomainEventMetaData
                                             {
                                                 ModuleId = Guid.NewGuid(),
                                                 OccuranceOnDate = DateTime.UtcNow,
@@ -36,9 +43,11 @@ namespace Bank.Infrastructure.Persistence.Interceptors
                                             })
                                             .ToList();
 
-                //Todo insert into Mongodb as event soursing / we can use rabbitmq to send events persistContext.Set<OutBox>().AddRange(OutBoxs);
+                
+                DomainEvents objDomainEvents = new();
+                objDomainEvents.DomainEventMetaData = OutBoxs;
+                _IEventBusProvider.publishEvent(objDomainEvents);
                 return base.SavedChangesAsync(eventData, result, cancellationToken);
-
             }
         } 
     }

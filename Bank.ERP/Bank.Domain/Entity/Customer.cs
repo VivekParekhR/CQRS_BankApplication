@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Bank.Domain.Entity
 {
-    public class Customer : EventGenerator
+    public class Customer : AggregateRoot
     {
         public int Id { get; set; }
         public string FirstName { get; set; } = string.Empty;

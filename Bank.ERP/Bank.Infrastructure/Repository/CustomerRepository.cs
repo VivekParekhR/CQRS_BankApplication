@@ -1,6 +1,6 @@
 ﻿#region Using
-using Bank.Core.Interface;
 using Bank.Domain.Entity;
+using Bank.Domain.Interface;
 using Bank.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 

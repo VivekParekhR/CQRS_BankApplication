@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Bank.Domain.Entity
 {
-    public class Transaction : EventGenerator
+    public class Transaction : AggregateRoot
     { 
         public int Id { get; set; }
         public Guid TransactionId { get; set; }
@@ -14,7 +14,7 @@ namespace Bank.Domain.Entity
         public DateTime TransectionDate { get; set; }
         public TransactionType TransactionType { get; set; }
         public string TransectionRemarks { get; set; } = string.Empty;  
-        public virtual Bank Bank { get; set; } = new Bank();
-        public virtual Customer Customer { get; set; } = new Customer();
+        public virtual Bank Bank { get; set; }  
+        public virtual Customer Customer { get; set; }  
     }
 }

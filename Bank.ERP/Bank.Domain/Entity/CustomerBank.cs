@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 #endregion
 namespace Bank.Domain.Entity
 {
-    public class CustomerBank : EventGenerator
+    public class CustomerBank : AggregateRoot
     {
         public int Id { get; set; }
         public int BankId { get; set; }

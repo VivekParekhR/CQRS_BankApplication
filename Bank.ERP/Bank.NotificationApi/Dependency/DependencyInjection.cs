@@ -1,6 +1,5 @@
-﻿using Bank.Core.Constant;
-using Bank.Notification.Consumer;
- 
+﻿using Bank.Core.Constant; 
+using Bank.NotificationApi.Consumer;
 using MassTransit;
 
 namespace Bank.Notification.Dependency
@@ -14,6 +13,7 @@ namespace Bank.Notification.Dependency
             services.AddMassTransit(x =>
             {
                 x.AddConsumer<EmailConsumer>();
+                x.AddConsumer<DomainEventConsumer>(); 
                 x.AddBus(provider => Bus.Factory.CreateUsingRabbitMq(cfg =>
                 {
                     cfg.Host(new Uri(ERPConstant.RabbitMQ_URL), h =>
@@ -25,7 +25,15 @@ namespace Bank.Notification.Dependency
                     {
                         ep.PrefetchCount = 16;
                         ep.UseMessageRetry(r => r.Interval(2, 100));
-                        ep.ConfigureConsumer<EmailConsumer>(provider);
+                        ep.ConfigureConsumer<EmailConsumer>(provider); 
+
+                    });
+                    cfg.ReceiveEndpoint(ERPConstant.RabbitMQ_DomainEventQueue, ep =>
+                    {
+                        ep.PrefetchCount = 20;
+                        ep.UseMessageRetry(r => r.Interval(3, 150));
+                        ep.ConfigureConsumer<DomainEventConsumer>(provider);
+
                     });
                 }));
             });

@@ -1,7 +1,6 @@
 ﻿#region Using
 using Azure.Core;
 using Bank.Core.Exceptions;
-using Bank.Core.Interface;
 using Bank.Domain.Entity;
 using Bank.Domain.Enum;
 using Bank.Domain.Interface;
@@ -66,14 +65,11 @@ namespace Bank.Core.Modules.TransectionFeature.TransferAmount
                                              CustomerBankObject.Balance - command.Amount;
 
 
-            Transaction.GenerateDomainEvent(new Domain.Events.TransactionCreatedDomainEvent
+            Transaction.RaiseEvent(new Domain.Events.TransactionCreatedDomainEvent
             {
                 Transaction = TransactionAdd,
                 CustomerBank = CustomerBankObject
             });
-
-
-
 
             await _unitOfWork.TransactionService.Add(TransactionAdd);
 

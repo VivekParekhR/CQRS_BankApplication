@@ -1,5 +1,4 @@
 ﻿#region Using
-using Bank.Core.Interface;
 using Bank.Domain.Entity;
 using Bank.Domain.Enum;
 using Bank.Domain.Interface;
@@ -39,7 +38,7 @@ namespace Bank.Core.Modules.BranchFeature.CreateBranch
                 CreatedDate = DateTime.Now
             };
 
-            Branch.GenerateDomainEvent(new Domain.Events.BranchCreatedDomainEvent
+            Branch.RaiseEvent(new Domain.Events.BranchCreatedDomainEvent
             {
                 Branch = branch
             });

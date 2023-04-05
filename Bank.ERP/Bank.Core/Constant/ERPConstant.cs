@@ -17,6 +17,8 @@ namespace Bank.Core.Constant
         public const string RabbitMQ_Password = "guest";
 
         public const string RabbitMQ_EmailQueue = "emailQueue";
+        public const string RabbitMQ_DomainEventQueue = "domainEventQueue";
+
 
 
         public const string SmtpClient = "smtp.gmail.com";

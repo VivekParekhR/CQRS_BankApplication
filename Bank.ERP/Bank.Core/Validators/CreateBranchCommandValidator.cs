@@ -1,5 +1,4 @@
 ﻿#region Using
-using Bank.Core.Interface;
 using FluentValidation;
 using Bank.Core.Modules.BranchFeature.CreateBranch;
 using Bank.Domain.Interface;

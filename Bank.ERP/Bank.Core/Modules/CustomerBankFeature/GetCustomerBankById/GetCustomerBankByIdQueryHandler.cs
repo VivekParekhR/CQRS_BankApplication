@@ -1,5 +1,4 @@
 ﻿#region Using
-using Bank.Core.Interface;
 using Bank.Core.ViewModel;
 using Bank.Domain.Interface;
 using MediatR;
@@ -33,7 +32,7 @@ namespace Bank.Core.Modules.CustomerBankFeature.GetCustomerBankById
         public async Task<List<CustomerBankViewModel>> Handle(GetCustomerBankByIdQuery request, CancellationToken cancellationToken)
         {
             var retVal = await _unitOfWork.CustomerBankService.GetCustomerBankByCustomerIdAsync(request.CustomerId); 
-            return JsonConvert.DeserializeObject<List<CustomerBankViewModel>>(retVal);
+            return  JsonConvert.DeserializeObject<List<CustomerBankViewModel>>(retVal);
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Bank.Application.Behaviour;
 using Bank.Core.Constant;
+using Bank.Core.EventBus;
 using FluentValidation;
 using MassTransit;
 using MediatR;
@@ -19,7 +20,7 @@ namespace Bank.Core.Dependency
         {
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly()));
-
+            services.AddTransient<IEventBusProvider, EventBusProvider>(); 
             services.AddMassTransit(x =>
             {
                 x.AddBus(provider => Bus.Factory.CreateUsingRabbitMq(config =>

@@ -9,7 +9,7 @@ namespace Bank.Core.Modules.CustomerBankFeature.CustomerBankCreate
     {
         public int BankId { get; set; }
         public int CustomerId { get; set; }
-        public string AccountNumber { get; set; }
+        public string AccountNumber { get; set; } = string.Empty;   
         public AccountType AccountType { get; set; }
         public decimal Balance { get; set; }
     }

@@ -3,7 +3,7 @@ using Bank.Domain.Entity;
 using Bank.Domain.Interface;
 #endregion
 
-namespace Bank.Core.Interface
+namespace Bank.Domain.Interface
 {
     public interface IBranchRepository : IGenericRepository<Branch>
     { 

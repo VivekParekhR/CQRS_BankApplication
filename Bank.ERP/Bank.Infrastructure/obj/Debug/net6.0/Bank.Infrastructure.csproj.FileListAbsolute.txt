@@ -16,6 +16,7 @@ C:\Users\HP\Desktop\CQRS2\CQRS_BankApplication\Bank.ERP\Bank.Infrastructure\obj\
 C:\Users\HP\Desktop\CQRS2\CQRS_BankApplication\Bank.ERP\Bank.Infrastructure\obj\Debug\net6.0\Bank.Infrastructure.pdb
 C:\Users\HP\Desktop\CQRS2\CQRS_BankApplication\Bank.ERP\Bank.Infrastructure\obj\Debug\net6.0\ref\Bank.Infrastructure.dll
 D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Infrastructure\bin\Debug\net6.0\Bank.Infrastructure.deps.json
+D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Infrastructure\bin\Debug\net6.0\Bank.Infrastructure.runtimeconfig.json
 D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Infrastructure\bin\Debug\net6.0\Bank.Infrastructure.dll
 D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Infrastructure\bin\Debug\net6.0\Bank.Infrastructure.pdb
 D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Infrastructure\bin\Debug\net6.0\Bank.Core.dll
@@ -31,6 +32,5 @@ D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Ban
 D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Infrastructure\obj\Debug\net6.0\Bank.Infrastructure.dll
 D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Infrastructure\obj\Debug\net6.0\refint\Bank.Infrastructure.dll
 D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Infrastructure\obj\Debug\net6.0\Bank.Infrastructure.pdb
-D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Infrastructure\obj\Debug\net6.0\ref\Bank.Infrastructure.dll
-D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Infrastructure\bin\Debug\net6.0\Bank.Infrastructure.runtimeconfig.json
 D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Infrastructure\obj\Debug\net6.0\Bank.Infrastructure.genruntimeconfig.cache
+D:\Vivek\company\Cygnet Infotech\PracticalTest\CQRS_BankApplication\Bank.ERP\Bank.Infrastructure\obj\Debug\net6.0\ref\Bank.Infrastructure.dll

@@ -1,6 +1,5 @@
 ﻿#region Using
 using Bank.Core.Modules.BankFeature.CreateBank;
-using Bank.Core.Interface;
 using Bank.Domain.Enum;
 using MediatR;
 using Bank.Domain.Interface;
@@ -40,7 +39,7 @@ namespace Bank.Core.Modules.Bank.CreateBank
             };
 
 
-            Domain.Entity.Bank.GenerateDomainEvent(new Domain.Events.BankCreatedDomainEvent
+            Domain.Entity.Bank.RaiseEvent(new Domain.Events.BankCreatedDomainEvent
             {
                 Bank = bank
             });

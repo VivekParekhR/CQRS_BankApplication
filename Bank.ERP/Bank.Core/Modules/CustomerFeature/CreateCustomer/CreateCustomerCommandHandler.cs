@@ -1,5 +1,4 @@
 ﻿#region Using
-using Bank.Core.Interface;
 using Bank.Domain.Entity;
 using Bank.Domain.Enum;
 using Bank.Domain.Interface;
@@ -42,7 +41,7 @@ namespace Bank.Core.Modules.CustomerFeature.CreateCustomer
                 CreatedDate = DateTime.Now
             };
 
-            Customer.GenerateDomainEvent(new Domain.Events.CustomerCreatedDomainEvent
+            Customer.RaiseEvent(new Domain.Events.CustomerCreatedDomainEvent
             {
                 Customer = customer
             });

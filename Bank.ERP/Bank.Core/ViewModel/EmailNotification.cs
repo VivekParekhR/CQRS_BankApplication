@@ -11,7 +11,7 @@ namespace Bank.Core.ViewModel
         public EmailNotification() {
             this.MessageForQueueGenerationTime = System.DateTime.Now;
         }
-        public string Subject { get; set; }
+        public string Subject { get; set; }     
         public string FromName { get; set; }
         public string FromAddress { get; set; }
         public string ToAddress { get; set; }

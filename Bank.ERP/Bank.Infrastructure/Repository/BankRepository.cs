@@ -1,10 +1,8 @@
-﻿using Bank.Core.Interface;
-using Microsoft.EntityFrameworkCore;
-using System;
-using Bank.Core.ViewModel;
+﻿#region Using
+using Bank.Domain.Interface;
 using Bank.Infrastructure.Persistence;
-using Bank.Domain.Entity;
 
+#endregion
 namespace Bank.Infrastructure.Repository
 {
     public class BankRepository : GenericRepository<Bank.Domain.Entity.Bank>, IBankRepository

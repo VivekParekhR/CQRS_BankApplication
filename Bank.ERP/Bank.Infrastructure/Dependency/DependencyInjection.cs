@@ -1,5 +1,4 @@
 ﻿#region MyRegion 
-using Bank.Core.Interface;
 using Bank.Domain.Interface;
 using Bank.Infrastructure.Persistence;
 using Bank.Infrastructure.Persistence.Interceptors;

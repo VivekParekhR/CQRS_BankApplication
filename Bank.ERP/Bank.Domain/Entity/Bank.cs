@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Bank.Domain.Entity
 {
-    public sealed class Bank : EventGenerator
+    public sealed class Bank : AggregateRoot
     { 
         public int Id { get; set; }
         public string Name { get; set; } =String.Empty;

@@ -12,7 +12,7 @@ namespace Bank.Core.Modules.TransectionFeature.TransferAmount
         public int CustomerId { get; set; }
         public decimal Amount { get; set; }
         public TransactionType TransactionType { get; set; }
-        public string TransectionRemarks { get; set; }
+        public string TransectionRemarks { get; set; } = string.Empty;
 
     }
 }

@@ -5,7 +5,7 @@ using Bank.Domain.Interface;
 
 #endregion
 
-namespace Bank.Core.Interface
+namespace Bank.Domain.Interface
 {
     public interface ITransactionRepository : IGenericRepository<Transaction>
     { 

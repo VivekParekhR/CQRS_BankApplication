@@ -2,7 +2,7 @@
 using Bank.Domain.Enum;
 using Bank.Domain.Interface;
 
-namespace Bank.Core.Interface
+namespace Bank.Domain.Interface
 {
     public interface ICustomerBankRepository : IGenericRepository<CustomerBank>
     { 
