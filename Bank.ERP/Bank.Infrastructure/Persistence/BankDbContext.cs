@@ -1,7 +1,8 @@
-﻿using Bank.Domain.Entity;
+﻿#region Using
+using Bank.Domain.Entity;
 using Bank.Infrastructure.Persistence.ModelConfiguration;
-using Microsoft.EntityFrameworkCore;
-using System.Security.Cryptography.X509Certificates;
+using Microsoft.EntityFrameworkCore; 
+#endregion
 
 namespace Bank.Infrastructure.Persistence
 {

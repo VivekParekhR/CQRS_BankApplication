@@ -1491,6 +1491,23 @@
         "runtime": {
           "bin/placeholder/Bank.Domain.dll": {}
         }
+      },
+      "Bank.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Bank.Domain": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "7.0.3",
+          "Microsoft.Extensions.Configuration.Abstractions": "7.0.0",
+          "Newtonsoft.Json": "13.0.2",
+          "RestSharp": "109.0.1"
+        },
+        "compile": {
+          "bin/placeholder/Bank.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Bank.Infrastructure.dll": {}
+        }
       }
     }
   },
@@ -4306,19 +4323,27 @@
       "type": "project",
       "path": "../Bank.Domain/Bank.Domain.csproj",
       "msbuildProject": "../Bank.Domain/Bank.Domain.csproj"
+    },
+    "Bank.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../Bank.Infrastructure/Bank.Infrastructure.csproj",
+      "msbuildProject": "../Bank.Infrastructure/Bank.Infrastructure.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "Bank.Domain >= 1.0.0",
+      "Bank.Infrastructure >= 1.0.0",
       "FluentValidation >= 11.5.1",
       "FluentValidation.DependencyInjectionExtensions >= 11.5.1",
       "MassTransit >= 8.0.14",
       "MassTransit.AspNetCore >= 7.3.1",
       "MassTransit.RabbitMQ >= 8.0.14",
       "Microsoft.EntityFrameworkCore >= 7.0.3",
+      "Microsoft.EntityFrameworkCore.Design >= 7.0.3",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.3",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.3",
+      "Microsoft.Extensions.Configuration.Abstractions >= 7.0.0",
       "Newtonsoft.Json >= 13.0.2",
       "RestSharp >= 109.0.1",
       "Ulid >= 1.2.6"
@@ -4358,6 +4383,9 @@
           "projectReferences": {
             "D:\\Vivek\\company\\Cygnet Infotech\\PracticalTest\\CQRS_BankApplication\\Bank.ERP\\Bank.Domain\\Bank.Domain.csproj": {
               "projectPath": "D:\\Vivek\\company\\Cygnet Infotech\\PracticalTest\\CQRS_BankApplication\\Bank.ERP\\Bank.Domain\\Bank.Domain.csproj"
+            },
+            "D:\\Vivek\\company\\Cygnet Infotech\\PracticalTest\\CQRS_BankApplication\\Bank.ERP\\Bank.Infrastructure\\Bank.Infrastructure.csproj": {
+              "projectPath": "D:\\Vivek\\company\\Cygnet Infotech\\PracticalTest\\CQRS_BankApplication\\Bank.ERP\\Bank.Infrastructure\\Bank.Infrastructure.csproj"
             }
           }
         }
@@ -4396,6 +4424,12 @@
             "target": "Package",
             "version": "[7.0.3, )"
           },
+          "Microsoft.EntityFrameworkCore.Design": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[7.0.3, )"
+          },
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
             "version": "[7.0.3, )"
@@ -4405,6 +4439,10 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[7.0.3, )"
+          },
+          "Microsoft.Extensions.Configuration.Abstractions": {
+            "target": "Package",
+            "version": "[7.0.0, )"
           },
           "Newtonsoft.Json": {
             "target": "Package",

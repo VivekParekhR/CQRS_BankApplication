@@ -9,6 +9,8 @@ namespace Bank.Core.EventBus
 {
     public interface IEventBusProvider
     {
-        void publishEvent(DomainEvents objDomainEvents);
+        Task publishDomainEventAsync(DomainEvents objDomainEvents);
+        Task publishEmailEventAsync(EmailNotification objEmailNotification);
+
     }
 }

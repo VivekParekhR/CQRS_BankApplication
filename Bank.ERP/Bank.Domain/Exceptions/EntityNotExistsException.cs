@@ -1,4 +1,4 @@
-﻿namespace Bank.Core.Exceptions
+﻿namespace Bank.Domain.Exceptions
 {
     [Serializable]
     public class EntityNotExistsException : Exception

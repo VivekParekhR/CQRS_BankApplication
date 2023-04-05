@@ -1,5 +1,4 @@
 ﻿#region Using
-using Bank.Core.Constant;
 using Bank.Core.Modules.CustomerBankFeature.CustomerBankCreate;
 using Bank.Core.Modules.CustomerBankFeature.GetCustomerBankById;
 using Bank.Core.Modules.TransectionFeature.TransferAmount;
@@ -65,24 +64,7 @@ namespace Bank.Api.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> TransferFund(TransferCommand command)
         {
-           
-            var transactionId = await _mediator.Send(command);
-           
-            Uri uri = new Uri("rabbitmq://localhost/"+ ERPConstant.RabbitMQ_EmailQueue);
-
-            var endPoint = await _bus.GetSendEndpoint(uri);
-
-            EmailNotification objEmailNotification = new EmailNotification();
-            
-            objEmailNotification.Subject = "Transfer Fund From Bank : "+ command.BankId;
-            objEmailNotification.Body = "Frund Transfer Time :" + objEmailNotification.MessageForQueueGenerationTime + " <br/>" +
-                                        "Amount :" + command.Amount + " <br/>"  +
-                                        "TransectionRemarks :" + command.TransectionRemarks + " <br/>" +
-                                        "For Referance Transection Id is :" + transactionId;
-            objEmailNotification.FromAddress = ERPConstant.FromEmail;
-            objEmailNotification.ToAddress = ERPConstant.ToEmail;
-            objEmailNotification.PhonNo = ERPConstant.PhonNo;
-            await endPoint.Send(objEmailNotification);
+            var transactionId = await _mediator.Send(command); 
             return Ok(transactionId);
         }
 

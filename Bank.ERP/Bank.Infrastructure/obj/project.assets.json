@@ -59,23 +59,6 @@
           }
         }
       },
-      "FluentValidation.DependencyInjectionExtensions/11.5.1": {
-        "type": "package",
-        "dependencies": {
-          "FluentValidation": "11.5.1",
-          "Microsoft.Extensions.Dependencyinjection.Abstractions": "2.1.0"
-        },
-        "compile": {
-          "lib/netstandard2.1/FluentValidation.DependencyInjectionExtensions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.1/FluentValidation.DependencyInjectionExtensions.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "Humanizer.Core/2.14.1": {
         "type": "package",
         "compile": {
@@ -124,59 +107,6 @@
         },
         "runtime": {
           "lib/net6.0/MassTransit.Abstractions.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "MassTransit.AspNetCore/7.3.1": {
-        "type": "package",
-        "dependencies": {
-          "MassTransit": "7.3.1",
-          "MassTransit.Extensions.DependencyInjection": "7.3.1",
-          "Microsoft.Extensions.Diagnostics.HealthChecks": "3.1.18",
-          "Microsoft.Extensions.Hosting.Abstractions": "3.1.18"
-        },
-        "compile": {
-          "lib/netstandard2.0/MassTransit.AspNetCoreIntegration.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/MassTransit.AspNetCoreIntegration.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "MassTransit.Extensions.DependencyInjection/7.3.1": {
-        "type": "package",
-        "dependencies": {
-          "MassTransit": "7.3.1",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "2.1.1"
-        },
-        "compile": {
-          "lib/netstandard2.0/MassTransit.ExtensionsDependencyInjectionIntegration.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/MassTransit.ExtensionsDependencyInjectionIntegration.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "MassTransit.RabbitMQ/8.0.14": {
-        "type": "package",
-        "dependencies": {
-          "MassTransit": "8.0.14",
-          "RabbitMQ.Client": "6.4.0"
-        },
-        "compile": {
-          "lib/net6.0/MassTransit.RabbitMqTransport.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/MassTransit.RabbitMqTransport.dll": {
             "related": ".xml"
           }
         }
@@ -888,23 +818,6 @@
           }
         }
       },
-      "RabbitMQ.Client/6.4.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Memory": "4.5.4",
-          "System.Threading.Channels": "4.7.1"
-        },
-        "compile": {
-          "lib/netstandard2.0/RabbitMQ.Client.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/RabbitMQ.Client.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "RestSharp/109.0.1": {
         "type": "package",
         "compile": {
@@ -1461,29 +1374,6 @@
           }
         }
       },
-      "Bank.Core/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "Bank.Domain": "1.0.0",
-          "FluentValidation": "11.5.1",
-          "FluentValidation.DependencyInjectionExtensions": "11.5.1",
-          "MassTransit": "8.0.14",
-          "MassTransit.AspNetCore": "7.3.1",
-          "MassTransit.RabbitMQ": "8.0.14",
-          "Microsoft.EntityFrameworkCore": "7.0.3",
-          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.3",
-          "Newtonsoft.Json": "13.0.2",
-          "RestSharp": "109.0.1",
-          "Ulid": "1.2.6"
-        },
-        "compile": {
-          "bin/placeholder/Bank.Core.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Bank.Core.dll": {}
-        }
-      },
       "Bank.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -1567,23 +1457,6 @@
         "lib/netstandard2.1/FluentValidation.xml"
       ]
     },
-    "FluentValidation.DependencyInjectionExtensions/11.5.1": {
-      "sha512": "iWM0LS1MDYX06pcjMEQKqHirl2zkjHlNV23mEJSoR1IZI7KQmTa0RcTtGEJpj5+iHvBCfrzP2mYKM4FtRKVb+A==",
-      "type": "package",
-      "path": "fluentvalidation.dependencyinjectionextensions/11.5.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "README.md",
-        "fluent-validation-icon.png",
-        "fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
-        "fluentvalidation.dependencyinjectionextensions.nuspec",
-        "lib/netstandard2.0/FluentValidation.DependencyInjectionExtensions.dll",
-        "lib/netstandard2.0/FluentValidation.DependencyInjectionExtensions.xml",
-        "lib/netstandard2.1/FluentValidation.DependencyInjectionExtensions.dll",
-        "lib/netstandard2.1/FluentValidation.DependencyInjectionExtensions.xml"
-      ]
-    },
     "Humanizer.Core/2.14.1": {
       "sha512": "lQKvtaTDOXnoVJ20ibTuSIOf2i0uO0MPbDhd1jm238I+U/2ZnRENj0cktKZhtchBMtCUSRQ5v4xBCUbKNmyVMw==",
       "type": "package",
@@ -1641,55 +1514,6 @@
         "lib/netstandard2.1/MassTransit.Abstractions.xml",
         "masstransit.abstractions.8.0.14.nupkg.sha512",
         "masstransit.abstractions.nuspec",
-        "mt-logo-small.png"
-      ]
-    },
-    "MassTransit.AspNetCore/7.3.1": {
-      "sha512": "l5zu6mHevPQGP1tfDg4My8dtqH4n2jL22+Y1+GnAs12liQy5gYLcJAwSmCKb1iusjjD9S1tgfdILVkAfShfN8w==",
-      "type": "package",
-      "path": "masstransit.aspnetcore/7.3.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/netstandard2.0/MassTransit.AspNetCoreIntegration.dll",
-        "lib/netstandard2.0/MassTransit.AspNetCoreIntegration.xml",
-        "masstransit.aspnetcore.7.3.1.nupkg.sha512",
-        "masstransit.aspnetcore.nuspec",
-        "mt-logo-small.png"
-      ]
-    },
-    "MassTransit.Extensions.DependencyInjection/7.3.1": {
-      "sha512": "s1gnkYUngHNP9m2+Jx1vuUAvoVm4KB3oVbtFJUlXNtBBzhRFq1N3Y0w5iiew60ZBLm0j0RQcSRbI0ahMOkL+og==",
-      "type": "package",
-      "path": "masstransit.extensions.dependencyinjection/7.3.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/netstandard2.0/MassTransit.ExtensionsDependencyInjectionIntegration.dll",
-        "lib/netstandard2.0/MassTransit.ExtensionsDependencyInjectionIntegration.xml",
-        "masstransit.extensions.dependencyinjection.7.3.1.nupkg.sha512",
-        "masstransit.extensions.dependencyinjection.nuspec",
-        "mt-logo-small.png"
-      ]
-    },
-    "MassTransit.RabbitMQ/8.0.14": {
-      "sha512": "m9GLbi1tVUNV5b5aKeQw+JEefmuEyK+oWXKASnh/F9rr5wEE4poc8h1aj5WBQLGg76Ynqwnv6OKi5dUQwKc9Ww==",
-      "type": "package",
-      "path": "masstransit.rabbitmq/8.0.14",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "NuGet.README.md",
-        "lib/net462/MassTransit.RabbitMqTransport.dll",
-        "lib/net462/MassTransit.RabbitMqTransport.xml",
-        "lib/net6.0/MassTransit.RabbitMqTransport.dll",
-        "lib/net6.0/MassTransit.RabbitMqTransport.xml",
-        "lib/netstandard2.0/MassTransit.RabbitMqTransport.dll",
-        "lib/netstandard2.0/MassTransit.RabbitMqTransport.xml",
-        "lib/netstandard2.1/MassTransit.RabbitMqTransport.dll",
-        "lib/netstandard2.1/MassTransit.RabbitMqTransport.xml",
-        "masstransit.rabbitmq.8.0.14.nupkg.sha512",
-        "masstransit.rabbitmq.nuspec",
         "mt-logo-small.png"
       ]
     },
@@ -2722,22 +2546,6 @@
         "newtonsoft.json.13.0.2.nupkg.sha512",
         "newtonsoft.json.nuspec",
         "packageIcon.png"
-      ]
-    },
-    "RabbitMQ.Client/6.4.0": {
-      "sha512": "1znR1gGU+xYVSpO5z8nQolcUKA/yydnxQn7Ug9+RUXxTSLMm/eE58VKGwahPBjELXvDnX0k/kBrAitFLRjx9LA==",
-      "type": "package",
-      "path": "rabbitmq.client/6.4.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "icon.png",
-        "lib/net461/RabbitMQ.Client.dll",
-        "lib/net461/RabbitMQ.Client.xml",
-        "lib/netstandard2.0/RabbitMQ.Client.dll",
-        "lib/netstandard2.0/RabbitMQ.Client.xml",
-        "rabbitmq.client.6.4.0.nupkg.sha512",
-        "rabbitmq.client.nuspec"
       ]
     },
     "RestSharp/109.0.1": {
@@ -4288,11 +4096,6 @@
         "ulid.nuspec"
       ]
     },
-    "Bank.Core/1.0.0": {
-      "type": "project",
-      "path": "../Bank.Core/Bank.Core.csproj",
-      "msbuildProject": "../Bank.Core/Bank.Core.csproj"
-    },
     "Bank.Domain/1.0.0": {
       "type": "project",
       "path": "../Bank.Domain/Bank.Domain.csproj",
@@ -4301,7 +4104,6 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "Bank.Core >= 1.0.0",
       "Bank.Domain >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 7.0.3",
       "Microsoft.EntityFrameworkCore.Design >= 7.0.3",
@@ -4342,9 +4144,6 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Vivek\\company\\Cygnet Infotech\\PracticalTest\\CQRS_BankApplication\\Bank.ERP\\Bank.Core\\Bank.Core.csproj": {
-              "projectPath": "D:\\Vivek\\company\\Cygnet Infotech\\PracticalTest\\CQRS_BankApplication\\Bank.ERP\\Bank.Core\\Bank.Core.csproj"
-            },
             "D:\\Vivek\\company\\Cygnet Infotech\\PracticalTest\\CQRS_BankApplication\\Bank.ERP\\Bank.Domain\\Bank.Domain.csproj": {
               "projectPath": "D:\\Vivek\\company\\Cygnet Infotech\\PracticalTest\\CQRS_BankApplication\\Bank.ERP\\Bank.Domain\\Bank.Domain.csproj"
             }

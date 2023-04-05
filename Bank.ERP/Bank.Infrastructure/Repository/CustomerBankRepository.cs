@@ -1,5 +1,4 @@
-﻿#region Using
-using Bank.Core.ViewModel;
+﻿#region Using 
 using Bank.Domain.Entity;
 using Bank.Domain.Enum;
 using Bank.Domain.Interface;
@@ -50,7 +49,7 @@ namespace Bank.Infrastructure.Repository
             var returnValue = (from e in customerBank
                                join c in customer on e.CustomerId equals c.Id
                                join o in bank on e.BankId equals o.Id
-                               select new CustomerBankViewModel
+                               select new
                                {
                                     AccountNumber = e.AccountNumber,
                                     AccountType = Convert.ToString(e.AccountType),

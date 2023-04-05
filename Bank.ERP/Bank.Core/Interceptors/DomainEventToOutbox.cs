@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Diagnostics;
 using Newtonsoft.Json;
 #endregion
 
-namespace Bank.Infrastructure.Persistence.Interceptors
+namespace Bank.Core.Interceptors
 {
     public sealed class DomainEventToOutbox : SaveChangesInterceptor
     {
@@ -17,12 +17,12 @@ namespace Bank.Infrastructure.Persistence.Interceptors
         {
             _IEventBusProvider = IEventBusProvider;
         }
-        public override ValueTask<int> SavedChangesAsync(SaveChangesCompletedEventData eventData, int result, CancellationToken cancellationToken = default)
+        public override async ValueTask<int> SavedChangesAsync(SaveChangesCompletedEventData eventData, int result, CancellationToken cancellationToken = default)
         {
             var persistContext = eventData.Context;
             if (persistContext == null)
             {
-                return base.SavedChangesAsync(eventData, result, cancellationToken);
+                return await base.SavedChangesAsync(eventData, result, cancellationToken);
             }
             else
             {
@@ -46,8 +46,8 @@ namespace Bank.Infrastructure.Persistence.Interceptors
                 
                 DomainEvents objDomainEvents = new();
                 objDomainEvents.DomainEventMetaData = OutBoxs;
-                _IEventBusProvider.publishEvent(objDomainEvents);
-                return base.SavedChangesAsync(eventData, result, cancellationToken);
+                await _IEventBusProvider.publishDomainEventAsync(objDomainEvents);
+                return await base.SavedChangesAsync(eventData, result, cancellationToken);
             }
         } 
     }

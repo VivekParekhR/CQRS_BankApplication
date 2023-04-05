@@ -1,6 +1,5 @@
 #region Using
 using Bank.Core.Dependency;
-using Bank.Infrastructure.ServiceContainer;
 #endregion
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,8 +7,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddCore();
-builder.Services.AddInfrastructure(builder.Configuration);
+builder.Services.AddCore(builder.Configuration); 
 
 var app = builder.Build();
 

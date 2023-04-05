@@ -1,5 +1,4 @@
-﻿#region Using
-using Bank.Core.ViewModel;
+﻿#region Using 
 using Bank.Domain.Entity;
 using Bank.Domain.Enum;
 using Bank.Domain.Interface;
@@ -30,9 +29,8 @@ namespace Bank.Infrastructure.Repository
             var Iquery = _dbContext.Transactions.Include(x => x.Customer)
                                                        .Include(x => x.Bank)
                                                        .Where(x => x.BankId == BankId && x.CustomerId == CustomerId);
-
-            List<TransactionHistory> lstTranHistory = new();
-            var query = Iquery.Select(x => new TransactionHistory
+             
+            var query = Iquery.Select(x => new
             {
                 Amount = x.Amount,
                 Id = x.Id,
@@ -41,8 +39,10 @@ namespace Bank.Infrastructure.Repository
                 TransectionDate = x.TransectionDate,
                 TransectionRemarks = x.TransectionRemarks
             });
-            lstTranHistory = await query.ToListAsync();
-            TransactionHistoryViewModel objTransactionHistoryViewModel = new()
+
+            var lstTranHistory = await query.ToListAsync();
+
+            var objTransactionHistoryViewModel = new
             {
                 Transactions = lstTranHistory,
                 Bank = Iquery.Select(x => x.Bank).FirstOrDefault(),

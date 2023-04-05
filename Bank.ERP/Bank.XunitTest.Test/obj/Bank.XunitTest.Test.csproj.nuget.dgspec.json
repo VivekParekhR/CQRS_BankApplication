@@ -34,6 +34,9 @@
             "projectReferences": {
               "D:\\Vivek\\company\\Cygnet Infotech\\PracticalTest\\CQRS_BankApplication\\Bank.ERP\\Bank.Domain\\Bank.Domain.csproj": {
                 "projectPath": "D:\\Vivek\\company\\Cygnet Infotech\\PracticalTest\\CQRS_BankApplication\\Bank.ERP\\Bank.Domain\\Bank.Domain.csproj"
+              },
+              "D:\\Vivek\\company\\Cygnet Infotech\\PracticalTest\\CQRS_BankApplication\\Bank.ERP\\Bank.Infrastructure\\Bank.Infrastructure.csproj": {
+                "projectPath": "D:\\Vivek\\company\\Cygnet Infotech\\PracticalTest\\CQRS_BankApplication\\Bank.ERP\\Bank.Infrastructure\\Bank.Infrastructure.csproj"
               }
             }
           }
@@ -72,6 +75,12 @@
               "target": "Package",
               "version": "[7.0.3, )"
             },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.3, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[7.0.3, )"
@@ -81,6 +90,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[7.0.3, )"
+            },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[7.0.0, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
@@ -232,9 +245,6 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Vivek\\company\\Cygnet Infotech\\PracticalTest\\CQRS_BankApplication\\Bank.ERP\\Bank.Core\\Bank.Core.csproj": {
-                "projectPath": "D:\\Vivek\\company\\Cygnet Infotech\\PracticalTest\\CQRS_BankApplication\\Bank.ERP\\Bank.Core\\Bank.Core.csproj"
-              },
               "D:\\Vivek\\company\\Cygnet Infotech\\PracticalTest\\CQRS_BankApplication\\Bank.ERP\\Bank.Domain\\Bank.Domain.csproj": {
                 "projectPath": "D:\\Vivek\\company\\Cygnet Infotech\\PracticalTest\\CQRS_BankApplication\\Bank.ERP\\Bank.Domain\\Bank.Domain.csproj"
               }

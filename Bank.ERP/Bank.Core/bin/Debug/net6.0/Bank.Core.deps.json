@@ -9,14 +9,17 @@
       "Bank.Core/1.0.0": {
         "dependencies": {
           "Bank.Domain": "1.0.0",
+          "Bank.Infrastructure": "1.0.0",
           "FluentValidation": "11.5.1",
           "FluentValidation.DependencyInjectionExtensions": "11.5.1",
           "MassTransit": "8.0.14",
           "MassTransit.AspNetCore": "7.3.1",
           "MassTransit.RabbitMQ": "8.0.14",
           "Microsoft.EntityFrameworkCore": "7.0.3",
+          "Microsoft.EntityFrameworkCore.Design": "7.0.3",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.3",
           "Microsoft.EntityFrameworkCore.Tools": "7.0.3",
+          "Microsoft.Extensions.Configuration.Abstractions": "7.0.0",
           "Newtonsoft.Json": "13.0.2",
           "RestSharp": "109.0.1",
           "Ulid": "1.2.6"
@@ -917,6 +920,18 @@
         "runtime": {
           "Bank.Domain.dll": {}
         }
+      },
+      "Bank.Infrastructure/1.0.0": {
+        "dependencies": {
+          "Bank.Domain": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "7.0.3",
+          "Microsoft.Extensions.Configuration.Abstractions": "7.0.0",
+          "Newtonsoft.Json": "13.0.2",
+          "RestSharp": "109.0.1"
+        },
+        "runtime": {
+          "Bank.Infrastructure.dll": {}
+        }
       }
     }
   },
@@ -1543,6 +1558,11 @@
       "hashPath": "ulid.1.2.6.nupkg.sha512"
     },
     "Bank.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Bank.Infrastructure/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
