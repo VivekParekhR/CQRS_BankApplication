@@ -20,7 +20,7 @@ namespace Bank.Core.EventBus
         }
         public async Task publishDomainEventAsync(DomainEvents objDomainEvents)
         {
-            Uri uri = new Uri("rabbitmq://localhost/" + ERPConstant.RabbitMQ_DomainEventQueue);
+            Uri uri = new Uri(ERPConstant.RabbitMQ_URL + ERPConstant.RabbitMQ_DomainEventQueue);
             var endPoint = await _bus.GetSendEndpoint(uri);
             if (endPoint != null)
             {
@@ -30,7 +30,7 @@ namespace Bank.Core.EventBus
 
         public async Task publishEmailEventAsync(EmailNotification objEmailNotification)
         {
-            Uri uri = new Uri("rabbitmq://localhost/" + ERPConstant.RabbitMQ_EmailQueue);
+            Uri uri = new Uri(ERPConstant.RabbitMQ_URL + ERPConstant.RabbitMQ_EmailQueue);
             var endPoint = await _bus.GetSendEndpoint(uri);
             if (endPoint != null)
             {
